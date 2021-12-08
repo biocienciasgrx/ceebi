@@ -1,0 +1,7 @@
+{
+  "name": "CEEBI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
