@@ -1,39 +1,55 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import Tabs from '../views/Tabs.vue'
+import { createRouter, createWebHistory } from "@ionic/vue-router";
+import { RouteRecordRaw } from "vue-router";
+import Tabs from "../views/Tabs.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    redirect: '/tabs/tab1'
-  },
-  {
-    path: '/tabs/',
+    path: "/",
     component: Tabs,
     children: [
       {
-        path: '',
-        redirect: '/tabs/tab1'
+        path: "",
+        redirect: "/notifications",
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        path: "code",
+        component: () => import("@/views/QRCode.vue"),
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        path: "schedule",
+        component: () => import("@/views/Schedule.vue"),
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
-    ]
-  }
-]
+        path: "news",
+        component: () => import("@/views/News.vue"),
+      },
+      {
+        path: "notifications",
+        component: () => import("@/views/Notifications.vue"),
+      },
+      {
+        path: "notifications/:id",
+        component: () => import("@/views/NotificationDetails.vue"),
+      },
+      {
+        path: "about",
+        component: () => import("@/views/About.vue"),
+      },
+      {
+        path: "settings",
+        component: () => import("@/views/Settings.vue"),
+      },
+      {
+        path: "id-change",
+        component: () => import("@/views/IdChange.vue"),
+      },
+    ],
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- You can add as many layer as you want as long as they are drawable bitmaps or vectors -->
+  <item android:drawable="@drawable/ic_launcher_background_b"/> <!-- will stretch to exactly match the viewport size -->
+  <item android:drawable="@drawable/ic_launcher_foreground" android:gravity="center"/> <!-- will be centered in the viewport without stretching -->
+</layer-list>

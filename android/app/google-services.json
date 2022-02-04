@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "349028882075",
+    "project_id": "ceebi-client",
+    "storage_bucket": "ceebi-client.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349028882075:android:641d0ecb0ef43868a2d83e",
+        "android_client_info": {
+          "package_name": "net.hipycas.ceebi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349028882075-8o7ravk9oldnheknoje59abivvm8vhlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN1JOpTTVZAxPu-wron_UAF1CpSdLAfMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349028882075-8o7ravk9oldnheknoje59abivvm8vhlf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

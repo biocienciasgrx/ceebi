@@ -3,24 +3,24 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
+        <ion-tab-button tab="qrcode" href="/code">
           <ion-icon :icon="triangle" />
-          <ion-label>QR Code</ion-label>
+          <ion-label>{{ $t("message.tabQRCode") }}</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-tab-button tab="schedule" href="/schedule">
           <ion-icon :icon="ellipse" />
-          <ion-label>Schedule</ion-label>
+          <ion-label>{{ $t("message.tabSchedule") }}</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
+        <ion-tab-button tab="news" href="/news">
           <ion-icon :icon="square" />
-          <ion-label>News</ion-label>
+          <ion-label>{{ $t("message.tabNews") }}</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
-          <ion-icon :icon="square" />
-          <ion-label>About</ion-label>
+        <ion-tab-button tab="about" href="/notifications">
+          <ion-icon :icon="notificationsOutline" />
+          <ion-label>{{ $t("message.tabNotifications") }}</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -37,7 +37,12 @@ import {
   IonPage,
   IonRouterOutlet,
 } from "@ionic/vue";
-import { ellipse, square, triangle } from "ionicons/icons";
+import {
+  calendarOutline as ellipse,
+  newspaperOutline as square,
+  qrCodeOutline as triangle,
+  notificationsOutline,
+} from "ionicons/icons";
 
 export default {
   name: "Tabs",
@@ -55,6 +60,7 @@ export default {
       ellipse,
       square,
       triangle,
+      notificationsOutline,
     };
   },
 };

@@ -1,0 +1,56 @@
+{
+  "colaborador": [
+    {
+      "nombre": "Facultad de Ciencias",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Ciencias-CEEBI.png",
+      "web": "https://fciencias.ugr.es/"
+    },
+    {
+      "nombre": "Asociación EventEX",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/EventEX-CEEBI-1.png",
+      "web": "https://eventex.es"
+    },
+    {
+      "nombre": "ARQUS European University Alliance",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/ARQUS-CEEBI.png",
+      "web": "https://www.arqus-alliance.eu/"
+    },
+    {
+      "nombre": "Vicerrectorado de Estudiantes y Empleabilidad",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Vicerrectorado-CEEBI.png",
+      "web": "https://ve.ugr.es"
+    },
+    {
+      "nombre": "Asociación para el Estudio de la Biología de la Reproducción",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/ASEBIR-CEEBI-1.png",
+      "web": "https://asebir.com/"
+    },
+    {
+      "nombre": "Biobanco del Sistema Sanitario Público de Andalucía",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Biobanco-CEEBI.png",
+      "web": "https://www.juntadeandalucia.es/salud/biobanco/"
+    }
+  ],
+  "bronce": [
+    {
+      "nombre": "Fundación del Instituto Bernabeu",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Fundacion-Rafael-Bernabeu-CEEBI-1.png",
+      "web": "https://www.fundacionrafaelbernabeu.com/"
+    }
+  ],
+  "plata": [
+    {
+      "nombre": "Microbacterium",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/logo-microbacterium-RGB-2.png",
+      "web": "https://microbacterium.es/"
+    }
+  ],
+  "oro": [],
+  "platino": [
+    {
+      "nombre": "Vircell Microbiologists",
+      "img": "https://i0.wp.com/biociencias.es/wp-content/uploads/2022/01/Vircell-CEEBI.png?w=512&ssl=1",
+      "web": "https://www.vircell.com/"
+    }
+  ]
+}
