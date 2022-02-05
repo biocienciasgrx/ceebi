@@ -35,6 +35,8 @@
         </provider>
     </application>
 
+    <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/push_icon" />
+
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
