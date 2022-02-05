@@ -24,7 +24,9 @@
               "
             >
               <ion-select-option
-                v-for="locale in $i18n.availableLocales"
+                v-for="locale in $i18n.availableLocales.sort((a, b) =>
+                  getLocaleName(a).localeCompare(getLocaleName(b))
+                )"
                 :key="`locale-${locale}`"
                 :value="locale"
                 >{{ getLocaleName(locale) }}</ion-select-option
