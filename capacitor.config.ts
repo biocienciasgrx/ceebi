@@ -3,7 +3,7 @@ import { SplashScreenPlugin } from "@capacitor/splash-screen";
 import { PushNotificationsPlugin } from "@capacitor/push-notifications";
 
 const config: CapacitorConfig = {
-  appId: "net.hipycas.ceebi",
+  appId: "es.biociencias.ceebi",
   appName: "CEEBI",
   webDir: "dist",
   bundledWebRuntime: false,
