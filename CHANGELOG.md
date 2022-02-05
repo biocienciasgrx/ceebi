@@ -7,7 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.3.3-alpha] - 2022-02-04
+## [0.4.0-alpha] - 2022-02-05
+
+### Added
+
+- Icons to events set from the web itself
+- Multiple speakers in events
+- Provisional ripple effect for events
+
+### Changed
+
+- **BREAKING (Android)**: Changed package id to `es.biociencias.ceebi`
+
+## [0.3.3-alpha] - 2022-02-04 [YANKED]
 
 ### Added
 
