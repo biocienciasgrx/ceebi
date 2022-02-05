@@ -14,6 +14,7 @@
 1. ¿Que hasta la semana en sí del evento siempre te ponga en el día 19 en schedule?
 1. View de cada evento
 1. Notificaciones Push
+1. Poner el logo como icono de la App
 
 ## Others
 
@@ -28,3 +29,4 @@
 1. Translations
 1. Haptics for toasts
 1. Vista detallada de cada evento
+1. Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)
