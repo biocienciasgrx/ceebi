@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4-alpha] - 2022-02-05 [YANKED]
+
+### Added
+
+- Sort locales by name in alphabetical order in locale selection dropdown
+- Translations: German
+
+### Changed
+
+- Moved firebase and analytics account ownership to app@biociencias.es. (In a future, you may view the external services and the use that this app makes of your data in PRIVACY.md)
+
 ## [0.4.1-alpha] - 2022-02-05
 
 ### Fixed
@@ -46,5 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Images not properly loading from cache
 - Showing _alt_ text in case images don't load
 
-[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.3.3-alpha...HEAD
+[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.4.4a-alpha...HEAD
+[0.4.4-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.4-alpha
+[0.4.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.1-alpha
+[0.4.0-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.1-alpha
 [0.3.2-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.3.3-alpha
