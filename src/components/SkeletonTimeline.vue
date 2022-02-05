@@ -31,16 +31,11 @@
   </section>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { IonSkeletonText } from "@ionic/vue";
 
-export default {
-  components: { IonSkeletonText },
-  methods: {
-    randItems: () => Math.floor(Math.random() * 2 + 1),
-    randWidth: () => `${Math.floor(Math.random() * 3 + 10)}em`,
-  },
-};
+const randItems = () => Math.floor(Math.random() * 2 + 1);
+const randWidth = () => `${Math.floor(Math.random() * 3 + 10)}em`;
 </script>
 
 <style scoped>

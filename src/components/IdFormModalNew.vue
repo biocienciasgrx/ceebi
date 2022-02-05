@@ -28,17 +28,10 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { modalController } from "@ionic/core";
-import { defineComponent } from "@vue/runtime-core";
 
-export default defineComponent({
-  setup() {
-    return {
-      dismiss: modalController.dismiss,
-    };
-  },
-});
+const dismiss = modalController.dismiss;
 </script>
 
 <style></style>

@@ -27,7 +27,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import {
   IonTabBar,
   IonTabButton,
@@ -43,25 +43,4 @@ import {
   qrCodeOutline as triangle,
   notificationsOutline,
 } from "ionicons/icons";
-
-export default {
-  name: "Tabs",
-  components: {
-    IonLabel,
-    IonTabs,
-    IonTabBar,
-    IonTabButton,
-    IonIcon,
-    IonPage,
-    IonRouterOutlet,
-  },
-  setup() {
-    return {
-      ellipse,
-      square,
-      triangle,
-      notificationsOutline,
-    };
-  },
-};
 </script>
