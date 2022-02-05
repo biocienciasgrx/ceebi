@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1-alpha] - 2022-02-05
+
+### Fixed
+
+- Android app splash screen set to CEEBI's
+
 ## [0.4.0-alpha] - 2022-02-05
 
 ### Added

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "net.hipycas.ceebi",
+  "applicationId": "es.biociencias.ceebi",
   "variantName": "release",
   "elements": [
     {

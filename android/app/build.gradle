@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services' // (Push notifications)
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "net.hipycas.ceebi"
+        applicationId "es.biociencias.ceebi"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -25,20 +24,12 @@ android {
 }
 
 repositories {
-    google()
     flatDir{
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
 }
 
 dependencies {
-    // Import the Firebase BoM (push notifications)
-    implementation platform('com.google.firebase:firebase-bom:29.0.1')
-    // Add the dependency for the Firebase SDK for Google Analytics
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-iid'
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation project(':capacitor-android')
@@ -50,11 +41,11 @@ dependencies {
 
 apply from: 'capacitor.build.gradle'
 
-//try {
-//    def servicesJSON = file('google-services.json')
-//    if (servicesJSON.text) {
-//        apply plugin: 'com.google.gms.google-services:3.0.0'
-//    }
-//} catch(Exception e) {
-//    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work", e)
-//}
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

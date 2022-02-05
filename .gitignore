@@ -31,4 +31,4 @@ npm-debug.log*
 /www
 
 splash_screen.*
-keystore.jks
+keystore*.jks

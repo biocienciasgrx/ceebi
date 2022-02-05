@@ -1,4 +1,4 @@
-package net.hipycas.ceebi;
+package es.biociencias.ceebi;
 
 import com.getcapacitor.BridgeActivity;
 

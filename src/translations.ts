@@ -83,7 +83,7 @@ export default {
       identificationPassport: "Pasaporte u otro (cualquier país)",
       identificationDocumentIdentifier: "Identificador del documento",
       identificationHelpTextLengthDNI:
-        "El DNI debe de ser de 9 carácteres de loongitud",
+        "El DNI debe de ser de 9 carácteres de longitud",
       identificationHelpTextInvalidDNI: "DNI no válido",
       identificationHelpTextWrongFormatDNI: "Formato de DNI inválido",
 
