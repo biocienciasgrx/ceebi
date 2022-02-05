@@ -45,7 +45,7 @@ export default {
       newsCannotRefreshOffline: "Cannot refresh news while offline",
       newsReadMore: "Read more",
     },
-  },
+  } as Traslation,
   es: {
     message: {
       minutes: "minutos",
@@ -80,7 +80,7 @@ export default {
       identificationTypeTitle: "Tipo de documento",
       identificationDNI: "DNI Español",
       identificationNIE: "NIE Español",
-      identificationPassport: "Pasaporte u otro (cualquier país)",
+      identificationPassportOrOther: "Pasaporte u otro (cualquier país)",
       identificationDocumentIdentifier: "Identificador del documento",
       identificationHelpTextLengthDNI:
         "El DNI debe de ser de 9 carácteres de longitud",
@@ -95,7 +95,7 @@ export default {
         "No es posible recargar las noticias sin conexión",
       newsReadMore: "Leer más",
     },
-  },
+  } as Traslation,
   gl: {
     message: {
       minutes: "minutos",
@@ -143,5 +143,100 @@ export default {
         "Non é posible recargar as noticias sen conexión",
       newsReadMore: "Ler máis",
     },
-  },
+  } as Traslation,
+  de: {
+    message: {
+      minutes: "Minuten",
+
+      // Tabs
+      tabQRCode: "QR-Code",
+      tabSchedule: "Plan",
+      tabNews: "Nachrichten",
+      tabNotifications: "Mitteilung",
+
+      // QRCode
+      qrcodeIdNotSet: "Stellen Sie eine ID auf, um QR-Code zu benutzen",
+      qrcodeSetId: "Set ID",
+
+      // components/NoConnection.vue
+      noConnection: "Keine Verbindung",
+
+      // Settings
+      localeSelection: "Wählen Sie die Sprache",
+      settingsInterfaceTitle: "Interface",
+      darkMode: "Dunkelmodus",
+      workingOnDarkMode: "Dunkelmodus ist noch nicht erhältich",
+      settingsIdentificationTitle: "Ausweis",
+      settingsIdentificationChange: "Ändern ID",
+      settingsNotificationsTitle: "Mitteilungen",
+      settingsEventRemindersToggle: "Aktivieren Eventserinnerungen",
+      settingsEventRemindersChooseTime: "Zeit zu EventsMitteilung",
+      settingsEventsRemindersTime0: "Im Startzeit",
+
+      // components/IdFormModal
+      identificationTypeTitle: "ID Dokumentenart",
+      identificationDNI: "Spanische DNI",
+      identificationNIE: "Spanische NIE",
+      identificationPassportOrOther: "Reisepass order andere (jedes Land)",
+      identificationDocumentIdentifier: "Dokumentskennzeichen",
+      identificationHelpTextLengthDNI: "DNI müss 9 Buchstaben lang sein",
+      identificationHelpTextInvalidDNI: "DNI ist nicht berechtigt",
+      identificationHelpTextWrongFormatDNI: "DNI-Format ist nicht berechtigt",
+
+      // News
+      newsTakingLongMessage: "Das wird länger als wir gedacht haben",
+      newsTakingLongerLoadCache: "Laden aus dem Cachespeicher",
+      newsTakingLongerWait: "Abwarten Sie, bitte",
+      newsCannotRefreshOffline: "Nachrichten sind nicht offline zu laden",
+      newsReadMore: "Lessen mehr",
+    },
+  } as Traslation,
 };
+
+interface Traslation {
+  message: {
+    minutes: string;
+
+    // Tabs
+    tabQRCode: string;
+    tabSchedule: string;
+    tabNews: string;
+    tabNotifications: string;
+
+    // QRCode
+    qrcodeIdNotSet: string;
+    qrcodeSetId: string;
+
+    // components/NoConnection.vue
+    noConnection: string;
+
+    // Settings
+    localeSelection: string;
+    settingsInterfaceTitle: string;
+    darkMode: string;
+    workingOnDarkMode: string;
+    settingsIdentificationTitle: string;
+    settingsIdentificationChange: string;
+    settingsNotificationsTitle: string;
+    settingsEventRemindersToggle: string;
+    settingsEventRemindersChooseTime: string;
+    settingsEventsRemindersTime0: string;
+
+    // components/IdFormModal
+    identificationTypeTitle: string;
+    identificationDNI: string;
+    identificationNIE: string;
+    identificationPassportOrOther: string;
+    identificationDocumentIdentifier: string;
+    identificationHelpTextLengthDNI: string;
+    identificationHelpTextInvalidDNI: string;
+    identificationHelpTextWrongFormatDNI: string;
+
+    // News
+    newsTakingLongMessage: string;
+    newsTakingLongerLoadCache: string;
+    newsTakingLongerWait: string;
+    newsCannotRefreshOffline: string;
+    newsReadMore: string;
+  };
+}

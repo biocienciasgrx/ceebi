@@ -34,6 +34,7 @@ import { KEY_LOCALE } from "./vars";
 
 const i18n = createI18n({
   fallbackLocale: "en",
+  //@ts-ignore
   messages,
 });
 Storage.keys().then(({ keys }) => {
