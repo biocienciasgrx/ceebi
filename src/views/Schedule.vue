@@ -138,7 +138,7 @@ export default {
       );
 
       res.json().then((json) => {
-        tuesdayEvents.value = json.content_json["2022-07-20"];
+        tuesdayEvents.value = json.content_json["2022-07-19"];
         tuesdayLoading.value = false;
       });
     }

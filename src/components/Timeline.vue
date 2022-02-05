@@ -1,20 +1,23 @@
 <template>
   <div id="vertical-bar"></div>
   <section class="events">
-    <article v-for="event in events" :key="event.ID" class="event">
+    <article
+      v-for="event in events"
+      :key="event.ID"
+      class="event ion-activatable"
+    >
       <div class="event__icon">
-        <ion-icon
-          :icon="icon(firstProp(event.data.categories).name)"
-        ></ion-icon>
+        <ion-icon :icon="icon(event)"></ion-icon>
       </div>
       <div class="event__header">
         <p class="event__start-time">
           {{ event.data.time.start }}
         </p>
         <h3 class="event__title">{{ event.data.title }}</h3>
+        <ion-ripple-effect></ion-ripple-effect>
       </div>
       <p class="event__presenter">
-        {{ firstProp(event.data.speakers).name }}
+        {{ presenters(event) }}
         {{
           keys(event.data.locations).length &&
           keys(event.data.speakers).length > 0
@@ -29,19 +32,12 @@
 </template>
 
 <script lang="ts">
-import { IonIcon, onIonViewDidEnter } from "@ionic/vue";
-import {
-  megaphoneOutline,
-  chatbubbleEllipsesOutline,
-  buildOutline,
-  briefcaseOutline,
-  cafeOutline,
-  helpOutline,
-  restaurantOutline,
-  peopleOutline,
-} from "ionicons/icons";
+import { IonIcon, IonRippleEffect, onIonViewDidEnter } from "@ionic/vue";
+import * as ionicons from "ionicons/icons";
 
-import { Event, EventType } from "@/scripts/events";
+// import { Event, EventType } from "@/scripts/events";
+import { Event } from "@/types";
+import { EVENT_ICON_FIELD_LABEL } from "@/vars";
 
 import { PropType } from "@vue/runtime-core";
 
@@ -52,7 +48,7 @@ export default {
       required: true,
     },
   },
-  components: { IonIcon },
+  components: { IonIcon, IonRippleEffect },
   // @ts-ignore TS7006
   setup(props) {
     function firstProp(obj?: any): any {
@@ -78,33 +74,58 @@ export default {
     });
 
     return {
-      icon(type: EventType): string {
-        switch (type) {
-          case EventType.Conferencia:
-            return megaphoneOutline;
-          case EventType.Microcharla:
-            return chatbubbleEllipsesOutline;
-          case EventType.Taller:
-            return buildOutline;
-          case EventType.ForoEmpresas:
-            return briefcaseOutline;
-          case EventType.Break:
-            return cafeOutline;
-          case EventType.ComidaEventual:
-            return restaurantOutline;
-          case EventType.Social:
-            return peopleOutline;
-        }
-        return helpOutline;
+      // icon(type: EventType): string {
+      //   switch (type) {
+      //     case EventType.Conferencia:
+      //       return megaphoneOutline;
+      //     case EventType.Microcharla:
+      //       return chatbubbleEllipsesOutline;
+      //     case EventType.Taller:
+      //       return buildOutline;
+      //     case EventType.ForoEmpresas:
+      //       return briefcaseOutline;
+      //     case EventType.Break:
+      //       return cafeOutline;
+      //     case EventType.ComidaEventual:
+      //       return restaurantOutline;
+      //     case EventType.Social:
+      //       return peopleOutline;
+      //   }
+      //   return helpOutline;
+      // },
+      icon(event: Event): string {
+        //@ts-expect-error
+        return ionicons[
+          `${
+            (
+              event.data.fields.find(
+                (el) => el.label === EVENT_ICON_FIELD_LABEL
+              ) || {
+                value: "",
+              }
+            ).value
+          }Outline`
+        ];
       },
-      displayMinutes(event: Event): string {
-        const mins = event.startTime.getMinutes();
-        if (mins < 10) return "0" + mins;
-        return mins.toString();
-      },
+      // displayMinutes(event: Event): string {
+      //   const mins = event.startTime.getMinutes();
+      //   if (mins < 10) return "0" + mins;
+      //   return mins.toString();
+      // },
       firstProp,
       keys: (obj?: Record<string, any>): string[] =>
         obj === undefined ? [] : Object.keys(obj),
+      presenters(event: Event): string {
+        console.info(
+          "??? presenters event",
+          event.data.title,
+          "data",
+          event.data.speakers
+        );
+        return Object.values(event.data.speakers || {})
+          .map((speaker) => speaker.name)
+          .join(", ");
+      },
     };
   },
 };
@@ -134,18 +155,19 @@ export default {
   padding-left: 30px;
   /* margin-top: -15px; */
   padding-top: 5px;
+  position: relative;
 }
 
 .event__icon {
   position: absolute;
-  left: calc(2em + 30px / 2 * -1);
+  left: calc(30px / 2 * -1);
   background-color: var(--ion-color-secondary-tint);
   border-radius: 9999px;
   width: 40px;
   height: 40px;
   display: grid;
   place-items: center;
-  color: black;
+  color: #111;
 }
 
 .event__header {
@@ -156,6 +178,7 @@ export default {
   align-items: baseline;
   gap: 0.25em;
   font-size: 1.5rem;
+  position: relative;
 }
 
 .event__header > * {
