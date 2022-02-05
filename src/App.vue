@@ -17,8 +17,9 @@ import {
 } from "@capacitor/push-notifications";
 import { SplashScreen } from "@capacitor/splash-screen";
 import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Storage } from "@capacitor/storage";
 
-import { IMAGES_DIRECTORY } from "@/vars";
+import { IMAGES_DIRECTORY, KEY_NOTIFICATIONS } from "@/vars";
 
 PushNotifications.addListener("registration", async (token: Token) => {
   console.log("===== FIREBASE TOKEN: " + token.value + " =====");
@@ -35,31 +36,66 @@ console.info("App:21 > Setting upd");
 LocalNotifications.requestPermissions().then((res) =>
   console.log("App:23 > local permissions: ", res.display)
 );
-if (isPlatform("capacitor"))
+if (isPlatform("capacitor")) {
   PushNotifications.requestPermissions().then((res) => {
     console.log("App:26 push permissions: ", res.receive);
     if (res.receive === "granted") PushNotifications.register();
   });
 
-PushNotifications.addListener(
-  "pushNotificationReceived",
-  async (notification: PushNotificationSchema) => {
-    console.log("PUSH >>>> Push received: " + JSON.stringify(notification));
-  }
-);
-
-PushNotifications.addListener(
-  "pushNotificationActionPerformed",
-  async (notification: ActionPerformed) => {
-    const data = notification.notification.data;
-    console.log(
-      "PUSH >>>> Action performed: " + JSON.stringify(notification.notification)
-    );
-    if (data) {
-      console.info("PUSH >>> data " + JSON.stringify(data));
+  PushNotifications.addListener(
+    "pushNotificationReceived",
+    async (notification: PushNotificationSchema) => {
+      console.log("PUSH >>>> Push received: " + JSON.stringify(notification));
+      // Show notification in case you don't have the app open
+      LocalNotifications.schedule({
+        notifications: [
+          {
+            title: notification.title || "",
+            body: notification.body || "",
+            id: Date.now(),
+            extra: notification.data,
+            // smallIcon: "@mipmap/push_icon",
+          },
+        ],
+      })
+        .then((res) =>
+          console.info("PUSH >>>> Scheduled: ", JSON.stringify(res))
+        )
+        .catch((e) =>
+          console.warn("PUSH >>> ERROR while setting local notification: " + e)
+        );
+      // Save notification
+      const { value: notificationsJSON } = await Storage.get({
+        key: KEY_NOTIFICATIONS,
+      });
+      const notifications: PushNotificationSchema[] = JSON.parse(
+        notificationsJSON || ""
+      );
+      console.info("PUSH >>>> Saving notification");
+      notifications.push(notification);
+      Storage.set({
+        key: KEY_NOTIFICATIONS,
+        value: JSON.stringify(notifications),
+      })
+        .catch((e) => console.error("PUSH >>>> Error while saving push: " + e))
+        .then(() => console.info("PUSH >>>> Successfully saved notification"));
     }
-  }
-);
+  );
+
+  PushNotifications.addListener(
+    "pushNotificationActionPerformed",
+    async (notification: ActionPerformed) => {
+      const data = notification.notification.data;
+      console.log(
+        "PUSH >>>> Action performed: " +
+          JSON.stringify(notification.notification)
+      );
+      if (data) {
+        console.info("PUSH >>> data " + JSON.stringify(data));
+      }
+    }
+  );
+}
 
 onMounted(SplashScreen.hide);
 </script>
