@@ -13,8 +13,8 @@
 1. ~~_**IMPORTANTE** Deslizar en schedule entre tabs_~~ => Hay que mejorarlo, pq la height se queda justa cuando carga y no puedes bajar
 1. ¿Que hasta la semana en sí del evento siempre te ponga en el día 19 en schedule?
 1. View de cada evento
-1. Notificaciones Push
 1. Poner el logo como icono de la App
+1. Notificaciones Push => data/campo personalizado del icono que venga en la push y si no hay o no encuentra fallback a avioncito de papel
 
 ## Others
 
@@ -30,3 +30,9 @@
 1. Haptics for toasts
 1. Vista detallada de cada evento
 1. Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)
+
+# SENDING NOTIFICATIONS PROGRAMATICALLY:
+
+```bash
+curl -X POST --header "Authorization: key=AAAAUUO-Fps:APA91bEJpuWqhxT9ZvLJ0ficdf1u-dhL8j-Nn9eYb5wUNoer_hpNmJy7AyCp-NCRvNzq-VX21PSY2fshqZLAN_wrqHOjqqF9PUCBRO8MBWkT4S0qZPqTdzv3kf9y3gU5gp83QkdHM7VF " --Header "Content-Type: application/json" https://fcm.googleapis.com/fcm/send -d "{\"to\":\"d4S6-vIURlWhLSkQDcid4X:APA91bFO_vC5xRYT2MO75aWr0kUwkAswGjCtEASkxGpP7C4MTpJ8UMe8ZuCtHCDdGp-021MvpGAhiqmUGJsxxZo7zEeBdTEjVT4NNfjGfeUykv4xL8bnGfWqb_MatBWuePXamHe0sRB5\",\"notification\":{\"body\":\"Firebase\"}}"
+```
