@@ -97,29 +97,17 @@ import { IonPage, IonContent, toastController } from "@ionic/vue";
 import Header from "../components/Header.vue";
 // import { trophy } from "ionicons/icons";
 
-import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 import { Capacitor } from "@capacitor/core";
 import { Http } from "@capacitor-community/http";
 
-import { IMAGES_DIRECTORY } from "@/vars";
+import { Mecena, Mecenas, MecenasLevel } from "@/types";
+import { IMAGES_DIRECTORY, MECENAS_JSON_PATH } from "@/vars";
 
-import _mecenas from "../../mecenas.json";
+// import _mecenas from "../../mecenas.json";
 import { computed, ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
-type MecenasLevel = "bronce" | "colaborador" | "plata" | "oro" | "platino";
-interface Mecenas {
-  colaborador: Mecena[];
-  bronce: Mecena[];
-  plata: Mecena[];
-  oro: Mecena[];
-  platino: Mecena[];
-}
-interface Mecena {
-  nombre: string;
-  img: string;
-  web: string;
-  // finalImg: string;
-}
+
 // const modMecenas: Mecenas = {
 //   colaborador: [],
 //   bronce: [],
@@ -141,8 +129,13 @@ interface Mecena {
 //           finalImg: _mecenas["finalmg"],
 //         });
 // }
-const mecenas: Mecenas = _mecenas;
-console.info(_mecenas);
+const mecenas = ref({
+  colaborador: [],
+  bronce: [],
+  plata: [],
+  oro: [],
+  platino: [],
+} as Mecenas);
 
 const imagesLoaded = ref(false);
 const imageLoadings = ref({
@@ -162,79 +155,99 @@ const imageExists = async (path: string) => {
   return read.files.includes(path);
 };
 
-function blobToBase64(blob: Blob) {
-  return new Promise((resolve, _) => {
-    const reader = new FileReader();
-    reader.onloadend = () => resolve(reader.result);
-    reader.readAsDataURL(blob);
-  });
-}
-
-for (const type in mecenas) {
-  console.info(`>> ===== ${type} =====`);
-  mecenas[type as MecenasLevel].forEach(async (element) => {
-    console.info(
-      ">> Processing image for ",
-      element.nombre,
-      "with src",
-      element.img
+(async () => {
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/mecenas.json"
     );
-    const imageCached = await imageExists(element.img.replace(/\//g, "-"));
-    console.info(">> Checking for mecena ", element);
-    if (imageCached) {
-      console.info(">>> Image is cached, loading it");
-      const { uri: imageUri } = await Filesystem.getUri({
+    mecenas.value = await response.json();
+    // Cache mecenas info
+    Filesystem.writeFile({
+      directory: Directory.Cache,
+      path: MECENAS_JSON_PATH,
+      encoding: Encoding.UTF8,
+      data: JSON.stringify(mecenas.value),
+    });
+  } catch (e) {
+    try {
+      const { data } = await Filesystem.readFile({
         directory: Directory.Cache,
-        path: `${IMAGES_DIRECTORY}/${element.img.replaceAll("/", "-")}`,
+        path: MECENAS_JSON_PATH,
+        encoding: Encoding.UTF8,
       });
-      element.img = Capacitor.convertFileSrc(imageUri);
-    } else {
-      console.info(">>> Image not cached, downloading and saving");
-      try {
-        const imageRes = await Http.get({
-          url: element.img,
-          responseType: "blob",
-        });
-        console.info(">>> Response: ", imageRes);
-        console.info(
-          ">>> Is data base64?",
-          /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/.test(
-            imageRes.data
-          )
-        );
-        await Filesystem.writeFile({
+      mecenas.value = JSON.parse(data);
+    } catch (e) {
+      return;
+    }
+  }
+  console.info(" > Response JSON: ", mecenas.value);
+  for (const type in mecenas.value) {
+    console.info(`>> ===== ${type} =====`);
+    for (let i = 0; i < mecenas.value[type as MecenasLevel].length; i++) {
+      const element = mecenas.value[type as MecenasLevel][i];
+      console.info(
+        ">> Processing image for ",
+        element.nombre,
+        "with src",
+        element.img
+      );
+      const imageCached = await imageExists(element.img.replace(/\//g, "-"));
+      console.info(">> Checking for mecena ", element);
+      if (imageCached) {
+        console.info(">>> Image is cached, loading it");
+        const { uri: imageUri } = await Filesystem.getUri({
           directory: Directory.Cache,
           path: `${IMAGES_DIRECTORY}/${element.img.replaceAll("/", "-")}`,
-          data: imageRes.data,
         });
-      } catch {
-        const toast = await toastController.create({
-          message: "Error when downloading images",
-          color: "danger",
-          duration: 2000,
-        });
-        toast.present();
+        element.img = Capacitor.convertFileSrc(imageUri);
+      } else {
+        console.info(">>> Image not cached, downloading and saving");
+        try {
+          const imageRes = await Http.get({
+            url: element.img,
+            responseType: "blob",
+          });
+          console.info(">>> Response: ", imageRes);
+          console.info(
+            ">>> Is data base64?",
+            /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/.test(
+              imageRes.data
+            )
+          );
+          await Filesystem.writeFile({
+            directory: Directory.Cache,
+            path: `${IMAGES_DIRECTORY}/${element.img.replaceAll("/", "-")}`,
+            data: imageRes.data,
+          });
+        } catch {
+          const toast = await toastController.create({
+            message: "Error when downloading images",
+            color: "danger",
+            duration: 2000,
+          });
+          toast.present();
+        }
       }
+      console.info(">> Processed mecena ", element);
+      console.info(">> So, this is", element.nombre, "image:", element.img);
+      if (
+        mecenas.value[type as MecenasLevel].indexOf(element) ===
+        mecenas.value[type as MecenasLevel].length - 1
+      )
+        imageLoadings.value[type as MecenasLevel] = true;
+      console.info(
+        `[${type}] >> ${element} has index ${mecenas.value[
+          type as MecenasLevel
+        ].indexOf(element)} / ${
+          mecenas.value[type as MecenasLevel].length - 1
+        }, so colaborador images loaded? ${
+          mecenas.value[type as MecenasLevel].indexOf(element) ===
+          mecenas.value[type as MecenasLevel].length - 1
+        }`
+      );
     }
-    console.info(">> Processed mecena ", element);
-    console.info(">> So, this is", element.nombre, "image:", element.img);
-    if (
-      mecenas[type as MecenasLevel].indexOf(element) ===
-      mecenas[type as MecenasLevel].length - 1
-    )
-      imageLoadings.value[type as MecenasLevel] = true;
-    console.info(
-      `[${type}] >> ${element} has index ${mecenas[
-        type as MecenasLevel
-      ].indexOf(element)} / ${
-        mecenas[type as MecenasLevel].length - 1
-      }, so colaborador images loaded? ${
-        mecenas[type as MecenasLevel].indexOf(element) ===
-        mecenas[type as MecenasLevel].length - 1
-      }`
-    );
-  });
-}
+  }
+})();
 
 watch(
   imageLoadings,
@@ -243,21 +256,21 @@ watch(
     for (const type of Object.keys(value))
       if (!value[type as MecenasLevel]) areLoaded = false;
     imagesLoaded.value = areLoaded;
-    for (const type in mecenas) {
-      mecenas[type as MecenasLevel].forEach(async (element) => {
-        console.info(
-          "About:watch<imageLoadings> >>",
-          JSON.stringify(value),
-          "&",
-          imagesLoaded.value,
-          "Here we are: ",
-          // JSON.stringify(element),
-          "(come from ",
-          JSON.stringify(oldValue),
-          ")"
-        );
-      });
-    }
+    // for (const type in mecenas) {
+    //   mecenas[type as MecenasLevel].forEach(async (element) => {
+    //     console.info(
+    //       "About:watch<imageLoadings> >>",
+    //       JSON.stringify(value),
+    //       "&",
+    //       imagesLoaded.value,
+    //       "Here we are: ",
+    //       // JSON.stringify(element),
+    //       "(come from ",
+    //       JSON.stringify(oldValue),
+    //       ")"
+    //     );
+    //   });
+    // }
   },
   { deep: true }
 );

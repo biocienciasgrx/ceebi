@@ -1,4 +1,5 @@
 export const IMAGES_DIRECTORY = "images";
+export const MECENAS_JSON_PATH = "mecenas.json";
 
 //* Storage keys
 export const STORAGE_PREFIX = "ceebi";
