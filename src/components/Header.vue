@@ -6,18 +6,19 @@
 
       <ion-buttons slot="end">
         <ion-button
-          href="https://www.instagram.com/biocienciasGRX/"
-          target="_blank"
+          @click="
+            goto('https://www.instagram.com/biocienciasGRX/', 'instagram')
+          "
         >
           <ion-icon :icon="logoInstagram"></ion-icon>
         </ion-button>
-        <ion-button href="https://biociencias.es/" target="_blank">
+        <ion-button @click="goto('https://biociencias.es/', 'webpage')">
           <ion-icon :icon="globeOutline"></ion-icon>
         </ion-button>
-        <ion-button @click="link('/about')">
+        <ion-button @click="link('/about', 'about')">
           <ion-icon :icon="informationCircleOutline"></ion-icon>
         </ion-button>
-        <ion-button @click="link('/settings')">
+        <ion-button @click="link('/settings', 'settings')">
           <ion-icon :icon="settingsOutline"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -43,6 +44,9 @@ import {
 // @ts-ignore
 import logoHorizontal from "../../public/assets/logo_horizontal.png";
 import { useRouter } from "vue-router";
+import { FIREBASE_ANALYTICS } from "@/vars";
+import { inject } from "@vue/runtime-core";
+import { logEvent } from "firebase/analytics";
 
 export default {
   props: {
@@ -53,10 +57,20 @@ export default {
     },
   },
   components: { IonHeader, IonToolbar, IonButtons, IonButton, IonIcon },
+  // inject: [FIREBASE_ANALYTICS],
   setup() {
     const router = useRouter();
 
+    const analytics = inject(FIREBASE_ANALYTICS);
+
     return {
+      // analytics,
+      goto: (url: string, msg: string) => {
+        //@ts-expect-error
+        logEvent(analytics, "open_" + msg);
+        window.location.href = url;
+      },
+
       logoHorizontal,
 
       // Icons
@@ -65,8 +79,10 @@ export default {
       informationCircleOutline,
       settingsOutline,
 
-      link(to: string) {
-        router.push(to);
+      link(url: string, name: string) {
+        //@ts-expect-error
+        logEvent(analytics, "navigate_" + name);
+        router.push(url);
       },
     };
   },

@@ -30,8 +30,14 @@ import { createI18n } from "vue-i18n";
 import * as locale from "locale-codes";
 
 import messages from "./translations";
-import { KEY_LOCALE } from "./vars";
+import {
+  KEY_LOCALE,
+  firebaseConfig,
+  FIREBASE_APP,
+  FIREBASE_ANALYTICS,
+} from "./vars";
 
+//* I18n
 const i18n = createI18n({
   fallbackLocale: "en",
   //@ts-ignore
@@ -55,12 +61,33 @@ Storage.keys().then(({ keys }) => {
       ({ value }) => (i18n.global.locale = value) // The saved value will always be a valid locale code
     );
 });
+//* =====
 
+//* Firebase
+// Import the functions you need from the SDKs you need
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+const firebaseAnalytics = getAnalytics(firebaseApp);
+console.info(firebaseAnalytics);
+//* ======
+
+//* ===== Vue
 const app = createApp(App).use(IonicVue).use(i18n).use(router);
+app.provide(FIREBASE_APP, firebaseApp);
+app.provide(FIREBASE_ANALYTICS, firebaseAnalytics);
 
 router.isReady().then(() => {
   if (isPlatform("mobile")) {
+    // Lock orientation to vertical
     ScreenOrientation.lock(ScreenOrientation.ORIENTATIONS.PORTRAIT);
   }
   app.mount("#app");
 });
+//* =====

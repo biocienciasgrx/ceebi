@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { IonApp, IonRouterOutlet, isPlatform } from "@ionic/vue";
-import { onMounted, toHandlerKey } from "vue";
+import { inject, onMounted, toHandlerKey } from "vue";
 
 import { LocalNotifications } from "@capacitor/local-notifications";
 import {
@@ -19,7 +19,13 @@ import { SplashScreen } from "@capacitor/splash-screen";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { Storage } from "@capacitor/storage";
 
-import { IMAGES_DIRECTORY, KEY_NOTIFICATIONS } from "@/vars";
+import {
+  FIREBASE_ANALYTICS,
+  IMAGES_DIRECTORY,
+  KEY_NOTIFICATIONS,
+} from "@/vars";
+
+import { Analytics, logEvent } from "firebase/analytics";
 
 PushNotifications.addListener("registration", async (token: Token) => {
   console.log("===== FIREBASE TOKEN: " + token.value + " =====");
@@ -98,4 +104,10 @@ if (isPlatform("capacitor")) {
 }
 
 onMounted(SplashScreen.hide);
+
+// const analytics: Analytics | undefined = inject("firebaseApp");
+// @ts-ignore
+const analytics: Analytics = inject(FIREBASE_ANALYTICS);
+console.info("Injected analytics: ", analytics);
+logEvent(analytics, "vue_app_setup");
 </script>
