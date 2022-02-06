@@ -30,6 +30,7 @@
 1. Haptics for toasts
 1. Vista detallada de cada evento
 1. Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)
+1. Diferenciar de alguna forma si los logos de los mecenas pertenecen a la categoría indicada encima del logo o debajo del logo.
 
 # SENDING NOTIFICATIONS PROGRAMATICALLY:
 
