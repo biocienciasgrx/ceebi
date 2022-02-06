@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1-alpha]
+
+### Added
+
+- Fetch [mecenas.json](https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/mecenas.json) from the GitHub repo (@biocienciasgrx/ceebi) and save it locally (in cache) for use offline.
+
+## [0.5.0-alpha] - 2022-02-05
+
+### Added
+
+- Push notifications: receive push notifications when the app is in background (or even in foreground)
+
 ## [0.4.4-alpha] - 2022-02-05 [YANKED]
 
 ### Added
@@ -57,8 +69,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Images not properly loading from cache
 - Showing _alt_ text in case images don't load
 
-[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.4.4a-alpha...HEAD
+[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.5.1-alpha...HEAD
+[0.5.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.1-alpha
+[0.5.0-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.0-alpha
 [0.4.4-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.4-alpha
 [0.4.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.1-alpha
 [0.4.0-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.1-alpha
-[0.3.2-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.3.3-alpha
+[0.3.3-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.3.3-alpha
