@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.5.1-alpha]
+## [0.6.1-alpha] - 2022-02-06
+
+### Added
+
+- Google Firebase Analytics for Android app
+- First basic integration of web analytics for in-app use
+
+## [0.5.1-alpha] - 2022-02-06
 
 ### Added
 
@@ -69,7 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Images not properly loading from cache
 - Showing _alt_ text in case images don't load
 
-[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.5.1-alpha...HEAD
+[Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.6.1-alpha...HEAD
+[0.6.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.1-alpha
 [0.5.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.1-alpha
 [0.5.0-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.0-alpha
 [0.4.4-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.4.4-alpha
