@@ -80,7 +80,7 @@ import {
 import {
   openOutline,
   cloudOfflineOutline,
-  hourglassOutline,
+  cloudDownloadOutline,
 } from "ionicons/icons";
 import Header from "../components/Header.vue";
 // @ts-ignore
@@ -121,31 +121,11 @@ async function getNews(
     if (!finished.value) {
       toastController
         .create({
-          icon: hourglassOutline,
-          message: i18n.t("message.newsTakingLongMessage"),
-          buttons: [
-            {
-              text: i18n.t("message.newsTakingLongerLoadCache"),
-              handler: () => {
-                loadNews(finished, toStore);
-                toastController.dismiss();
-              },
-            },
-            {
-              text: i18n.t("message.newsTakingLongerWait"),
-              handler: () => {
-                setTimeout(suggestCache, 5000);
-                toastController.dismiss();
-              },
-            },
-          ],
+          icon: cloudDownloadOutline,
+          message: i18n.t("message.newsLoadedOffline"),
         })
-        .then((toast) => {
-          watch(finished, (value) => {
-            if (value) toast.dismiss();
-          });
-          toast.present();
-        });
+        .then((toast) => toast.present());
+      loadNews(finished, toStore);
     }
   };
   setTimeout(suggestCache, 5000); //* Increased after ceebi-15

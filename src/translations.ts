@@ -39,9 +39,7 @@ export default {
       identificationHelpTextWrongFormatDNI: "Not valid DNI format",
 
       // News
-      newsTakingLongMessage: "This taking longer than expected",
-      newsTakingLongerLoadCache: "Load cached",
-      newsTakingLongerWait: "Wait",
+      newsLoadedOffline: "Couldn't fetch news, loaded locally saved news",
       newsCannotRefreshOffline: "Cannot refresh news while offline",
       newsReadMore: "Read more",
     },
@@ -88,9 +86,8 @@ export default {
       identificationHelpTextWrongFormatDNI: "Formato de DNI inválido",
 
       // News
-      newsTakingLongMessage: "La descarga está tardando más de lo esperado",
-      newsTakingLongerLoadCache: "Ver offline",
-      newsTakingLongerWait: "Esperar",
+      newsLoadedOffline:
+        "No se pueden obtener las noticias, cargando guardadas",
       newsCannotRefreshOffline:
         "No es posible recargar las noticias sin conexión",
       newsReadMore: "Leer más",
@@ -143,7 +140,7 @@ export default {
         "Non é posible recargar as noticias sen conexión",
       newsReadMore: "Ler máis",
     },
-  } as Traslation,
+  } as Traslation | any,
   de: {
     message: {
       minutes: "Minuten",
@@ -190,7 +187,7 @@ export default {
       newsCannotRefreshOffline: "Nachrichten sind nicht offline zu laden",
       newsReadMore: "Lessen mehr",
     },
-  } as Traslation,
+  } as Traslation | any,
 };
 
 interface Traslation {
@@ -233,9 +230,7 @@ interface Traslation {
     identificationHelpTextWrongFormatDNI: string;
 
     // News
-    newsTakingLongMessage: string;
-    newsTakingLongerLoadCache: string;
-    newsTakingLongerWait: string;
+    newsLoadedOffline: string;
     newsCannotRefreshOffline: string;
     newsReadMore: string;
   };
