@@ -34,6 +34,11 @@
       "nombre": "ComunicaBiotec - Asociación Comunicadores Biotecnología",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/logo-comunicabiotec_rgb_1920x930px-1.png",
       "web": "https://www.comunicabiotec.org/"
+    },
+    {
+      "nombre": "Sociedad Española de Epidemiología",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-SEE.png",
+      "web": "https://seepidemiologia.es/"
     }
   ],
   "bronce": [
@@ -41,6 +46,11 @@
       "nombre": "Fundación del Instituto Bernabeu",
       "img": "https://biociencias.es/wp-content/uploads/2022/01/Fundacion-Rafael-Bernabeu-CEEBI-1.png",
       "web": "https://www.fundacionrafaelbernabeu.com/"
+    },
+    {
+      "nombre": "Transmitting Science",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-Transmitting-Science.png",
+      "web": "https://www.transmittingscience.com/"
     }
   ],
   "plata": [
@@ -50,7 +60,13 @@
       "web": "https://microbacterium.es/"
     }
   ],
-  "oro": [],
+  "oro": [
+  {
+      "nombre": "LANIAKEA Management & Communication",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-LANIAKEA.png",
+      "web": "https://www.laniakeacommunication.com/"
+    }
+  ],
   "platino": [
     {
       "nombre": "Vircell Microbiologists",
