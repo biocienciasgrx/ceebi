@@ -33,7 +33,7 @@
           @swiper="setSwiperInstance"
           @slideChange="daySwiped"
           :modules="swiperModules"
-          :auto-height="false"
+          :auto-height="true"
           :grab-cursor="true"
         >
           <swiper-slide class="slide"
@@ -288,11 +288,12 @@ export default {
 
 .swiper {
   min-height: 100%;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .slide {
-  /* min-height: 79.4vh; */
-  min-height: 100%;
+  min-height: 79.4vh;
+  /* min-height: 100%; */
+  height: max-content;
 }
 </style>

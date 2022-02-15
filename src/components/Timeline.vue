@@ -142,7 +142,7 @@ export default {
   /* z-index: -10; */
   width: 10px;
   /* height: 100%; */
-  height: 200vh;
+  height: 100%;
   /* height: 100px; TODO Height should depend on items height  */
   background: var(--ion-color-secondary-shade);
 }
