@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove options when news take long to download, instead the app just loads the cached news without letting the user choose
 - Improve sliding between dates in schedule so the vertical bar does not seem too long
+- Add app icon on Android
 
 ## [0.6.1-alpha] - 2022-02-06
 
