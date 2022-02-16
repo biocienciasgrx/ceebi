@@ -42,6 +42,17 @@ export default {
       newsLoadedOffline: "Couldn't fetch news, loaded locally saved news",
       newsCannotRefreshOffline: "Cannot refresh news while offline",
       newsReadMore: "Read more",
+
+      // About
+      developedBy: "Developed by",
+      aboutMe: "About me",
+      sourceCode: "Source code",
+      patron: "PATRONS",
+      platinum: "Platinum",
+      gold: "Gold",
+      silver: "Silver",
+      bronze: "Bronze",
+      collaborators: "COLLABORATORS",
     },
   } as Traslation,
   es: {
@@ -91,6 +102,17 @@ export default {
       newsCannotRefreshOffline:
         "No es posible recargar las noticias sin conexión",
       newsReadMore: "Leer más",
+
+      // About
+      developedBy: "App desarrollada por",
+      aboutMe: "Sobre mí",
+      sourceCode: "Código fuente",
+      patron: "MECENAS",
+      platinum: "Platino",
+      gold: "Oro",
+      silver: "Plata",
+      bronze: "Bronce",
+      collaborators: "COLABORADORES",
     },
   } as Traslation,
   gl: {
@@ -128,6 +150,7 @@ export default {
       identificationDNI: "DNI Español",
       identificationNIE: "NIE Español",
       identificationPassportOrOther: "Pasaporte ou outro (calquera país)",
+      identificationDocumentIdentifier: "Identificador do documento",
       identificationHelpTextLengthDNI: "O DNI debe ter 9 carácteres",
       identificationHelpTextInvalidDNI: "DNI non válido",
       identificationHelpTextWrongFormatDNI: "Formato de DNI inválido",
@@ -139,8 +162,20 @@ export default {
       newsCannotRefreshOffline:
         "Non é posible recargar as noticias sen conexión",
       newsReadMore: "Ler máis",
+      newsLoadedOffline: "Cargadas as noticias descargadas",
+
+      // About
+      developedBy: "Creado por",
+      aboutMe: "Sobre mín",
+      sourceCode: "Código fonte",
+      patron: "MECENAS",
+      platinum: "Platino",
+      gold: "Oro",
+      silver: "Plata",
+      bronze: "Bronce",
+      collaborators: "COLABORADORES",
     },
-  } as Traslation | any,
+  } as Traslation,
   de: {
     message: {
       minutes: "Minuten",
@@ -233,5 +268,16 @@ interface Traslation {
     newsLoadedOffline: string;
     newsCannotRefreshOffline: string;
     newsReadMore: string;
+
+    // About
+    developedBy: string;
+    aboutMe: string;
+    sourceCode: string;
+    patron: string;
+    platinum: string;
+    gold: string;
+    silver: string;
+    bronze: string;
+    collaborators: string;
   };
 }

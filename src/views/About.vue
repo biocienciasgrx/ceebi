@@ -6,10 +6,10 @@
         class="flex-row title"
         style="background: var(--ion-color-primary-tint)"
       >
-        <b>MECENAS</b>
+        <b>{{ $t("message.patron") }}</b>
       </section>
       <section class="flex-row title" style="background: #e5e4e2">
-        🏆 &nbsp;&nbsp; Platino &nbsp;&nbsp; 🏆
+        🏆 &nbsp;&nbsp; {{ $t("message.platinum") }} &nbsp;&nbsp; 🏆
       </section>
       <div class="flex-row ion-margin">
         <template v-for="platino in mecenas.platino">
@@ -25,7 +25,7 @@
       </div>
 
       <section class="flex-row title" style="background: #d6ac39">
-        🥇 &nbsp;&nbsp; Oro &nbsp;&nbsp; 🥇
+        🥇 &nbsp;&nbsp; {{ $t("message.gold") }} &nbsp;&nbsp; 🥇
       </section>
       <div class="flex-row ion-margin">
         <template v-for="oro in mecenas.oro">
@@ -40,7 +40,7 @@
         </template>
       </div>
       <section class="flex-row title" style="background: #bab7b2">
-        🥈 &nbsp;&nbsp; Plata &nbsp;&nbsp; 🥈
+        🥈 &nbsp;&nbsp; {{ $t("message.silver") }} &nbsp;&nbsp; 🥈
       </section>
       <div class="flex-row ion-margin">
         <template v-for="plata in mecenas.plata">
@@ -55,7 +55,7 @@
         </template>
       </div>
       <section class="flex-row title" style="background: #cd7f32">
-        🥉 &nbsp;&nbsp; Bronce &nbsp;&nbsp; 🥉
+        🥉 &nbsp;&nbsp; {{ $t("message.bronze") }} &nbsp;&nbsp; 🥉
       </section>
       <div class="flex-row ion-margin">
         <template v-for="bronce in mecenas.bronce">
@@ -74,7 +74,7 @@
         class="flex-row title"
         style="background: var(--ion-color-secondary-tint)"
       >
-        <b>COLABORADORES</b>
+        <b>{{ $t("message.collaborators") }}</b>
       </section>
       <div class="flex-row ion-margin">
         <template v-for="colaborador in mecenas.colaborador">
@@ -88,12 +88,44 @@
           </a>
         </template>
       </div>
+
+      <div class="flex-row ion-margin-top">
+        <p>
+          {{ $t("message.developedBy") }}
+          <ion-text color="primary">Lucas de Uña Ocampo</ion-text>
+        </p>
+      </div>
+      <div class="flex-row ion-margin-bottom">
+        <ion-button
+          color="secondary"
+          @click="goto('https://github.com/HipyCas/', 'personal_profile')"
+        >
+          {{ $t("message.aboutMe") }}
+          <ion-icon slot="start" :md="planet" :ios="planet"></ion-icon>
+        </ion-button>
+        <ion-button
+          fill="outline"
+          color="secondary"
+          @click="
+            goto('https://github.com/biocienciasgrx/ceebi/', 'source_code')
+          "
+        >
+          {{ $t("message.sourceCode") }}
+          <ion-icon slot="start" :md="logoGithub" :ios="logoGithub"></ion-icon>
+        </ion-button>
+      </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonContent, toastController } from "@ionic/vue";
+import {
+  IonPage,
+  IonContent,
+  IonText,
+  IonIcon,
+  toastController,
+} from "@ionic/vue";
 import Header from "../components/Header.vue";
 // import { trophy } from "ionicons/icons";
 
@@ -107,6 +139,8 @@ import { IMAGES_DIRECTORY, MECENAS_JSON_PATH } from "@/vars";
 // import _mecenas from "../../mecenas.json";
 import { computed, ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
+
+import { logoGithub, planet } from "ionicons/icons";
 
 // const modMecenas: Mecenas = {
 //   colaborador: [],
@@ -129,6 +163,12 @@ import { watch } from "@vue/runtime-core";
 //           finalImg: _mecenas["finalmg"],
 //         });
 // }
+const goto = (url: string, msg: string) => {
+  //@ts-expect-error
+  logEvent(analytics, "open_" + msg);
+  window.location.href = url;
+};
+
 const mecenas = ref({
   colaborador: [],
   bronce: [],
