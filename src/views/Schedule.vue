@@ -111,7 +111,7 @@ export default {
       const day = new Date().getDay();
       return day < 2 ||
         day > 5 ||
-        new Date().getTime() <= new Date(2022, 7, 19).getTime()
+        new Date().getTime() <= new Date(2022, 6, 19).getTime()
         ? 2
         : day;
     }
