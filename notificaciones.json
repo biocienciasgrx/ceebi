@@ -1,5 +1,6 @@
 [
   {
+    "id": "abiertas_inscripciones",
     "title": "Abiertas las inscripciones al CEEBI",
     "body": "Entra en <a href='https://biociencias.es/inscripciones'>biociencias.es/inscripciones</a> y no te quedes sin tu entrada. Nos vemos en julio en Granada.",
     "schedule": {
@@ -11,6 +12,7 @@
     },
     "icon": "ticket",
     "buttons": [{
+      "id": "compra",
       "text": "Comprar en la web",
       "link": "https://biociencias.es/inscripciones",
       "icon": "cart"
