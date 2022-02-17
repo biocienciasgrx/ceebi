@@ -12,6 +12,7 @@
     },
     "icon": "ticket",
     "buttons": [{
+      "id": "compra",
       "text": "Comprar en la web",
       "link": "https://biociencias.es/inscripciones",
       "icon": "cart"
