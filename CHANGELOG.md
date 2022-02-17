@@ -5,7 +5,17 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.7.3-alpha]
+
+### Added
+
+- Notifications tab: fetches notifications from JSON file in github and displays them in a list, opening a modal for each one when clicked that includes the full notification body and links
+
+### Fixed
+
+- About developer section buttons now properly linking
+- Updated and fixed some errors in Galician translations
+- Added 2s duration to toast that shows when offline news are loaded due to bad connection as previously it didn't disappear
 
 ## [0.6.5-alpha] - 2022-02-17
 

@@ -54,6 +54,9 @@ export default {
       silver: "Silver",
       bronze: "Bronze",
       collaborators: "COLLABORATORS",
+
+      // Notifications
+      noNotificationsYet: "No notifications yet",
     },
   } as Traslation,
   es: {
@@ -115,6 +118,9 @@ export default {
       silver: "Plata",
       bronze: "Bronce",
       collaborators: "COLABORADORES",
+
+      // Notifications
+      noNotificationsYet: "Aún no hay notificaciones",
     },
   } as Traslation,
   gl: {
@@ -177,6 +183,9 @@ export default {
       silver: "Plata",
       bronze: "Bronce",
       collaborators: "COLABORADORES",
+
+      // Notifications
+      noNotificationsYet: "Aínda non hay notificacións",
     },
   } as Traslation,
   de: {
@@ -283,5 +292,8 @@ interface Traslation {
     silver: string;
     bronze: string;
     collaborators: string;
+
+    // Notifications
+    noNotificationsYet: string;
   };
 }

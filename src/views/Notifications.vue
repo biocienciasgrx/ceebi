@@ -19,42 +19,45 @@
 
       <SkeletonNotifications v-if="loading" />
       <ion-list lines="full" v-else>
-        <ion-item
-          v-for="notification in notifications"
+        <template
+          v-for="notification in notifications.filter(
+            (not) => not.date <= date
+          )"
           :key="notification.id"
-          detail
-          :_router-link="`/notifications/${notification.id}`"
-          button
         >
-          <ion-icon
-            slot="start"
-            :md="paperPlaneOutline"
-            :ios="paperPlaneOutline"
-          ></ion-icon>
-          <div style="display: flex; flex-direction: column">
-            <ion-text>{{ notification.title }}</ion-text>
-            <ion-note
-              >{{ (notification.body || "").substring(0, 30) }}...</ion-note
-            >
-          </div>
-        </ion-item>
+          <ion-item @click="modal(notification)" detail button>
+            <ion-icon
+              slot="start"
+              :md="notification.ionIcon"
+              :ios="notification.ionIcon"
+            ></ion-icon>
+            <div style="display: flex; flex-direction: column">
+              <ion-text>{{ notification.title }}</ion-text>
+              <ion-note
+                >{{
+                  extractContent(notification.body || "").substring(0, 30)
+                }}...</ion-note
+              >
+            </div>
+          </ion-item>
+        </template>
       </ion-list>
+      <div
+        class="container"
+        v-if="notifications.filter((not) => not.date <= date).length === 0"
+      >
+        <ion-icon
+          :md="notificationsOffOutline"
+          :ios="notificationsOffOutline"
+          size="large"
+        ></ion-icon>
+        <ion-note>{{ $t("message.noNotificationsYet") }}</ion-note>
+      </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-// :_md="
-//               notification.type === NotificationType.PUSH
-//                 ? paperPlaneOutline
-//                 : calendarClearOutline
-//             "
-//             :_ios="
-//               notification.type === NotificationType.PUSH
-//                 ? paperPlaneOutline
-//                 : calendarClearOutline
-//             "
-
 import { ref, Ref } from "@vue/reactivity";
 
 import {
@@ -66,19 +69,23 @@ import {
   IonList,
   IonNote,
   IonText,
+  modalController,
 } from "@ionic/vue";
-import { warningOutline } from "ionicons/icons";
+import { warningOutline, notificationsOffOutline } from "ionicons/icons";
+import * as ionicons from "ionicons/icons";
+// import { paperPlaneOutline, calendarClearOutline } from "ionicons/icons";
+
+import { Network } from "@capacitor/network";
+import { Http } from "@capacitor-community/http";
 
 import Header from "../components/Header.vue";
 import SkeletonNotifications from "@/components/SkeletonNotifications.vue";
+import NotificationModalVue from "@/components/NotificationModal.vue";
 
-import { paperPlaneOutline, calendarClearOutline } from "ionicons/icons";
-
-import { Network } from "@capacitor/network";
-import { Storage } from "@capacitor/storage";
-
-import { KEY_NOTIFICATIONS } from "@/vars";
-import { PushNotificationSchema } from "@capacitor/push-notifications";
+import { FIREBASE_ANALYTICS } from "@/vars";
+import { Notification, RawNotification, NotificationType } from "@/types";
+import { Analytics, logEvent } from "firebase/analytics";
+import { inject } from "@vue/runtime-core";
 
 const loading = ref(true);
 
@@ -91,35 +98,88 @@ Network.addListener("networkStatusChange", (status) => {
   connected.value = status.connected;
 });
 
-enum NotificationType {
-  PUSH,
-  EVENT,
-}
+const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
 
-const notifications: Ref<PushNotificationSchema[]> = ref([]);
-// {
-//     type: NotificationType.PUSH,
-//     title: "Inscripciones abiertas!",
-//     body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptatum. Nam odit ad praesentium numquam optio vero vel vitae eligendi, ipsa porro suscipit iure accusamus et cum distinctio! Repellat voluptas, minus et nulla iste velit mollitia ea quis magnam quo soluta veritatis libero commodi quibusdam neque aliquam quidem id ducimus? Tenetur nesciunt magnam ipsa quos perferendis, consectetur consequuntur sapiente id reiciendis eius. Unde nisi nobis consectetur accusamus, exercitationem, veniam quos nesciunt repellat, nihil ducimus illum quisquam reiciendis excepturi! Earum, quod omnis ea nostrum quia, ipsam alias quae officia fuga mollitia repellendus, in enim itaque adipisci. Facere dignissimos ullam eius dolor!",
-//   },
+const date = ref(new Date());
 
+const notifications: Ref<Notification[]> = ref([]);
 (async () => {
-  const { value: notificationsJSON } = await Storage.get({
-    key: KEY_NOTIFICATIONS,
+  console.info("Notifications > Requesting");
+  const res = await Http.get({
+    url: "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/notificaciones.json",
   });
-  notifications.value = JSON.parse(notificationsJSON || "[]");
-  console.info("hey ma, notifications", notifications.value);
-  await new Promise((r) => setTimeout(r, 2000));
+  console.info(res.data);
+  const data = JSON.parse(res.data);
+  // const res = await fetch(
+  //   "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/notificaciones.json"
+  // );
+  // console.info(res.c);
+  // const data: RawNotification[] = await res.json();
+  notifications.value = data.map(
+    (not: RawNotification): Notification => ({
+      ...not,
+      type: NotificationType.PUSH,
+      date: new Date(
+        not.schedule.year || 2022,
+        not.schedule.month === undefined ? 6 : not.schedule.month - 1,
+        not.schedule.day || 0,
+        not.schedule.hour || 0,
+        not.schedule.minutes || 0,
+        not.schedule.seconds || 0
+      ),
+      ionIcon:
+        // @ts-expect-error
+        ionicons[`${not.icon || "paperPlane"}Outline`] ||
+        ionicons.paperPlaneOutline,
+    })
+  );
   loading.value = false;
 })();
 
-// const notificationLines = computed(() => (connected.value ? "full" : "none"));
+const modal = async (notification: Notification) => {
+  console.info(notification);
+  logEvent(analytics, `notification_${notification.id}`);
+  const m = await modalController.create({
+    component: NotificationModalVue,
+    breakpoints: [0, 0.35, 0.65, 1],
+    initialBreakpoint: 0.35,
+    componentProps: notification,
+  });
+  m.present();
+};
 
-// function changed(ev) {
-//   console.info("toggle", ev);
-//   connected.value = !connected.value;
-//   console.info("connected? ", connected.value);
-// }
+const extractContent = (html: string) => {
+  const span = document.createElement("span");
+  span.innerHTML = html;
+  return span.textContent || span.innerText;
+};
+
+// (async () => {
+//   const { value: notificationsJSON } = await Storage.get({
+//     key: KEY_NOTIFICATIONS,
+//   });
+//   notifications.value = JSON.parse(notificationsJSON || "[]");
+//   console.info("hey ma, notifications", notifications.value);
+//   await new Promise((r) => setTimeout(r, 2000));
+//   loading.value = false;
+// })();
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container > ion-icon {
+  margin-bottom: 0.2em;
+}
+
+.container > ion-note {
+  margin-top: 0.3em;
+}
+</style>
