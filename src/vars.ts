@@ -26,3 +26,4 @@ export const firebaseConfig = {
 //* Provide/Inject
 export const FIREBASE_APP = "firebaseApp";
 export const FIREBASE_ANALYTICS = "firebaseAnalytics";
+export const FIREBASE_PERFORMANCE = "firebasePerformance";
