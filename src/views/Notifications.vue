@@ -44,7 +44,10 @@
       </ion-list>
       <div
         class="container"
-        v-if="notifications.filter((not) => not.date <= date).length === 0"
+        v-if="
+          notifications.filter((not) => not.date <= date).length === 0 &&
+          !loading
+        "
       >
         <ion-icon
           :md="notificationsOffOutline"
