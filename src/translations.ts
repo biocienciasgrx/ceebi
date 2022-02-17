@@ -2,6 +2,7 @@ export default {
   en: {
     message: {
       minutes: "minutes",
+      close: "Cerrar",
 
       // Tabs
       tabQRCode: "QR Code",
@@ -58,6 +59,7 @@ export default {
   es: {
     message: {
       minutes: "minutos",
+      close: "Cerrar",
 
       // Tabs
       tabQRCode: "Código QR",
@@ -118,11 +120,12 @@ export default {
   gl: {
     message: {
       minutes: "minutos",
+      close: "Pechar",
 
       // Tabs
       tabQRCode: "Código QR",
       tabSchedule: "Horario",
-      tabNews: "Noticias",
+      tabNews: "Novas",
       tabNotifications: "Notificacións",
 
       // QRCode
@@ -134,9 +137,9 @@ export default {
 
       // Settings
       localeSelection: "Seleccionar idioma",
-      settingsInterfaceTitle: "Interfaz",
+      settingsInterfaceTitle: "Interface",
       darkMode: "Modo oscuro",
-      workingOnDarkMode: "O modo oscuro aún non está dispoñible",
+      workingOnDarkMode: "O modo oscuro aínda non está dispoñible",
       settingsIdentificationTitle: "Identificación",
       settingsIdentificationChange: "Modificar ID",
       settingsNotificationsTitle: "Notificacións",
@@ -170,7 +173,7 @@ export default {
       sourceCode: "Código fonte",
       patron: "MECENAS",
       platinum: "Platino",
-      gold: "Oro",
+      gold: "Ouro",
       silver: "Plata",
       bronze: "Bronce",
       collaborators: "COLABORADORES",
@@ -228,6 +231,7 @@ export default {
 interface Traslation {
   message: {
     minutes: string;
+    close: string;
 
     // Tabs
     tabQRCode: string;
