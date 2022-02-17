@@ -123,6 +123,7 @@ async function getNews(
         .create({
           icon: cloudDownloadOutline,
           message: i18n.t("message.newsLoadedOffline"),
+          duration: 2000,
         })
         .then((toast) => toast.present());
       loadNews(finished, toStore);
