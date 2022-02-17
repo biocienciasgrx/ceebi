@@ -5,8 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import { IonApp, IonRouterOutlet, isPlatform } from "@ionic/vue";
-import { inject, onMounted, toHandlerKey } from "vue";
+import {
+  IonApp,
+  IonRouterOutlet,
+  isPlatform,
+  alertController,
+  toastController,
+} from "@ionic/vue";
+import { inject, onMounted } from "vue";
 
 import { LocalNotifications } from "@capacitor/local-notifications";
 import {
@@ -18,6 +24,11 @@ import {
 import { SplashScreen } from "@capacitor/splash-screen";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { Storage } from "@capacitor/storage";
+import {
+  AppUpdate,
+  AppUpdateAvailability,
+  FlexibleUpdateInstallStatus,
+} from "@robingenz/capacitor-app-update";
 
 import {
   FIREBASE_ANALYTICS,
@@ -27,10 +38,7 @@ import {
 
 import { Analytics, logEvent } from "firebase/analytics";
 
-PushNotifications.addListener("registration", async (token: Token) => {
-  console.log("===== FIREBASE TOKEN: " + token.value + " =====");
-}).catch((e) => console.warn(">>>> FIREBASE REGISTRATION ERROR: " + e));
-
+//* CREATE IMAGE DIR
 Filesystem.mkdir({
   path: IMAGES_DIRECTORY,
   directory: Directory.Cache,
@@ -38,11 +46,18 @@ Filesystem.mkdir({
   e.message === "Current directory does already exist." ? {} : console.error(e)
 );
 
+//* LOCAL NOTIFICATIONS
 console.info("App:21 > Setting upd");
 LocalNotifications.requestPermissions().then((res) =>
   console.log("App:23 > local permissions: ", res.display)
 );
+
+//* PUSH NOTIFICATIONS
 if (isPlatform("capacitor")) {
+  PushNotifications.addListener("registration", async (token: Token) => {
+    console.log("===== FIREBASE TOKEN: " + token.value + " =====");
+  }).catch((e) => console.warn(">>>> FIREBASE REGISTRATION ERROR: " + e));
+
   PushNotifications.requestPermissions().then((res) => {
     console.log("App:26 push permissions: ", res.receive);
     if (res.receive === "granted") PushNotifications.register();
@@ -103,11 +118,69 @@ if (isPlatform("capacitor")) {
   );
 }
 
-onMounted(SplashScreen.hide);
-
-// const analytics: Analytics | undefined = inject("firebaseApp");
-// @ts-ignore
-const analytics: Analytics = inject(FIREBASE_ANALYTICS);
+//* FIREBASE ANALYTICS
+const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
 console.info("Injected analytics: ", analytics);
 logEvent(analytics, "vue_app_setup");
+
+//* CHECK FOR UPDATE
+(async () => {
+  const {
+    updateAvailability,
+    flexibleUpdateAllowed,
+    immediateUpdateAllowed,
+    availableVersion,
+    currentVersion,
+  } = await AppUpdate.getAppUpdateInfo();
+  if (updateAvailability !== AppUpdateAvailability.UPDATE_AVAILABLE) {
+    return;
+  }
+  const alert = await alertController.create({
+    header: "App update available",
+    message:
+      "We recommend you to update the application.\nCurrent version: " +
+      currentVersion +
+      ". New version: " +
+      availableVersion,
+    buttons: [
+      {
+        text: "Later",
+        role: "cancel",
+      },
+      {
+        text: "Update",
+        handler: () => {
+          if (flexibleUpdateAllowed) {
+            AppUpdate.startFlexibleUpdate();
+            AppUpdate.addListener(
+              "onFlexibleUpdateStateChange",
+              ({ installStatus }) => {
+                if (installStatus === FlexibleUpdateInstallStatus.INSTALLED)
+                  toastController
+                    .create({
+                      message: "App updated, restart to apply updates",
+                      buttons: [
+                        {
+                          text: "Update",
+                          handler: () => AppUpdate.completeFlexibleUpdate(),
+                        },
+                      ],
+                    })
+                    .then((toast) => toast.present());
+              }
+            );
+          } else if (immediateUpdateAllowed) {
+            AppUpdate.performImmediateUpdate();
+          } else {
+            AppUpdate.openAppStore();
+          }
+        },
+      },
+    ],
+  });
+  alert.present();
+})();
+
+//* HIDE SPLASHSCREEN ON MOUNTED
+onMounted(SplashScreen.hide);
 </script>
