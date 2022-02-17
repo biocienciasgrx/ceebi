@@ -1,13 +1,19 @@
 [
   {
     "title": "Abiertas las inscripciones al CEEBI",
-    "body": "Entra en biociencias.es/inscripciones y no te quedes sin tu entrada. Nos vemos en julio en Granada.",
-    "program": {
+    "body": "Entra en <a href='https://biociencias.es/inscripciones'>biociencias.es/inscripciones</a> y no te quedes sin tu entrada. Nos vemos en julio en Granada.",
+    "schedule": {
       "year": 2022,
       "month": 2,
       "day": 21,
       "hour": 14,
       "minutes": 30
-    }
+    },
+    "icon": "ticket",
+    "buttons": [{
+      "text": "Comprar en la web",
+      "link": "https://biociencias.es/inscripciones",
+      "icon": "cart"
+    }]
   }
 ]
