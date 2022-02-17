@@ -39,6 +39,16 @@
       "nombre": "Sociedad Española de Epidemiología",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-SEE.png",
       "web": "https://seepidemiologia.es/"
+    },
+    {
+      "nombre": "BIRWAY Academia de Oposicioones",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/birway.png",
+      "web": "https://birway.es/"
+    },
+    {
+      "nombre": "Fundación Centro de Investigación Enfermedades Neurológicas",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-MoCIEN-1.png",
+      "web": "https://www.fundacioncien.es/"
     }
   ],
   "bronce": [
