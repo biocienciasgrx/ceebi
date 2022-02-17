@@ -12,7 +12,7 @@
     "icon": "ticket",
     "buttons": [{
       "text": "Comprar en la web",
-      "icon": "cart",
+      "icon": "cart"
     }]
   }
 ]
