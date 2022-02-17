@@ -9,6 +9,10 @@
       "hour": 14,
       "minutes": 30
     },
-    "icon": "ticket"
+    "icon": "ticket",
+    "buttons": [{
+      "text": "Comprar en la web",
+      "icon": "cart",
+    }]
   }
 ]
