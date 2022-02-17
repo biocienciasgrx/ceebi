@@ -92,7 +92,7 @@
       <div class="flex-row ion-margin-top">
         <p>
           {{ $t("message.developedBy") }}
-          <ion-text color="primary">Lucas de Uña Ocampo</ion-text>
+          <strong>Lucas de Uña Ocampo</strong>
         </p>
       </div>
       <div class="flex-row ion-margin-bottom">
@@ -134,13 +134,19 @@ import { Capacitor } from "@capacitor/core";
 import { Http } from "@capacitor-community/http";
 
 import { Mecena, Mecenas, MecenasLevel } from "@/types";
-import { IMAGES_DIRECTORY, MECENAS_JSON_PATH } from "@/vars";
+import {
+  FIREBASE_ANALYTICS,
+  IMAGES_DIRECTORY,
+  MECENAS_JSON_PATH,
+} from "@/vars";
 
 // import _mecenas from "../../mecenas.json";
 import { computed, ref } from "@vue/reactivity";
-import { watch } from "@vue/runtime-core";
+import { inject, watch } from "@vue/runtime-core";
 
 import { logoGithub, planet } from "ionicons/icons";
+
+import { logEvent } from "firebase/analytics";
 
 // const modMecenas: Mecenas = {
 //   colaborador: [],
@@ -163,6 +169,8 @@ import { logoGithub, planet } from "ionicons/icons";
 //           finalImg: _mecenas["finalmg"],
 //         });
 // }
+const analytics = inject(FIREBASE_ANALYTICS);
+
 const goto = (url: string, msg: string) => {
   //@ts-expect-error
   logEvent(analytics, "open_" + msg);
