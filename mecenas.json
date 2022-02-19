@@ -54,6 +54,16 @@
       "nombre": "Sakata 3D Filaments",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/Sakata-3D-Filaments-CEEBI-1.png",
       "web": "https://sakata3d.com/es/"
+    },
+    {
+      "nombre": "Asociación Española de Bioética y Ética Médica",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/AEBI.jpg",
+      "web": "http://aebioetica.org/"
+    },
+    {
+      "nombre": "Departamento de Didáctica de las Ciencias Experimentales",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/IC_Did-Cc-Expe-PhotoRoom-1.png",
+      "web": "https://www.didacticacienciasugr.es/"
     }
   ],
   "bronce": [
@@ -66,6 +76,11 @@
       "nombre": "Transmitting Science",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-Transmitting-Science.png",
       "web": "https://www.transmittingscience.com/"
+    },
+    {
+      "nombre": "Doble Folio",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/DobleFolio.png",
+      "web": "https://www.instagram.com/doble_folio/"
     }
   ],
   "plata": [
@@ -73,6 +88,11 @@
       "nombre": "Microbacterium",
       "img": "https://biociencias.es/wp-content/uploads/2022/01/logo-microbacterium-RGB-2.png",
       "web": "https://microbacterium.es/"
+    },
+    {
+      "nombre": "International Technology 3D Printers",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/logos-IT3D-Group-y-Tumaker-2.png",
+      "web": "https://it3d.com/"
     }
   ],
   "oro": [
