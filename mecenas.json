@@ -1,6 +1,31 @@
 {
   "colaborador": [
     {
+      "nombre": "Comisión Nacional Española de la UNESCO",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-UNESCO.png",
+      "web": "https://www.aecid.es/ES/sectores-de-cooperaci%C3%B3n/cultura-y-ciencia/unesco"
+    },
+    {
+      "nombre": "Fundación Centro de Investigación Enfermedades Neurológicas",
+      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-MoCIEN-1.png",
+      "web": "https://www.fundacioncien.es/"
+    },
+    {
+      "nombre": "Vicerrectorado de Estudiantes y Empleabilidad",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Vicerrectorado-CEEBI.png",
+      "web": "https://ve.ugr.es"
+    },
+    {
+      "nombre": "Biobanco del Sistema Sanitario Público de Andalucía",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/Biobanco-CEEBI.png",
+      "web": "https://www.juntadeandalucia.es/salud/biobanco/"
+    },
+    {
+      "nombre": "ARQUS European University Alliance",
+      "img": "https://biociencias.es/wp-content/uploads/2022/01/ARQUS-CEEBI.png",
+      "web": "https://www.arqus-alliance.eu/"
+    },
+    {
       "nombre": "Facultad de Ciencias",
       "img": "https://biociencias.es/wp-content/uploads/2022/01/Ciencias-CEEBI.png",
       "web": "https://fciencias.ugr.es/"
@@ -11,24 +36,9 @@
       "web": "https://eventex.es"
     },
     {
-      "nombre": "ARQUS European University Alliance",
-      "img": "https://biociencias.es/wp-content/uploads/2022/01/ARQUS-CEEBI.png",
-      "web": "https://www.arqus-alliance.eu/"
-    },
-    {
-      "nombre": "Vicerrectorado de Estudiantes y Empleabilidad",
-      "img": "https://biociencias.es/wp-content/uploads/2022/01/Vicerrectorado-CEEBI.png",
-      "web": "https://ve.ugr.es"
-    },
-    {
       "nombre": "Asociación para el Estudio de la Biología de la Reproducción",
       "img": "https://biociencias.es/wp-content/uploads/2022/01/ASEBIR-CEEBI-1.png",
       "web": "https://asebir.com/"
-    },
-    {
-      "nombre": "Biobanco del Sistema Sanitario Público de Andalucía",
-      "img": "https://biociencias.es/wp-content/uploads/2022/01/Biobanco-CEEBI.png",
-      "web": "https://www.juntadeandalucia.es/salud/biobanco/"
     },
     {
       "nombre": "ComunicaBiotec - Asociación Comunicadores Biotecnología",
@@ -44,11 +54,6 @@
       "nombre": "BIRWAY Academia de Oposicioones",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/birway.png",
       "web": "https://birway.es/"
-    },
-    {
-      "nombre": "Fundación Centro de Investigación Enfermedades Neurológicas",
-      "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-MoCIEN-1.png",
-      "web": "https://www.fundacioncien.es/"
     },
     {
       "nombre": "Sakata 3D Filaments",
