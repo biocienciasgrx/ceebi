@@ -2,7 +2,9 @@
 	"appId": "es.biociencias.ceebi",
 	"appName": "CEEBI",
 	"webDir": "dist",
-	"bundledWebRuntime": false,
+	"bundledWebRuntime": true,
+	"hideLogs": false,
+	"loggingBehavior": "debug",
 	"plugins": {
 		"LocalNotifications": {
 			"smallIcon": "ic_launcher_round",
