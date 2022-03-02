@@ -20,20 +20,21 @@
 
 ## Others
 
-1. Restringir carácteres para introducir en QR ~~=> Primero seleccionar entre tipo de identificación (DNI/NIE/Pasaporte) y después input del mismo~~
-1. Menú de configuración: para notificaciones, [modo oscuro], cambiar DNI (quitar de donde el QR) ...
-1. _SIMPLE_ Hacer que el botón atrás te saque de la aplicación si estás en una de las pantallas principales
-1. **IMPORTANTE** Carga dinámica de noticias
-1. Aclarar mensaje notificaciones
-1. (View in-app de noticias)
-1. ~~Cache noticias + (solo requerir online primera vez)~~
-1. Cache horario + (solo requerir online primera vez)
-1. Local notifications: notificaciones locales para el evento
-1. Translations
-1. Haptics for toasts
-1. Vista detallada de cada evento
-1. Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)
-1. Diferenciar de alguna forma si los logos de los mecenas pertenecen a la categoría indicada encima del logo o debajo del logo.
+1. Poner ancho máximo en los logos de plata para abajo (50% del ancho)
+2. Restringir carácteres para introducir en QR ~~=> Primero seleccionar entre tipo de identificación (DNI/NIE/Pasaporte) y después input del mismo~~
+3. Menú de configuración: para notificaciones, [modo oscuro], cambiar DNI (quitar de donde el QR) ...
+4. _SIMPLE_ Hacer que el botón atrás te saque de la aplicación si estás en una de las pantallas principales
+5. **IMPORTANTE** Carga dinámica de noticias
+6. Aclarar mensaje notificaciones
+7. (View in-app de noticias)
+8. ~~Cache noticias + (solo requerir online primera vez)~~
+9. Cache horario + (solo requerir online primera vez)
+10. Local notifications: notificaciones locales para el evento
+11. Translations
+12. Haptics for toasts
+13. Vista detallada de cada evento
+14. Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)
+15. Diferenciar de alguna forma si los logos de los mecenas pertenecen a la categoría indicada encima del logo o debajo del logo.
 
 ## Next congress
 
