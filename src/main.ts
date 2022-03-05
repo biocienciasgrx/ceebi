@@ -91,7 +91,7 @@ const app = createApp(App).use(IonicVue).use(i18n).use(router);
 router.isReady().then(() => {
   if (isPlatform("mobile")) {
     // Lock orientation to vertical
-    ScreenOrientation.lock(ScreenOrientation.ORIENTATIONS.PORTRAIT);
+    ScreenOrientation.lock(ScreenOrientation.ORIENTATIONS.PORTRAIT); // TODO Change this to android manifest instead
   }
   app.mount("#app");
 });
