@@ -5,6 +5,21 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.7-beta] - 2022-03-05
+
+## Added
+
+- Firebase user properties and performance monitoring for specific code
+- Small delay to splash screen hide to ensure that the app is completely rendered before the splash screen goes out
+
+## Changed
+
+- Native splash screen is now white (instead of showing a weirdly stretched logo)
+
+## Security
+
+- Bumped `url-parse` from 1.5.3 to 1.5.10 (See [Dependabot alerts](https://github.com/biocienciasgrx/ceebi/security/dependabot?q=is%3Aclosed) for more info)
+
 ## [0.8.3-beta] - 2022-03-02
 
 ## Added
