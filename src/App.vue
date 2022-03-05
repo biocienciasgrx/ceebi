@@ -184,5 +184,5 @@ logEvent(analytics, "vue_app_setup");
 })();
 
 //* HIDE SPLASHSCREEN ON MOUNTED
-onMounted(SplashScreen.hide);
+onMounted(() => setTimeout(SplashScreen.hide, 250));
 </script>
