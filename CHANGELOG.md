@@ -5,6 +5,16 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.3-beta] - 2022-03-02
+
+## Added
+
+- Firebase Crashlytics
+
+## Fixed
+
+- App causing lock screen to show up multiple times when app is opened in some Samsung phones.
+
 ## [0.8.1-beta] - 2022-02-17
 
 ## Added
@@ -106,6 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Showing _alt_ text in case images don't load
 
 [Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.6.1-alpha...HEAD
+[0.8.3-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.5-alpha
 [0.6.5-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.5-alpha
 [0.6.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.1-alpha
 [0.5.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.1-alpha
