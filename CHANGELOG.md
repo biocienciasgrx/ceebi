@@ -5,7 +5,14 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.7.3-alpha]
+## [0.8.1-beta] - 2022-02-17
+
+## Added
+
+- App update checker and installer
+- Firebase Performance Monitoring
+
+## [0.7.3-alpha] - 2022-02-17
 
 ### Added
 
