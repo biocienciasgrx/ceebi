@@ -3,7 +3,6 @@
 	"appName": "CEEBI",
 	"webDir": "dist",
 	"bundledWebRuntime": true,
-	"hideLogs": false,
 	"loggingBehavior": "debug",
 	"plugins": {
 		"LocalNotifications": {
