@@ -93,11 +93,15 @@ import { Http } from "@capacitor-community/http";
 import { Network } from "@capacitor/network";
 import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 import { useI18n } from "vue-i18n";
+import { trace } from "firebase/performance";
+import { performance } from "@/firebase";
 
 const i18n = useI18n();
 
 /** Load news from cache file */
 async function loadNews(finished: Ref<boolean>, toStore: Ref<Item[]>) {
+  const loadTrace = trace(performance, "load_news");
+  loadTrace.start();
   console.info("loadNews > loading news from file");
   finished.value = false;
   const { data } = await Filesystem.readFile({
@@ -107,6 +111,7 @@ async function loadNews(finished: Ref<boolean>, toStore: Ref<Item[]>) {
   });
   toStore.value = JSON.parse(data);
   finished.value = true;
+  loadTrace.stop();
 }
 
 async function getNews(
@@ -114,6 +119,8 @@ async function getNews(
   finished: Ref<boolean>,
   toStore: Ref<Item[]>
 ) {
+  const fetchTrace = trace(performance, "fetch_news");
+  fetchTrace.start();
   console.info("Getting news...");
   finished.value = false;
   // Suggest to load news from cache if it takes too long
@@ -138,15 +145,23 @@ async function getNews(
   toStore.value = feed.items;
   // await new Promise((r) => setTimeout(r, 200));
   finished.value = true;
+  fetchTrace.stop();
   // if (event !== undefined)
   //   if (event.target !== null) event.target.complete();
+  const saveNews = trace(performance, "save_news");
+  saveNews.start();
   Filesystem.writeFile({
     directory: Directory.Cache,
     path: "news.json",
     recursive: true,
     data: JSON.stringify(toStore.value),
     encoding: Encoding.UTF8,
-  }).catch((e) => console.log(e));
+  })
+    .catch((e) => {
+      console.log(e);
+      saveNews.stop();
+    })
+    .then(() => saveNews.stop());
 }
 
 const news: Ref<Item[]> = ref([]);
@@ -159,7 +174,7 @@ const haveCachedNews = ref(false);
 (async () => {
   const status = await Network.getStatus();
   connected.value = status.connected;
-  console.info("News.vue > Am i conected?", connected.value);
+  console.info("News.vue > Am i connected?", connected.value);
   if (connected.value) {
     getNews(parser, loaded, news);
     haveCachedNews.value = true;

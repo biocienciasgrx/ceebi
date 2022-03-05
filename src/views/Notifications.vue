@@ -88,7 +88,8 @@ import NotificationModalVue from "@/components/NotificationModal.vue";
 import { Analytics, logEvent } from "firebase/analytics";
 
 import { Notification, RawNotification, NotificationType } from "@/types";
-import { analytics } from "@/firebase";
+import { analytics, performance } from "@/firebase";
+import { trace } from "firebase/performance";
 
 const loading = ref(true);
 
@@ -104,7 +105,10 @@ Network.addListener("networkStatusChange", (status) => {
 const date = ref(new Date());
 
 const notifications: Ref<Notification[]> = ref([]);
+
+const loadTrace = trace(performance, "fetch_notifications");
 (async () => {
+  loadTrace.start();
   console.info("Notifications > Requesting");
   const res = await Http.get({
     url: "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/notificaciones.json",
@@ -135,6 +139,7 @@ const notifications: Ref<Notification[]> = ref([]);
     })
   );
   loading.value = false;
+  loadTrace.stop();
 })();
 
 const modal = async (notification: Notification) => {

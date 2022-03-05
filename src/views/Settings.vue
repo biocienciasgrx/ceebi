@@ -5,6 +5,7 @@
       <ion-title class="ion-margin-top" style="font-size: 30px"
         >Settings</ion-title
       >
+      <!-- Interface -->
       <ion-card>
         <ion-card-header
           ><ion-card-title>
@@ -41,6 +42,7 @@
           </div>
         </ion-card-content>
       </ion-card>
+      <!-- Identification -->
       <ion-card>
         <ion-card-header>
           <ion-card-title>{{
@@ -59,8 +61,10 @@
               $t("message.settingsIdentificationChange")
             }}</ion-label>
           </ion-item>
-        </ion-card-content> </ion-card
-      ><ion-card>
+        </ion-card-content>
+      </ion-card>
+      <!-- Notifications -->
+      <ion-card>
         <ion-card-header
           ><ion-card-title>
             {{ $t("message.settingsNotificationsTitle") }}
@@ -129,6 +133,9 @@ import { modalController } from "@ionic/core";
 // import IdFormModalVue from "../components/IdFormModal.vue";
 import IdFormModalVue from "@/components/IdFormModalNew.vue";
 import { KEY_LOCALE } from "@/vars";
+import { setUserProperties } from "firebase/analytics";
+import { analytics } from "@/firebase";
+import { setupPlatforms } from "@ionic/core/dist/types/utils/platform";
 
 const router = useIonRouter();
 const i18n = useI18n();
@@ -177,6 +184,9 @@ watch(i18n.locale, (value) => {
     key: KEY_LOCALE,
     value,
   });
+  setUserProperties(analytics, {
+    locale: value,
+  });
 });
 
 const getLocaleName = (tag: string): string => locale.getByTag(tag).name;
@@ -208,6 +218,25 @@ const modifyId = async () => {
 
 const eventRemindersOn = ref(false);
 const eventRemindersTime = ref(15);
+
+watch(eventRemindersOn, (value) => {
+  setUserProperties(analytics, {
+    eventRemindersOn: value,
+  });
+});
+
+watch(eventRemindersTime, (value) => {
+  setUserProperties(analytics, {
+    eventRemindersTime: value,
+  });
+});
+
+// Initial user property set
+setUserProperties(analytics, {
+  locale: i18n.locale.value,
+  eventRemindersOn: eventRemindersOn.value,
+  eventRemindersTime: eventRemindersTime.value,
+});
 </script>
 
 <style></style>

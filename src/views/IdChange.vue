@@ -123,6 +123,8 @@ import { useI18n } from "vue-i18n";
 import Header from "../components/Header.vue";
 
 import { KEY_ID } from "@/vars";
+import { setUserProperties } from "@firebase/analytics";
+import { analytics } from "@/firebase";
 
 const i18n = useI18n();
 
@@ -315,6 +317,12 @@ const saveId = () => {
           .then((toast) => toast.present())
       );
 };
+
+watch(documentType, (value) => {
+  setUserProperties(analytics, {
+    documentType: value,
+  });
+});
 </script>
 
 <style></style>

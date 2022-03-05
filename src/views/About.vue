@@ -139,7 +139,7 @@ import {
   IMAGES_DIRECTORY,
   MECENAS_JSON_PATH,
 } from "@/vars";
-import { analytics } from "@/firebase";
+import { analytics, performance } from "@/firebase";
 
 // import _mecenas from "../../mecenas.json";
 import { computed, ref } from "@vue/reactivity";
@@ -148,6 +148,7 @@ import { watch } from "@vue/runtime-core";
 import { logoGithub, planet } from "ionicons/icons";
 
 import { logEvent } from "firebase/analytics";
+import { trace } from "firebase/performance";
 
 // const modMecenas: Mecenas = {
 //   colaborador: [],
@@ -202,7 +203,11 @@ const imageExists = async (path: string) => {
   return read.files.includes(path);
 };
 
+const imageTrace = trace(performance, "sponsor_images_load");
+
 (async () => {
+  imageTrace.start();
+  console.log("> Tracing started");
   try {
     const response = await fetch(
       "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/mecenas.json"
@@ -298,11 +303,15 @@ const imageExists = async (path: string) => {
 
 watch(
   imageLoadings,
-  (value, oldValue) => {
+  (value) => {
     let areLoaded = true;
     for (const type of Object.keys(value))
       if (!value[type as MecenasLevel]) areLoaded = false;
     imagesLoaded.value = areLoaded;
+    if (areLoaded) {
+      imageTrace.stop();
+      console.log("> Tracing stopped");
+    }
     // for (const type in mecenas) {
     //   mecenas[type as MecenasLevel].forEach(async (element) => {
     //     console.info(
