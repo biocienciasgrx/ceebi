@@ -51,12 +51,13 @@ import {
 } from "@ionic/vue";
 import * as ionicons from "ionicons/icons";
 
-import { defineProps, inject } from "@vue/runtime-core";
+import { defineProps } from "@vue/runtime-core";
 
-import { ButtonSettings } from "@/types";
 import { Browser } from "@capacitor/browser";
 import { Analytics, logEvent } from "firebase/analytics";
-import { FIREBASE_ANALYTICS } from "@/vars";
+
+import { ButtonSettings } from "@/types";
+import { analytics } from "@/firebase";
 
 const props = defineProps<{
   id: string;
@@ -65,8 +66,6 @@ const props = defineProps<{
   date: Date;
   buttons?: ButtonSettings[];
 }>();
-
-const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
 
 const dismissModal = () => {
   modalController.dismiss();

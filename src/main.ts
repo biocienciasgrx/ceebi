@@ -64,29 +64,29 @@ Storage.keys().then(({ keys }) => {
 });
 //* =====
 
-//* Firebase
-// Import the functions you need from the SDKs you need
+//* Firebase -> Moved to @/firebase.ts
+// // Import the functions you need from the SDKs you need
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getPerformance } from "firebase/performance";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// import { getPerformance } from "firebase/performance";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-// Get Firebase Analytics
-const firebaseAnalytics = getAnalytics(firebaseApp);
-// Get Firebase Performance Monitoring
-const firebasePerformance = getPerformance(firebaseApp);
+// // Initialize Firebase
+// const firebaseApp = initializeApp(firebaseConfig);
+// // Get Firebase Analytics
+// const firebaseAnalytics = getAnalytics(firebaseApp);
+// // Get Firebase Performance Monitoring
+// const firebasePerformance = getPerformance(firebaseApp);
 //* ======
 
 //* ===== Vue
 const app = createApp(App).use(IonicVue).use(i18n).use(router);
-app.provide(FIREBASE_APP, firebaseApp);
-app.provide(FIREBASE_ANALYTICS, firebaseAnalytics);
-app.provide(FIREBASE_PERFORMANCE, firebasePerformance);
+// app.provide(FIREBASE_APP, firebaseApp);
+// app.provide(FIREBASE_ANALYTICS, firebaseAnalytics);
+// app.provide(FIREBASE_PERFORMANCE, firebasePerformance);
 
 router.isReady().then(() => {
   if (isPlatform("mobile")) {

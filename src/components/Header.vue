@@ -44,9 +44,11 @@ import {
 // @ts-ignore
 import logoHorizontal from "../../public/assets/logo_horizontal.png";
 import { useRouter } from "vue-router";
-import { FIREBASE_ANALYTICS } from "@/vars";
-import { inject } from "@vue/runtime-core";
+// import { FIREBASE_ANALYTICS } from "@/vars";
+// import { inject } from "@vue/runtime-core";
 import { logEvent } from "firebase/analytics";
+
+import { analytics } from "@/firebase";
 
 export default {
   props: {
@@ -61,12 +63,11 @@ export default {
   setup() {
     const router = useRouter();
 
-    const analytics = inject(FIREBASE_ANALYTICS);
+    // const analytics = inject(FIREBASE_ANALYTICS);
 
     return {
       // analytics,
       goto: (url: string, msg: string) => {
-        //@ts-expect-error
         logEvent(analytics, "open_" + msg);
         window.location.href = url;
       },
@@ -80,7 +81,6 @@ export default {
       settingsOutline,
 
       link(url: string, name: string) {
-        //@ts-expect-error
         logEvent(analytics, "navigate_" + name);
         router.push(url);
       },

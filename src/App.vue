@@ -12,7 +12,7 @@ import {
   alertController,
   toastController,
 } from "@ionic/vue";
-import { inject, onMounted } from "vue";
+import { onMounted } from "vue";
 
 import { LocalNotifications } from "@capacitor/local-notifications";
 import {
@@ -29,6 +29,8 @@ import {
   AppUpdateAvailability,
   FlexibleUpdateInstallStatus,
 } from "@robingenz/capacitor-app-update";
+
+import { analytics } from "@/firebase";
 
 import {
   FIREBASE_ANALYTICS,
@@ -119,7 +121,7 @@ if (isPlatform("capacitor")) {
 }
 
 //* FIREBASE ANALYTICS
-const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
+// const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
 console.info("Injected analytics: ", analytics);
 logEvent(analytics, "vue_app_setup");
 

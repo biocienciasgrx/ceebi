@@ -139,10 +139,11 @@ import {
   IMAGES_DIRECTORY,
   MECENAS_JSON_PATH,
 } from "@/vars";
+import { analytics } from "@/firebase";
 
 // import _mecenas from "../../mecenas.json";
 import { computed, ref } from "@vue/reactivity";
-import { inject, watch } from "@vue/runtime-core";
+import { watch } from "@vue/runtime-core";
 
 import { logoGithub, planet } from "ionicons/icons";
 
@@ -169,10 +170,8 @@ import { logEvent } from "firebase/analytics";
 //           finalImg: _mecenas["finalmg"],
 //         });
 // }
-const analytics = inject(FIREBASE_ANALYTICS);
 
 const goto = (url: string, msg: string) => {
-  //@ts-expect-error
   logEvent(analytics, "open_" + msg);
   window.location.href = url;
 };

@@ -85,10 +85,10 @@ import Header from "../components/Header.vue";
 import SkeletonNotifications from "@/components/SkeletonNotifications.vue";
 import NotificationModalVue from "@/components/NotificationModal.vue";
 
-import { FIREBASE_ANALYTICS } from "@/vars";
-import { Notification, RawNotification, NotificationType } from "@/types";
 import { Analytics, logEvent } from "firebase/analytics";
-import { inject } from "@vue/runtime-core";
+
+import { Notification, RawNotification, NotificationType } from "@/types";
+import { analytics } from "@/firebase";
 
 const loading = ref(true);
 
@@ -100,8 +100,6 @@ const connected = ref(true);
 Network.addListener("networkStatusChange", (status) => {
   connected.value = status.connected;
 });
-
-const analytics = inject(FIREBASE_ANALYTICS) as Analytics;
 
 const date = ref(new Date());
 
