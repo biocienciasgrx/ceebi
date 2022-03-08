@@ -1,5 +1,24 @@
 [
   {
+    "id": "nuevas_modalidades",
+    "title": "Nuevas modalidades de inscripción: Online y semipresencial",
+    "body": "Entra en <a href='https://biociencias.es/inscripciones'>biociencias.es/inscripciones</a>, mira las nuevas modalidades de inscripción y no te quedes sin tu entrada.",
+    "schedule": {
+      "year": 2022,
+      "month": 3,
+      "day": 3,
+      "hour": 10,
+      "minutes": 00
+    },
+    "icon": "earth",
+    "buttons": [{
+      "id": "modalidades",
+      "text": "Ver nuevos modalidades",
+      "link": "https://biociencias.es/inscripciones",
+      "icon": "eye"
+    }]
+  },
+  {
     "id": "abiertas_inscripciones",
     "title": "Abiertas las inscripciones al CEEBI",
     "body": "Entra en <a href='https://biociencias.es/inscripciones'>biociencias.es/inscripciones</a> y no te quedes sin tu entrada. Nos vemos en julio en Granada.",
@@ -13,7 +32,7 @@
     "icon": "ticket",
     "buttons": [{
       "id": "compra",
-      "text": "Comprar en la web",
+      "text": "Inscripción en la web",
       "link": "https://biociencias.es/inscripciones",
       "icon": "cart"
     }]
