@@ -2,60 +2,32 @@
   <ion-page>
     <Header />
     <ion-content :fullscreen="true">
-      <!-- <Header condense /> -->
-      <!-- <ion-item :lines="notificationLines">
-        <ion-label>Enable event notifications</ion-label>
-        <ion-toggle
-          :value="connected"
-          @ionChange="changed($event)"
-        ></ion-toggle>
-      </ion-item> -->
-      <ion-item v-if="!connected" color="warning" lines="none">
-        <ion-icon :icon="warningOutline" slot="start"></ion-icon>
-        <ion-label
-          >You are not connected, push notifications won't work</ion-label
-        >
-      </ion-item>
-
       <SkeletonNotifications v-if="loading" />
       <ion-list lines="full" v-else>
-        <template
+        <ion-item
           v-for="notification in notifications.filter(
             (not) => not.date <= date
           )"
           :key="notification.id"
+          @click="modal(notification)"
+          detail
+          button
         >
-          <ion-item @click="modal(notification)" detail button>
-            <ion-icon
-              slot="start"
-              :md="notification.ionIcon"
-              :ios="notification.ionIcon"
-            ></ion-icon>
-            <div style="display: flex; flex-direction: column">
-              <ion-text>{{ notification.title }}</ion-text>
-              <ion-note
-                >{{
-                  extractContent(notification.body || "").substring(0, 30)
-                }}...</ion-note
-              >
-            </div>
-          </ion-item>
-        </template>
+          <ion-icon
+            slot="start"
+            :md="notification.ionIcon"
+            :ios="notification.ionIcon"
+          ></ion-icon>
+          <div style="display: flex; flex-direction: column">
+            <ion-text>{{ notification.title }}</ion-text>
+            <ion-note
+              >{{
+                extractContent(notification.body || "").substring(0, 30)
+              }}...</ion-note
+            >
+          </div>
+        </ion-item>
       </ion-list>
-      <div
-        class="container"
-        v-if="
-          notifications.filter((not) => not.date <= date).length === 0 &&
-          !loading
-        "
-      >
-        <ion-icon
-          :md="notificationsOffOutline"
-          :ios="notificationsOffOutline"
-          size="large"
-        ></ion-icon>
-        <ion-note>{{ $t("message.noNotificationsYet") }}</ion-note>
-      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -67,14 +39,12 @@ import {
   IonPage,
   IonContent,
   IonItem,
-  IonLabel,
   IonIcon,
   IonList,
   IonNote,
   IonText,
   modalController,
 } from "@ionic/vue";
-import { warningOutline, notificationsOffOutline } from "ionicons/icons";
 import * as ionicons from "ionicons/icons";
 // import { paperPlaneOutline, calendarClearOutline } from "ionicons/icons";
 
@@ -85,14 +55,16 @@ import Header from "../components/Header.vue";
 import SkeletonNotifications from "@/components/SkeletonNotifications.vue";
 import NotificationModalVue from "@/components/NotificationModal.vue";
 
-import { Analytics, logEvent } from "firebase/analytics";
+import { logEvent } from "firebase/analytics";
 
 import { Notification, RawNotification, NotificationType } from "@/types";
 import { analytics, performance } from "@/firebase";
 import { trace } from "firebase/performance";
 
 const loading = ref(true);
+let notificationOpen = false;
 
+//#region CONNECTION
 const connected = ref(true);
 (async () => {
   const status = await Network.getStatus();
@@ -101,6 +73,7 @@ const connected = ref(true);
 Network.addListener("networkStatusChange", (status) => {
   connected.value = status.connected;
 });
+//#endregion
 
 const date = ref(new Date());
 
@@ -143,15 +116,19 @@ const loadTrace = trace(performance, "fetch_notifications");
 })();
 
 const modal = async (notification: Notification) => {
-  console.info(notification);
-  logEvent(analytics, `notification_${notification.id}`);
-  const m = await modalController.create({
-    component: NotificationModalVue,
-    breakpoints: [0, 0.35, 0.65, 1],
-    initialBreakpoint: 0.35,
-    componentProps: notification,
-  });
-  m.present();
+  if (!notificationOpen) {
+    notificationOpen = true;
+    console.info(notification);
+    logEvent(analytics, `notification_${notification.id}`);
+    const m = await modalController.create({
+      component: NotificationModalVue,
+      breakpoints: [0, 0.35, 0.65, 1],
+      initialBreakpoint: 0.35,
+      componentProps: notification,
+    });
+    m.onDidDismiss().then(() => (notificationOpen = false));
+    m.present();
+  }
 };
 
 const extractContent = (html: string) => {
