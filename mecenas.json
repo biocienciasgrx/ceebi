@@ -69,6 +69,11 @@
       "nombre": "Departamento de Didáctica de las Ciencias Experimentales",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/IC_Did-Cc-Expe-PhotoRoom-1.png",
       "web": "https://www.didacticacienciasugr.es/"
+    },
+    {
+      "nombre": "Parque de las Ciencias Granada",
+      "img": "https://biociencias.es/wp-content/uploads/2022/07/Logo-Parque-de-las-Ciencias-CEEBIll.png",
+      "web": "https://www.parqueciencias.com/"
     }
   ],
   "bronce": [
@@ -101,7 +106,7 @@
     }
   ],
   "oro": [
-  {
+    {
       "nombre": "LANIAKEA Management & Communication",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/Logo-LANIAKEA.png",
       "web": "https://www.laniakeacommunication.com/"
