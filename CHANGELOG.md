@@ -5,6 +5,16 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.8-beta] - 2022-03-14
+
+## Changed
+
+- Date and time when a notification was sent does not show seconds now in the notification detail modal
+
+## Fixed
+
+- Error caused when quickly tapping a notification to open its modal
+
 ## [0.8.7-beta] - 2022-03-05
 
 ## Added
@@ -131,6 +141,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Showing _alt_ text in case images don't load
 
 [Unreleased]: https://github.com/biocienciasgrx/ceeebi/compare/v0.6.1-alpha...HEAD
+[0.8.8-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.8-beta
+[0.8.7-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.7-beta
 [0.8.3-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.3-beta
 [0.6.5-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.5-alpha
 [0.6.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.1-alpha
