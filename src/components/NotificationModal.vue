@@ -13,7 +13,18 @@
     <div class="ion-padding">
       <ion-text class="block" v-html="body"></ion-text>
       <ion-text color="medium" class="block smaller ion-margin-top"
-        >Sent on {{ date.toLocaleString() }}</ion-text
+        >Sent on
+        {{
+          date.toLocaleDateString(undefined, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            hour12: false,
+            minute: "2-digit",
+          })
+        }}</ion-text
       >
     </div>
     <ion-item
@@ -54,7 +65,7 @@ import * as ionicons from "ionicons/icons";
 import { defineProps } from "@vue/runtime-core";
 
 import { Browser } from "@capacitor/browser";
-import { Analytics, logEvent } from "firebase/analytics";
+import { logEvent } from "firebase/analytics";
 
 import { ButtonSettings } from "@/types";
 import { analytics } from "@/firebase";
