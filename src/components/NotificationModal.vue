@@ -13,7 +13,7 @@
     <div class="ion-padding">
       <ion-text class="block" v-html="body"></ion-text>
       <ion-text color="medium" class="block smaller ion-margin-top"
-        >Sent on
+        >{{ $t("message.notificationSentOn") }}
         {{
           date.toLocaleDateString(undefined, {
             weekday: "long",

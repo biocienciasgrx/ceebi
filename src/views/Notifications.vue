@@ -46,7 +46,6 @@ import {
   modalController,
 } from "@ionic/vue";
 import * as ionicons from "ionicons/icons";
-// import { paperPlaneOutline, calendarClearOutline } from "ionicons/icons";
 
 import { Network } from "@capacitor/network";
 import { Http } from "@capacitor-community/http";
@@ -88,11 +87,6 @@ const loadTrace = trace(performance, "fetch_notifications");
   });
   console.info(res.data);
   const data = JSON.parse(res.data);
-  // const res = await fetch(
-  //   "https://raw.githubusercontent.com/biocienciasgrx/ceebi/master/notificaciones.json"
-  // );
-  // console.info(res.c);
-  // const data: RawNotification[] = await res.json();
   notifications.value = data.map(
     (not: RawNotification): Notification => ({
       ...not,
@@ -136,16 +130,6 @@ const extractContent = (html: string) => {
   span.innerHTML = html;
   return span.textContent || span.innerText;
 };
-
-// (async () => {
-//   const { value: notificationsJSON } = await Storage.get({
-//     key: KEY_NOTIFICATIONS,
-//   });
-//   notifications.value = JSON.parse(notificationsJSON || "[]");
-//   console.info("hey ma, notifications", notifications.value);
-//   await new Promise((r) => setTimeout(r, 2000));
-//   loading.value = false;
-// })();
 </script>
 
 <style scoped>

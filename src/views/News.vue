@@ -2,10 +2,8 @@
   <ion-page>
     <Header />
     <ion-content :fullscreen="true" class="ion-padding">
-      <!-- <Header condense /> -->
-
       <NoConnection v-if="!connected && !haveCachedNews">
-        You have to connect at least once to see news
+        {{ $t("message.newsConnectAtLeastOnce") }}
       </NoConnection>
       <template v-else>
         <div v-if="loaded">
@@ -25,7 +23,6 @@
             <ion-button fill="clear" @click="open(_new.link || '/news')"
               >{{ $t("message.newsReadMore") }}
               <ion-icon :icon="openOutline" slot="end"></ion-icon>
-              <!-- TODO Make this a capacitor browser open -->
             </ion-button>
           </div>
         </div>

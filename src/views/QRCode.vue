@@ -14,7 +14,6 @@
       </div>
     </ion-content>
   </ion-page>
-  <!-- TODO Include DNI configuration as button and modal here -->
 </template>
 
 <script setup lang="ts">
@@ -34,7 +33,6 @@ import { ScreenBrightness } from "@capacitor-community/screen-brightness";
 import QRCode from "qrcode";
 import { ref } from "@vue/reactivity";
 import { Storage } from "@capacitor/storage";
-import { onMounted } from "@vue/runtime-core";
 import { KEY_ID } from "@/vars";
 
 const showQR = ref(false);

@@ -23,7 +23,6 @@
       </ion-segment>
     </ion-toolbar>
     <ion-content :fullscreen="true">
-      <!-- <Header condense /> -->
       <NoConnection v-if="!connected">
         Go back online to get the updated schedule
       </NoConnection>
@@ -80,7 +79,6 @@ import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
 import Header from "../components/Header.vue";
 import Timeline from "../components/Timeline.vue";
 import SkeletonTimeline from "../components/SkeletonTimeline.vue";
-// @ts-ignore
 import NoConnection from "../components/NoConnection.vue";
 
 import { ref } from "vue";

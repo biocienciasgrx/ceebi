@@ -2,9 +2,9 @@
   <ion-page>
     <Header />
     <ion-content>
-      <ion-title class="ion-margin-top" style="font-size: 30px"
-        >Settings</ion-title
-      >
+      <ion-title class="ion-margin-top" style="font-size: 30px">{{
+        $t("message.settingsTitle")
+      }}</ion-title>
       <!-- Interface -->
       <ion-card>
         <ion-card-header

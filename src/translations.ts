@@ -2,7 +2,9 @@ export default {
   en: {
     message: {
       minutes: "minutes",
-      close: "Cerrar",
+      close: "Close",
+      save: "Save",
+      cancel: "Cancel",
 
       // Tabs
       tabQRCode: "QR Code",
@@ -22,6 +24,7 @@ export default {
       settingsInterfaceTitle: "Interface",
       darkMode: "Dark mode",
       workingOnDarkMode: "Dark mode not available yet",
+      settingsTitle: "Settings",
       settingsIdentificationTitle: "Identification",
       settingsIdentificationChange: "Modify ID",
       settingsNotificationsTitle: "Notifications",
@@ -43,6 +46,7 @@ export default {
       newsLoadedOffline: "Couldn't fetch news, loaded locally saved news",
       newsCannotRefreshOffline: "Cannot refresh news while offline",
       newsReadMore: "Read more",
+      newsConnectAtLeastOnce: "You have to connect at least once to see news",
 
       // About
       developedBy: "Developed by",
@@ -57,12 +61,15 @@ export default {
 
       // Notifications
       noNotificationsYet: "No notifications yet",
+      notificationSentOn: "Sent on",
     },
-  } as Traslation,
+  } as Translation,
   es: {
     message: {
       minutes: "minutos",
       close: "Cerrar",
+      save: "Guardar",
+      cancel: "Cancelar",
 
       // Tabs
       tabQRCode: "Código QR",
@@ -82,6 +89,7 @@ export default {
       settingsInterfaceTitle: "Interfaz",
       darkMode: "Modo oscuro",
       workingOnDarkMode: "El modo oscuro aún no está disponible",
+      settingsTitle: "Configuración",
       settingsIdentificationTitle: "Identificación",
       settingsIdentificationChange: "Modificar ID",
       settingsNotificationsTitle: "Notificaciones", // TODO Repeated, can't be
@@ -107,6 +115,8 @@ export default {
       newsCannotRefreshOffline:
         "No es posible recargar las noticias sin conexión",
       newsReadMore: "Leer más",
+      newsConnectAtLeastOnce:
+        "Conéctese a internet polo menos unha vez para poder ver as novas",
 
       // About
       developedBy: "App desarrollada por",
@@ -121,12 +131,15 @@ export default {
 
       // Notifications
       noNotificationsYet: "Aún no hay notificaciones",
+      notificationSentOn: "Enviado el",
     },
-  } as Traslation,
+  } as Translation,
   gl: {
     message: {
       minutes: "minutos",
       close: "Pechar",
+      save: "Gardar",
+      cancel: "Cancelar",
 
       // Tabs
       tabQRCode: "Código QR",
@@ -146,6 +159,7 @@ export default {
       settingsInterfaceTitle: "Interface",
       darkMode: "Modo oscuro",
       workingOnDarkMode: "O modo oscuro aínda non está dispoñible",
+      settingsTitle: "Configuración",
       settingsIdentificationTitle: "Identificación",
       settingsIdentificationChange: "Modificar ID",
       settingsNotificationsTitle: "Notificacións",
@@ -172,6 +186,8 @@ export default {
         "Non é posible recargar as noticias sen conexión",
       newsReadMore: "Ler máis",
       newsLoadedOffline: "Cargadas as noticias descargadas",
+      newsConnectAtLeastOnce:
+        "Conéctate a internet por lo menos una vez para poder ver las noticias",
 
       // About
       developedBy: "Creado por",
@@ -186,8 +202,9 @@ export default {
 
       // Notifications
       noNotificationsYet: "Aínda non hay notificacións",
+      notificationSentOn: "Enviado o",
     },
-  } as Traslation,
+  } as Translation,
   de: {
     message: {
       minutes: "Minuten",
@@ -234,13 +251,15 @@ export default {
       newsCannotRefreshOffline: "Nachrichten sind nicht offline zu laden",
       newsReadMore: "Lessen mehr",
     },
-  } as Traslation | any,
+  } as Translation | any,
 };
 
-interface Traslation {
+interface Translation {
   message: {
     minutes: string;
     close: string;
+    save: string;
+    cancel: string;
 
     // Tabs
     tabQRCode: string;
@@ -260,6 +279,7 @@ interface Traslation {
     settingsInterfaceTitle: string;
     darkMode: string;
     workingOnDarkMode: string;
+    settingsTitle: string;
     settingsIdentificationTitle: string;
     settingsIdentificationChange: string;
     settingsNotificationsTitle: string;
@@ -281,6 +301,7 @@ interface Traslation {
     newsLoadedOffline: string;
     newsCannotRefreshOffline: string;
     newsReadMore: string;
+    newsConnectAtLeastOnce: string;
 
     // About
     developedBy: string;
@@ -295,5 +316,6 @@ interface Traslation {
 
     // Notifications
     noNotificationsYet: string;
+    notificationSentOn: string;
   };
 }

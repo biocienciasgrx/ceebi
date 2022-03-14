@@ -3,7 +3,6 @@
     <Header
       ><ion-toolbar>
         <ion-buttons slot="start">
-          <!-- <ion-button @click="link('/settings')">Back</ion-button> -->
           <ion-button router-link="/settings" router-direction="back">
             <ion-icon
               :md="caretBackCircleOutline"
@@ -48,17 +47,12 @@
           class="ion-margin"
           :_color="inputStatus"
           :style="{
-            /*'--border-color':
-              inputStatus === InputStatus.NONE
-                ? undefined
-                : `var(--ion-color-${inputStatus})`,*/
             '--highlight-color-focused':
               inputStatus === InputStatus.NONE
                 ? undefined
                 : `var(--ion-color-${inputStatus})`,
           }"
         >
-          <!-- <ion-label position="stacked"></ion-label> -->
           <ion-input
             required
             v-model="documentID"
@@ -75,9 +69,9 @@
           }}</ion-note>
           <!-- * Not setting a slot sets it to the right top of the input in smaller font size -->
         </ion-item>
-        <ion-button size="block" class="ion-margin" type="submit"
-          >Save</ion-button
-        >
+        <ion-button size="block" class="ion-margin" type="submit">{{
+          $t("message.save")
+        }}</ion-button>
         <ion-button
           router-link="/settings"
           router-direction="back"
@@ -85,7 +79,7 @@
           class="ion-margin"
           fill="outline"
           color="danger"
-          >Cancel</ion-button
+          >{{ $t("message.cancel") }}</ion-button
         >
       </form>
     </ion-content>
@@ -135,11 +129,6 @@ enum InputStatus {
 }
 
 const router = useIonRouter();
-
-function link(to: string) {
-  console.log("hey go here", to);
-  router.push(to);
-}
 
 const documentType: Ref<"dni" | "nie" | "passport-other"> = ref("dni");
 
