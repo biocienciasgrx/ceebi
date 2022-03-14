@@ -126,16 +126,12 @@ import {
 import { useI18n } from "vue-i18n";
 import Header from "../components/Header.vue";
 import * as locale from "locale-codes";
-import { defineComponent, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { codeWorkingOutline } from "ionicons/icons";
 import { Storage } from "@capacitor/storage";
-import { modalController } from "@ionic/core";
-// import IdFormModalVue from "../components/IdFormModal.vue";
-import IdFormModalVue from "@/components/IdFormModalNew.vue";
 import { KEY_LOCALE } from "@/vars";
 import { setUserProperties } from "firebase/analytics";
 import { analytics } from "@/firebase";
-import { setupPlatforms } from "@ionic/core/dist/types/utils/platform";
 
 const router = useIonRouter();
 const i18n = useI18n();
@@ -199,21 +195,6 @@ const darkModeInProgress = async () => {
     duration: 2000,
   });
   toast.present();
-};
-
-const modifyId = async () => {
-  const pageEl = document.getElementById("page");
-  // console.info("t", i18n.t);
-  const modal = await modalController.create({
-    //   // component: IdFormModalVue,
-    component: IdFormModalVue,
-    //   swipeToClose: true,
-    //   presentingElement: pageEl === null ? undefined : pageEl,
-    //   // componentProps: {
-    //   //   translate: i18n.t,
-    //   // },
-  });
-  // modal.present();
 };
 
 const eventRemindersOn = ref(false);
