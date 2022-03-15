@@ -7,42 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.8-beta] - 2022-03-14
 
-## Changed
+### Changed
 
 - Date and time when a notification was sent does not show seconds now in the notification detail modal
 
-## Fixed
+### Fixed
 
 - Error caused when quickly tapping a notification to open its modal
 
 ## [0.8.7-beta] - 2022-03-05
 
-## Added
+### Added
 
 - Firebase user properties and performance monitoring for specific code
 - Small delay to splash screen hide to ensure that the app is completely rendered before the splash screen goes out
 
-## Changed
+### Changed
 
 - Native splash screen is now white (instead of showing a weirdly stretched logo)
 
-## Security
+### Security
 
 - Bumped `url-parse` from 1.5.3 to 1.5.10 (See [Dependabot alerts](https://github.com/biocienciasgrx/ceebi/security/dependabot?q=is%3Aclosed) for more info)
 
 ## [0.8.3-beta] - 2022-03-02
 
-## Added
+### Added
 
 - Firebase Crashlytics
 
-## Fixed
+### Fixed
 
 - App causing lock screen to show up multiple times when app is opened in some Samsung phones.
 
 ## [0.8.1-beta] - 2022-02-17
 
-## Added
+### Added
 
 - App update checker and installer
 - Firebase Performance Monitoring
