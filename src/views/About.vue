@@ -122,7 +122,7 @@
 import {
   IonPage,
   IonContent,
-  IonText,
+  IonButton,
   IonIcon,
   toastController,
 } from "@ionic/vue";
@@ -134,15 +134,11 @@ import { Capacitor } from "@capacitor/core";
 import { Http } from "@capacitor-community/http";
 
 import { Mecena, Mecenas, MecenasLevel } from "@/types";
-import {
-  FIREBASE_ANALYTICS,
-  IMAGES_DIRECTORY,
-  MECENAS_JSON_PATH,
-} from "@/vars";
+import { IMAGES_DIRECTORY, MECENAS_JSON_PATH } from "@/vars";
 import { analytics, performance } from "@/firebase";
 
 // import _mecenas from "../../mecenas.json";
-import { computed, ref } from "@vue/reactivity";
+import { ref } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
 
 import { logoGithub, planet } from "ionicons/icons";

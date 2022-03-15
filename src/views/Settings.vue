@@ -2,11 +2,11 @@
   <ion-page>
     <Header />
     <ion-content>
-      <ion-title class="ion-margin-top" style="font-size: 30px">{{
+      <ion-title class="ion-margin-top title" style="font-size: 30px">{{
         $t("message.settingsTitle")
       }}</ion-title>
       <!-- Interface -->
-      <ion-card>
+      <ion-card class="first-card">
         <ion-card-header
           ><ion-card-title>
             {{ $t("message.settingsInterfaceTitle") }}
@@ -111,6 +111,7 @@
 import {
   IonPage,
   IonContent,
+  IonTitle,
   IonCard,
   IonCardHeader,
   IonCardTitle,
@@ -220,4 +221,21 @@ setUserProperties(analytics, {
 });
 </script>
 
-<style></style>
+<style scoped>
+.title.ios {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  display: block;
+  overflow: visible;
+  padding: 0;
+}
+
+.title.ios > * {
+  overflow-x: visible;
+}
+
+.first-card.ios {
+  margin-top: 5em;
+}
+</style>
