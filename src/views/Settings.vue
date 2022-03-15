@@ -35,7 +35,7 @@
             </ion-select>
           </ion-item>
           <div @mousedown="darkModeInProgress">
-            <ion-item lines="inset" button>
+            <ion-item lines="inset" button detail="false">
               <ion-label>{{ $t("message.darkMode") }}</ion-label>
               <ion-toggle v-model="darkMode" disabled></ion-toggle>
             </ion-item>
@@ -75,6 +75,7 @@
             lines="inset"
             button
             @click.self="eventRemindersOn = !eventRemindersOn"
+            detail="false"
           >
             <ion-label @click="eventRemindersOn = !eventRemindersOn">{{
               $t("message.settingsEventRemindersToggle")
