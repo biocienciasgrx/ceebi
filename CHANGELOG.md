@@ -144,6 +144,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.8.8-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.8-beta
 [0.8.7-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.7-beta
 [0.8.3-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.3-beta
+[0.8.1-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.1-beta
+[0.7.3-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.7.3-alpha
 [0.6.5-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.5-alpha
 [0.6.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.6.1-alpha
 [0.5.1-alpha]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.5.1-alpha
