@@ -35,7 +35,6 @@
 import { IonIcon, IonRippleEffect, onIonViewDidEnter } from "@ionic/vue";
 import * as ionicons from "ionicons/icons";
 
-// import { Event, EventType } from "@/scripts/events";
 import { Event } from "@/types";
 import { EVENT_ICON_FIELD_LABEL } from "@/vars";
 

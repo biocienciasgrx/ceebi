@@ -86,7 +86,7 @@ import { Storage } from "@capacitor/storage";
 import { LocalNotifications } from "@capacitor/local-notifications";
 import { Network } from "@capacitor/network";
 
-import { Event } from "@/scripts/events";
+import { Event } from "@/types";
 
 export default {
   name: "Schedule",
@@ -218,7 +218,7 @@ export default {
             const wants = split[0] == "true";
             const registered = split[1] == "true";
             if (wants && !registered) {
-              tuesdayEvents.value.forEach((event: Event) => {
+              tuesdayEvents.value.forEach((event: any) => {
                 LocalNotifications.checkPermissions().then((check) => {
                   if (check.display === "granted") {
                     LocalNotifications.schedule({
