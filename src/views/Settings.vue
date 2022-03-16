@@ -134,6 +134,7 @@ import { Storage } from "@capacitor/storage";
 import { KEY_LOCALE } from "@/vars";
 import { setUserProperties } from "firebase/analytics";
 import { analytics } from "@/firebase";
+import { toast } from "@/ui";
 
 const router = useIonRouter();
 const i18n = useI18n();
@@ -190,14 +191,8 @@ watch(i18n.locale, (value) => {
 const getLocaleName = (tag: string): string => locale.getByTag(tag).name;
 
 const darkMode = ref(false);
-const darkModeInProgress = async () => {
-  const toast = await toastController.create({
-    message: i18n.t("message.workingOnDarkMode"),
-    icon: codeWorkingOutline,
-    duration: 2000,
-  });
-  toast.present();
-};
+const darkModeInProgress = async () =>
+  toast(i18n.t("message.workingOnDarkMode"), codeWorkingOutline);
 
 const eventRemindersOn = ref(false);
 const eventRemindersTime = ref(15);

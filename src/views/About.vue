@@ -145,6 +145,7 @@ import { logoGithub, planet } from "ionicons/icons";
 
 import { logEvent } from "firebase/analytics";
 import { trace } from "firebase/performance";
+import { toast } from "@/ui";
 
 // const modMecenas: Mecenas = {
 //   colaborador: [],
@@ -268,12 +269,7 @@ const imageTrace = trace(performance, "sponsor_images_load");
             data: imageRes.data,
           });
         } catch {
-          const toast = await toastController.create({
-            message: "Error when downloading images",
-            color: "danger",
-            duration: 2000,
-          });
-          toast.present();
+          toast("Error when downloading images", undefined, "danger");
         }
       }
       console.info(">> Processed mecena ", element);

@@ -92,6 +92,7 @@ import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 import { useI18n } from "vue-i18n";
 import { trace } from "firebase/performance";
 import { performance } from "@/firebase";
+import { toast } from "@/ui";
 
 const i18n = useI18n();
 
@@ -207,16 +208,7 @@ Network.addListener("networkStatusChange", (status) => {
 
 const refreshNews = async (event: any) => {
   if (connected.value) await getNews(parser, loaded, news);
-  else
-    (
-      await toastController.create({
-        message: i18n.t("message.newsCannotRefreshOffline"),
-        // color: "warning",
-        duration: 2000,
-        //@ts-ignore
-        icon: cloudOfflineOutline,
-      })
-    ).present();
+  else toast(i18n.t("message.newsCannotRefreshOffline"), cloudOfflineOutline);
   event.target.complete();
 };
 
