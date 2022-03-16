@@ -16,6 +16,7 @@
 - ~~Aclarar mensaje notificaciones~~
 - ~~Diferenciar de alguna forma si los logos de los mecenas pertenecen a la categoría indicada encima del logo o debajo del logo.~~
 - ~~Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)~~
+- ~~Poner ancho máximo en los logos de plata para abajo (50% del ancho)~~
 
 ## Beta release
 
@@ -23,7 +24,6 @@
 
 ## Others
 
-1. Poner ancho máximo en los logos de plata para abajo (50% del ancho)
 1. Implement cache for notifications
 1. Idea to improve sliding in schedule: make each bar fixed and shift them right by 100%*date_position_from_0 respect the actual position, make them go larger than 100% of the screen and put them fixed outside of the slide container
 1. View de cada evento

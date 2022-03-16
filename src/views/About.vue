@@ -45,7 +45,7 @@
       <div class="flex-row ion-margin">
         <template v-for="plata in mecenas.plata">
           <a
-            class="img-link"
+            class="img-link silver-smaller-link"
             v-if="imagesLoaded"
             :key="plata.nombre"
             :href="plata.web"
@@ -60,7 +60,7 @@
       <div class="flex-row ion-margin">
         <template v-for="bronce in mecenas.bronce">
           <a
-            class="img-link"
+            class="img-link silver-smaller-link"
             v-if="imagesLoaded"
             :href="bronce.web"
             :key="bronce.nombre"
@@ -79,7 +79,7 @@
       <div class="flex-row ion-margin">
         <template v-for="colaborador in mecenas.colaborador">
           <a
-            class="img-link"
+            class="img-link silver-smaller-link"
             v-if="imagesLoaded"
             :href="colaborador.web"
             :key="colaborador.nombre"
@@ -347,5 +347,9 @@ watch(
   text-decoration: none;
   /* color: inherit; */
   color: var(--ion-color-primary-shade);
+}
+
+.silver-smaller-link {
+  max-width: 50%;
 }
 </style>
