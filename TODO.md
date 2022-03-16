@@ -17,6 +17,7 @@
 - ~~Diferenciar de alguna forma si los logos de los mecenas pertenecen a la categoría indicada encima del logo o debajo del logo.~~
 - ~~Posibilidad de borrar las notificaciones (y algo super pro sería que a la hora de mandarlas pudieras elegir si se quedan guardadas o no)~~
 - ~~Poner ancho máximo en los logos de plata para abajo (50% del ancho)~~
+- ~~Translations~~
 
 ## Beta release
 
@@ -34,7 +35,6 @@
 1. (View in-app de noticias)
 1. Cache horario + (solo requerir online primera vez)
 1. Local notifications: notificaciones locales para el evento
-1. Translations
 1. Haptics for toasts
 1. Vista detallada de cada evento
 
