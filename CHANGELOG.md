@@ -5,6 +5,15 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Splash screen background color
+- Missing translations added
+- Remove detail arrows for toggle buttons in settings
+- (iOS) Settings page title positioning
+
 ## [0.8.8-beta] - 2022-03-14
 
 ### Changed
