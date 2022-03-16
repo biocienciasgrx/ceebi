@@ -58,6 +58,7 @@ export default {
       silver: "Silver",
       bronze: "Bronze",
       collaborators: "COLLABORATORS",
+      errorLoadingImages: "Error when downloading images",
 
       // Notifications
       noNotificationsYet: "No notifications yet",
@@ -128,6 +129,7 @@ export default {
       silver: "Plata",
       bronze: "Bronce",
       collaborators: "COLABORADORES",
+      errorLoadingImages: "Error al intentar descargar imágenes",
 
       // Notifications
       noNotificationsYet: "Aún no hay notificaciones",
@@ -199,6 +201,7 @@ export default {
       silver: "Plata",
       bronze: "Bronce",
       collaborators: "COLABORADORES",
+      errorLoadingImages: "Erro ao tentar descargar imaxes",
 
       // Notifications
       noNotificationsYet: "Aínda non hay notificacións",
@@ -313,6 +316,7 @@ interface Translation {
     silver: string;
     bronze: string;
     collaborators: string;
+    errorLoadingImages: string;
 
     // Notifications
     noNotificationsYet: string;

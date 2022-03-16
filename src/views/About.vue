@@ -146,6 +146,7 @@ import { logoGithub, planet } from "ionicons/icons";
 import { logEvent } from "firebase/analytics";
 import { trace } from "firebase/performance";
 import { toast } from "@/ui";
+import { useI18n } from "vue-i18n";
 
 // const modMecenas: Mecenas = {
 //   colaborador: [],
@@ -168,6 +169,7 @@ import { toast } from "@/ui";
 //           finalImg: _mecenas["finalmg"],
 //         });
 // }
+const i18n = useI18n();
 
 const goto = (url: string, msg: string) => {
   logEvent(analytics, "open_" + msg);
@@ -269,7 +271,7 @@ const imageTrace = trace(performance, "sponsor_images_load");
             data: imageRes.data,
           });
         } catch {
-          toast("Error when downloading images", undefined, "danger");
+          toast(i18n.t("message.errorLoadingImages"), undefined, "danger");
         }
       }
       console.info(">> Processed mecena ", element);
