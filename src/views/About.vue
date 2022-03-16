@@ -50,7 +50,11 @@
             :key="plata.nombre"
             :href="plata.web"
           >
-            <img :src="plata.img" :alt="plata.nombre" height="70" />
+            <img
+              class="colaborador-plata"
+              :src="plata.img"
+              :alt="plata.nombre"
+            />
           </a>
         </template>
       </div>
@@ -65,7 +69,11 @@
             :href="bronce.web"
             :key="bronce.nombre"
           >
-            <img :src="bronce.img" :alt="bronce.nombre" height="40" />
+            <img
+              class="colaborador-bronce"
+              :src="bronce.img"
+              :alt="bronce.nombre"
+            />
           </a>
         </template>
       </div>
@@ -84,7 +92,11 @@
             :href="colaborador.web"
             :key="colaborador.nombre"
           >
-            <img :src="colaborador.img" :alt="colaborador.nombre" height="40" />
+            <img
+              class="colaborador-bronce"
+              :src="colaborador.img"
+              :alt="colaborador.nombre"
+            />
           </a>
         </template>
       </div>
@@ -349,5 +361,13 @@ watch(
 
 .silver-smaller-link {
   max-width: 50%;
+}
+
+.colaborador-plata {
+  max-height: 70px;
+}
+
+.colaborador-bronce {
+  max-height: 40px;
 }
 </style>
