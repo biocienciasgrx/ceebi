@@ -79,6 +79,11 @@
       "nombre": "CASIO División Educacativa",
       "img": "https://biociencias.es/wp-content/uploads/2022/07/LOGO-CASIO-Divisio%CC%81n-Educativa-Azul.jpg",
       "web": "https://www.divisioneducativa.es/"
+    },
+    {
+      "nombre": "Smart Materials 3D",
+      "img": "https://biociencias.es/wp-content/uploads/2022/07/Logo-Smart-materials-3D-Compressed.png",
+      "web": "https://www.smartmaterials3d.com/"
     }
   ],
   "bronce": [
@@ -96,6 +101,11 @@
       "nombre": "Doble Folio",
       "img": "https://biociencias.es/wp-content/uploads/2022/02/DobleFolio.png",
       "web": "https://www.instagram.com/doble_folio/"
+    },
+    {
+      "nombre": "Fundación Instituto Roche",
+      "img": "https://biociencias.es/wp-content/uploads/2022/07/Logo-Fundacion-Instituto-Roche-Crop-Resize.png",
+      "web": "https://www.institutoroche.es/"
     }
   ],
   "plata": [
