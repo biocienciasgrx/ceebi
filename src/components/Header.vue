@@ -7,7 +7,7 @@
       <ion-buttons slot="end">
         <ion-button
           @click="
-            goto('https://www.instagram.com/biocienciasGRX/', 'instagram')
+            goto('https://www.instagram.com/biocienciasgrx/', 'instagram')
           "
         >
           <ion-icon :icon="logoInstagram"></ion-icon>

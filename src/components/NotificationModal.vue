@@ -82,8 +82,9 @@ const dismissModal = () => {
   modalController.dismiss();
 };
 
-// @ts-expect-error
-const getIcon = (name: string): string => ionicons[`${name}Outline`];
+const getIcon = (name: string): string =>
+  // @ts-expect-error
+  name.includes("logo") ? ionicons[name] : ionicons[`${name}Outline`];
 
 const open = (url: string, buttonId?: string) => {
   if (buttonId !== undefined)
