@@ -45,8 +45,8 @@
       "year": 2022,
       "month": 3,
       "day": 31,
-      "hour": 00,
-      "minutes": 00
+      "hour": 0,
+      "minutes": 0
     },
     "icon": "videocam",
     "buttons": [{
