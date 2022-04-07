@@ -71,7 +71,7 @@
       "id": "mas-info",
       "text": "Más información del Pre-CEEBI",
       "link": "https://biociencias.es/preceebi",
-      "icon": "information-circle"
+      "icon": "information"
     }]
   },
   {
@@ -145,7 +145,7 @@
       "id": "mas-info",
       "text": "Más información del Pre-CEEBI",
       "link": "https://biociencias.es/preceebi",
-      "icon": "information-circle"
+      "icon": "information"
     }]
   }
 ]
