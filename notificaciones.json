@@ -108,6 +108,43 @@
       "id": "mas-info",
       "text": "Más información del Pre-CEEBI",
       "link": "https://biociencias.es/preceebi",
+      "icon": "information"
+    }]
+  },
+  {
+    "id": "preceebi_3",
+    "title": "Charlas pre-CEEBI | Sesión 3 | Antonio Blázquez y Francisco García",
+    "body": "La tercera sesión de las charlas pre-CEEBI tendrá lugar el <b>jueves 21 de abril</b> de 2022 de 16:00h a 17:00h.<br><br><b>16:00h</b> - <b>Antonio Blázquez Pérez</b>, Jefe de la Unidad de Apoyo a la Dirección en AEMPS. Hablará sobre el trabajo de la AEMPS. Garantías de seguridad y eficacia en medicamentos y productos sanitarios.<br><br><b>16:30h</b> - <b>Francisco García García</b>, Investigador principal de la unidad de Bioinformática y Bioestadística (UBB) del Centro de Investigación Príncipe Felipe (CIPF). Dará a conocer nuevas estrategias bioinformáticas para el estudio de las diferencias de sexo en enfermedades neurodegenerativas.",
+    "schedule": {
+      "year": 2022,
+      "month": 4,
+      "day": 7,
+      "hour": 14,
+      "minutes": 0
+    },
+    "icon": "videocam",
+    "buttons": [{
+      "id": "youtube",
+      "text": "Ver directo en YouTube",
+      "link": "https://youtube.com/watch?v=93js8tbrv9I",
+      "icon": "logo-youtube"
+    },
+    {
+      "id": "linkedin",
+      "text": "Ver directo en Linkedin",
+      "link": "https://linkedin.com/feed/update/urn:li:activity:6914232067664855040",
+      "icon": "logo-linkedin"
+    },
+    {
+      "id": "twitter",
+      "text": "Ver directo en Twitter",
+      "link": "https://twitter.com/BiocienciasGRX",
+      "icon": "logo-twitter"
+    },
+    {
+      "id": "mas-info",
+      "text": "Más información del Pre-CEEBI",
+      "link": "https://biociencias.es/preceebi",
       "icon": "information-circle"
     }]
   }
