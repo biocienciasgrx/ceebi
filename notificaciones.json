@@ -40,7 +40,7 @@
   {
     "id": "preceebi_1",
     "title": "Charlas pre-CEEBI | Sesión 1 | Rodrigo Álvarez e Iñaki Abella",
-    "body": "La primera sesión de las charlas pre-CEEBI tendrá lugar el 7 de abril de 2022 de 16:00h a 17:00h.<br>17:00h - Rodrigo Álvarez Monzón, CEO de Microbacterium. Hablará sobre la importancia de comunicación y la divulgación científica.<br>17:30h - Iñaki Abella Gutiérrez, Director de la Asociación Biomas (Bio+). Dará a conocer la importancia de la megafauna para el futuro de los ecosistemas y el cambio climático.",
+    "body": "La primera sesión de las charlas pre-CEEBI tendrá lugar el 7 de abril de 2022 de 16:00h a 17:00h.<br><br><b>17:00h</b> - <b>Rodrigo Álvarez Monzón</b>, CEO de Microbacterium. Hablará sobre la importancia de comunicación y la divulgación científica.<br><br><b>17:30h</b> - <b>Iñaki Abella Gutiérrez</b>, Director de la Asociación Biomas (Bio+). Dará a conocer la importancia de la megafauna para el futuro de los ecosistemas y el cambio climático.",
     "schedule": {
       "year": 2022,
       "month": 3,
@@ -66,6 +66,12 @@
       "text": "Ver directo en Twitter",
       "link": "https://twitter.com/BiocienciasGRX",
       "icon": "logo-twitter"
+    },
+    {
+      "id": "mas-info",
+      "text": "Más información del Pre-CEEBI",
+      "link": "https://biociencias.es/preceeebi",
+      "icon": "information-circle"
     }]
   }
 ]
