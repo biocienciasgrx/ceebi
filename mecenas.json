@@ -84,6 +84,41 @@
       "nombre": "Smart Materials 3D",
       "img": "https://biociencias.es/wp-content/uploads/2022/07/Logo-Smart-materials-3D-Compressed.png",
       "web": "https://www.smartmaterials3d.com/"
+    },
+    {
+      "nombre": "Centro Mediterráneo",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/Logo-centro-mediterraneo.png",
+      "web": "https://cemed.ugr.es/"
+    },
+    {
+      "nombre": "Genotipia",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/Logo-Genotipia.png",
+      "web": "https://genotipia.com/"
+    },
+    {
+      "nombre": "Sociedad Española de Inmunología",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/Logo-SEI.png",
+      "web": "https://www.inmunologia.org/"
+    },
+    {
+      "nombre": "Asociación Española para el Avance de la Ciencia",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/logo.png",
+      "web": "https://aeac.science/"
+    },
+    {
+      "nombre": "Asociación de Estudiantes de Biociencias de España",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/SAVE_20220126_212816.jpg",
+      "web": "https://aebesp.es/"
+    },
+    {
+      "nombre": "Asociación Española de Bioempresas",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/asebio.png",
+      "web": "https://asebio.com/"
+    },
+    {
+      "nombre": "Frutas Molina",
+      "img": "https://biociencias.es/wp-content/uploads/2022/04/Frutas-molina.jpg",
+      "web": "https://frutasmolina.es/"
     }
   ],
   "bronce": [
