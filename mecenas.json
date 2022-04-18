@@ -119,6 +119,16 @@
       "nombre": "Frutas Molina",
       "img": "https://biociencias.es/wp-content/uploads/2022/04/Frutas-molina.jpg",
       "web": "https://frutasmolina.es/"
+    },
+    {
+      "nombre": "DCOOP",
+      "img": "https://biociencias.es/wp-content/uploads/2022/03/Logo-Dcoop.png",
+      "web": "https://dcoop.es/"
+    },
+    {
+      "nombre": "All Together Growing",
+      "img": "https://biociencias.es/wp-content/uploads/2022/03/Logo-ATG.jpg",
+      "web": ""
     }
   ],
   "bronce": [
