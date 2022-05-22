@@ -1,7 +1,7 @@
 [ {
     "id": "premios_fabt",
     "title": "Premios Retos de Investigación en Biociencias",
-    "body": "La Fundaci&oacute;n Andaluza de Biotecnolog&iacute;a (FABT) en el inter&eacute;s de promover, estimular, incentivar, y para reconocer la labor creadora y de investigaci&oacute;n en los j&oacute;venes estudiantes de grado y posgrado en Biociencias, convoca junto con la organizaci&oacute;n del Congreso Estatal de Estudiantes de Biociencias (CEEBI), los premios&nbsp;<em><strong>RETOS DE INVESTIGACI&Oacute;N EN BIOCIENCIAS FABT &ndash; CEEBI 2022.</strong></em>",
+    "body": "La Fundación Andaluza de Biotecnología (FABT) en el interés de promover, estimular, incentivar, y para reconocer la labor creadora y de investigación en los jóvenes estudiantes de grado y posgrado en Biociencias, convoca junto con la organización del Congreso Estatal de Estudiantes de Biociencias (CEEBI), los premios <em><strong>RETOS DE INVESTIGACIÓN EN BIOCIENCIAS FABT-CEEBI 2022.</strong></em>",
     "schedule": {
       "year": 2022,
       "month": 5,
@@ -16,7 +16,8 @@
       "link": "https://biociencias.es/noticias/reto/",
       "icon": "documentText"
     }]
-  },{
+  },
+  {
     "id": "nuevas_modalidades",
     "title": "Nuevas modalidades de inscripción: Online y semipresencial",
     "body": "Entra en <a href='https://biociencias.es/inscripciones'>biociencias.es/inscripciones</a>, mira las nuevas modalidades de inscripción y no te quedes sin tu entrada.",
