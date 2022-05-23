@@ -23,7 +23,7 @@
         </ion-tab-button>
 
         <ion-tab-button
-          tab="about"
+          tab="notifications"
           href="/notifications"
           @click="log('notifications')"
         >
