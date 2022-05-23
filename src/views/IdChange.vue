@@ -104,7 +104,6 @@ import {
   IonRadio,
   IonInput,
   IonNote,
-  toastController,
 } from "@ionic/vue";
 import { watch } from "vue";
 import { computed, ref, Ref } from "@vue/reactivity";
@@ -119,6 +118,7 @@ import Header from "../components/Header.vue";
 import { KEY_ID } from "@/vars";
 import { setUserProperties } from "@firebase/analytics";
 import { analytics } from "@/firebase";
+import { toast } from "@/ui";
 
 const i18n = useI18n();
 
@@ -285,25 +285,11 @@ const saveId = () => {
       value: documentID.value,
     })
       .then(() => {
-        toastController
-          .create({
-            color: "success",
-            message: "Successfully updated ID",
-            icon: checkmarkCircleOutline,
-            duration: 2000,
-          })
-          .then((toast) => toast.present());
+        toast("Successfully updated ID", checkmarkCircleOutline, "success");
         router.push("/settings");
       })
       .catch((e) =>
-        toastController
-          .create({
-            color: "danger",
-            message: `Error while saving: ${e}`,
-            icon: closeCircleOutline,
-            duration: 2000,
-          })
-          .then((toast) => toast.present())
+        toast(`Error while saving: ${e}`, closeCircleOutline, "danger")
       );
 };
 

@@ -72,7 +72,6 @@ import {
   IonSkeletonText,
   IonRefresher,
   IonRefresherContent,
-  toastController,
 } from "@ionic/vue";
 import {
   openOutline,
@@ -124,13 +123,7 @@ async function getNews(
   // Suggest to load news from cache if it takes too long
   const suggestCache = () => {
     if (!finished.value) {
-      toastController
-        .create({
-          icon: cloudDownloadOutline,
-          message: i18n.t("message.newsLoadedOffline"),
-          duration: 2000,
-        })
-        .then((toast) => toast.present());
+      toast(i18n.t("message.newsLoadedOffline"), cloudDownloadOutline);
       loadNews(finished, toStore);
     }
   };

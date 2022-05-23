@@ -131,13 +131,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  IonPage,
-  IonContent,
-  IonButton,
-  IonIcon,
-  toastController,
-} from "@ionic/vue";
+import { IonPage, IonContent, IonButton, IonIcon } from "@ionic/vue";
 import Header from "../components/Header.vue";
 // import { trophy } from "ionicons/icons";
 
