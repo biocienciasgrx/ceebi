@@ -14,6 +14,7 @@ const _toast = async (
     color,
     duration,
     buttons,
+    cssClass: "toast",
   });
 
 export const toast = async (
