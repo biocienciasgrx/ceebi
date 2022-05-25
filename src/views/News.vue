@@ -3,7 +3,19 @@
     <Header />
     <ion-content :fullscreen="true" class="ion-padding">
       <NoConnection v-if="!connected && !haveCachedNews">
-        {{ $t("message.newsConnectAtLeastOnce") }}
+        <template
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          {{ $t("message.newsConnectAtLeastOnce") }}
+          <ion-button @click="open('https://biociencias.es/noticias/')">
+            More on the web
+            <ion-icon
+              slot="end"
+              :md="openOutline"
+              :ios="openOutline"
+            ></ion-icon>
+          </ion-button>
+        </template>
       </NoConnection>
       <template v-else>
         <div v-if="loaded">
@@ -23,6 +35,16 @@
             <ion-button fill="clear" @click="open(_new.link || '/news')"
               >{{ $t("message.newsReadMore") }}
               <ion-icon :icon="openOutline" slot="end"></ion-icon>
+            </ion-button>
+          </div>
+          <div class="flex-center">
+            <ion-button @click="open('https://biociencias.es/noticias/')">
+              More on the web
+              <ion-icon
+                slot="end"
+                :md="openOutline"
+                :ios="openOutline"
+              ></ion-icon>
             </ion-button>
           </div>
         </div>
@@ -194,7 +216,7 @@ Network.addListener("networkStatusChange", (status) => {
     ". Have cache news? ",
     haveCachedNews.value
   );
-  if (status.connected) getNews(parser, loaded, news);
+  if (status.connected) getNews(parser, loaded, news); // TODO Something here raises an error: Uncaught (in promise) Error: File does not exist. -> Ok, I think I don't have to fix it and my problem was CORS
   // else loadNews(loaded, )
   //* I don't actually need to reload the news from cache if user goes offline, they should already be loaded
 });
@@ -234,5 +256,13 @@ const randWidth = () => `${Math.floor(Math.random() * (90 - 75) + 75)}%`;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.flex-center {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 1rem 0;
 }
 </style>
