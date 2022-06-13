@@ -1,4 +1,26 @@
-[ {
+[
+  {
+    "id": "inscripciones_microcursos",
+    "title": "Abiertas las inscripciones a los microcursos",
+    "body": "Si asistes presencialmente al CEEBI, desde hoy ya puedes inscribirte a los microcursos. ¡Corre que vuelan!",
+    "schedule": {
+      "year": 2022,
+      "month": 6,
+      "day": 13,
+      "hour": 12,
+      "minutes": 0
+    },
+    "icon": "school",
+    "buttons": [
+      {
+        "id": "info_compra",
+        "text": "Más información e inscripción",
+        "link": "https://biociencias.es/microcursos/",
+        "icon": "ticket"
+      }
+    ]
+  },
+  {
     "id": "premios_fabt",
     "title": "Premios Retos de Investigación en Biociencias",
     "body": "La Fundación Andaluza de Biotecnología (FABT) en el interés de promover, estimular, incentivar, y para reconocer la labor creadora y de investigación en los jóvenes estudiantes de grado y posgrado en Biociencias, convoca junto con la organización del Congreso Estatal de Estudiantes de Biociencias (CEEBI), los premios RETOS DE INVESTIGACIÓN EN BIOCIENCIAS FABT-CEEBI 2022.",
@@ -10,12 +32,14 @@
       "minutes": 50
     },
     "icon": "medal",
-    "buttons": [{
-      "id": "convocatoria",
-      "text": "Más información",
-      "link": "https://biociencias.es/noticias/reto/",
-      "icon": "documentText"
-    }]
+    "buttons": [
+      {
+        "id": "convocatoria",
+        "text": "Más información",
+        "link": "https://biociencias.es/noticias/reto/",
+        "icon": "documentText"
+      }
+    ]
   },
   {
     "id": "nuevas_modalidades",
@@ -29,12 +53,14 @@
       "minutes": 0
     },
     "icon": "earth",
-    "buttons": [{
-      "id": "modalidades",
-      "text": "Ver nuevos modalidades",
-      "link": "https://biociencias.es/inscripciones",
-      "icon": "eye"
-    }]
+    "buttons": [
+      {
+        "id": "modalidades",
+        "text": "Ver nuevos modalidades",
+        "link": "https://biociencias.es/inscripciones",
+        "icon": "eye"
+      }
+    ]
   },
   {
     "id": "abiertas_inscripciones",
@@ -48,11 +74,13 @@
       "minutes": 30
     },
     "icon": "ticket",
-    "buttons": [{
-      "id": "compra",
-      "text": "Inscripción en la web",
-      "link": "https://biociencias.es/inscripciones",
-      "icon": "cart"
-    }]
+    "buttons": [
+      {
+        "id": "compra",
+        "text": "Inscripción en la web",
+        "link": "https://biociencias.es/inscripciones",
+        "icon": "cart"
+      }
+    ]
   }
 ]
