@@ -1,20 +1,17 @@
 <template>
   <div id="vertical-bar"></div>
   <section class="events">
-    <article
-      v-for="event in events"
-      :key="event.ID"
-      class="event ion-activatable"
-    >
+    <article v-for="event in events" :key="event.ID" class="event">
       <div class="event__icon">
         <ion-icon :icon="icon(event)"></ion-icon>
       </div>
-      <div class="event__header">
+      <div class="event__header" data-animation="ripple">
         <p class="event__start-time">
           {{ event.data.time.start }}
         </p>
-        <h3 class="event__title">{{ event.data.title }}</h3>
-        <ion-ripple-effect></ion-ripple-effect>
+        <h3 class="event__title">
+          {{ event.data.title }}
+        </h3>
       </div>
       <p class="event__presenter">
         {{ presenters(event) }}
@@ -32,13 +29,15 @@
 </template>
 
 <script lang="ts">
-import { IonIcon, IonRippleEffect, onIonViewDidEnter } from "@ionic/vue";
+import { IonIcon, onIonViewDidEnter } from "@ionic/vue";
 import * as ionicons from "ionicons/icons";
 
 import { Event } from "@/types";
 import { EVENT_ICON_FIELD_LABEL } from "@/vars";
 
 import { PropType } from "@vue/runtime-core";
+
+import ripplet from "ripplet.js";
 
 export default {
   props: {
@@ -47,7 +46,7 @@ export default {
       required: true,
     },
   },
-  components: { IonIcon, IonRippleEffect },
+  components: { IonIcon },
   // @ts-ignore TS7006
   setup(props) {
     function firstProp(obj?: any): any {
@@ -58,6 +57,10 @@ export default {
             name: "",
           };
     }
+
+    props.events.map(
+      (e: Event) => (e.data.title = e.data.title.replace(/&#822(0|1);/g, '"'))
+    );
 
     console.info("setting up");
     console.info("events", props.events);
@@ -126,6 +129,11 @@ export default {
           .join(", ");
       },
     };
+  },
+  mounted() {
+    const buttons = document.querySelectorAll('[data-animation="ripple"]');
+
+    buttons.forEach((b) => b.addEventListener("click", ripplet));
   },
 };
 </script>
