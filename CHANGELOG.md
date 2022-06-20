@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-06-20
+
 ### Added
 
 - Ripple effect when event is clicked in Schedule view
+- Modal with event details is shown on click
 
 ### Fixed
 
 - Quotation marks properly rendering in one of the events
+- Toasts are now placed slightly higher so tab bar can be used while a toast is shown
 
 ## [1.0.2] - 2022-04-08
 
@@ -165,7 +169,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Images not properly loading from cache
 - Showing _alt_ text in case images don't load
 
-[unreleased]: https://github.com/biocienciasgrx/ceebi/compare/v1.0.2...HEAD
+[unreleased]: https://github.com/biocienciasgrx/ceebi/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.1.2
 [1.0.2]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.0.2
 [1.0.0]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.0.0
 [0.8.8-beta]: https://github.com/biocienciasgrx/ceebi/releases/tag/v0.8.8-beta
