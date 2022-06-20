@@ -5,7 +5,11 @@
       <div class="event__icon">
         <ion-icon :icon="icon(event)"></ion-icon>
       </div>
-      <div class="event__header" data-animation="ripple">
+      <div
+        class="event__header"
+        data-animation="ripple"
+        @click="eventModal(event)"
+      >
         <p class="event__start-time">
           {{ event.data.time.start }}
         </p>
@@ -29,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { IonIcon, onIonViewDidEnter } from "@ionic/vue";
+import { IonIcon, onIonViewDidEnter, modalController } from "@ionic/vue";
 import * as ionicons from "ionicons/icons";
 
 import { Event } from "@/types";
@@ -38,6 +42,7 @@ import { EVENT_ICON_FIELD_LABEL } from "@/vars";
 import { PropType } from "@vue/runtime-core";
 
 import ripplet from "ripplet.js";
+import EventDetailsModalVue from "./EventDetailsModal.vue";
 
 export default {
   props: {
@@ -60,7 +65,7 @@ export default {
 
     props.events.map(
       (e: Event) => (e.data.title = e.data.title.replace(/&#822(0|1);/g, '"'))
-    );
+    ); // TODO Instead of making this map, there is another field in the Object that has the quotations marks properly done, I think data.post.title was
 
     console.info("setting up");
     console.info("events", props.events);
@@ -134,6 +139,17 @@ export default {
     const buttons = document.querySelectorAll('[data-animation="ripple"]');
 
     buttons.forEach((b) => b.addEventListener("click", ripplet));
+  },
+  methods: {
+    async eventModal(event: Event) {
+      const modal = await modalController.create({
+        component: EventDetailsModalVue,
+        breakpoints: [0, 0.45, 0.75, 1],
+        initialBreakpoint: 1,
+        componentProps: { event },
+      });
+      modal.present();
+    },
   },
 };
 </script>

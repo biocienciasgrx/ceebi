@@ -63,6 +63,11 @@ export default {
       // Notifications
       noNotificationsYet: "No notifications yet",
       notificationSentOn: "Sent on",
+
+      // ---
+      eventNoLocation: "No location assigned",
+      eventSpeakers: "Speakers",
+      eventViewOnWeb: "View on the web",
     },
   } as Translation,
   es: {
@@ -134,6 +139,11 @@ export default {
       // Notifications
       noNotificationsYet: "Aún no hay notificaciones",
       notificationSentOn: "Enviado el",
+
+      // ---
+      eventNoLocation: "Sin localización asignada",
+      eventSpeakers: "Ponentes",
+      eventViewOnWeb: "Ver en la web",
     },
   } as Translation,
   gl: {
@@ -206,6 +216,11 @@ export default {
       // Notifications
       noNotificationsYet: "Aínda non hay notificacións",
       notificationSentOn: "Enviado o",
+
+      // ---
+      eventNoLocation: "Sen localización asignada",
+      eventSpeakers: "Poñentes",
+      eventViewOnWeb: "Ver na web",
     },
   } as Translation,
   de: {
@@ -321,5 +336,10 @@ interface Translation {
     // Notifications
     noNotificationsYet: string;
     notificationSentOn: string;
+
+    // components/EventDetailsModal
+    eventNoLocation: string;
+    eventSpeakers: string;
+    eventViewOnWeb: string;
   };
 }
