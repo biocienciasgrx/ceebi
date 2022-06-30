@@ -90,8 +90,9 @@ export default {
 </script>
 
 <style scoped>
-header {
+.header {
   z-index: 40;
+  padding-top: env(safe-area-inset-top, 10px);
 }
 
 #toolbar {
