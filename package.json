@@ -13,7 +13,6 @@
     "cap:ios:sync": "cap sync ios"
   },
   "dependencies": {
-    "@awesome-cordova-plugins/screen-orientation": "^5.37.3",
     "@capacitor-community/http": "^1.4.1",
     "@capacitor-community/screen-brightness": "^1.0.1",
     "@capacitor/android": "3.3.3",
@@ -34,9 +33,7 @@
     "@ionic/vue": "6.0.4",
     "@ionic/vue-router": "6.0.4",
     "@robingenz/capacitor-app-update": "^1.3.1",
-    "cordova-plugin-screen-orientation": "^3.0.2",
     "core-js": "^3.6.5",
-    "es6-promise-plugin": "^4.2.2",
     "firebase": "^9.6.6",
     "locale-codes": "^1.3.1",
     "qrcode": "^1.5.0",

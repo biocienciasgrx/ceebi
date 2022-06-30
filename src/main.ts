@@ -26,7 +26,6 @@ import "./theme/variables.css";
 
 import { Device } from "@capacitor/device";
 import { Storage } from "@capacitor/storage";
-import { ScreenOrientation } from "@awesome-cordova-plugins/screen-orientation";
 import { createI18n } from "vue-i18n";
 import * as locale from "locale-codes";
 
