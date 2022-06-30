@@ -100,8 +100,7 @@ export default {
       settingsIdentificationChange: "Modificar ID",
       settingsNotificationsTitle: "Notificaciones", // TODO Repeated, can't be
       settingsEventRemindersToggle: "Habilitar recordatorios de eventos",
-      settingsEventRemindersChooseTime:
-        "Antelación al evento para notificación",
+      settingsEventRemindersChooseTime: "Antelación al evento",
       settingsEventsRemindersTime0: "Al empezar",
 
       // IdChange (modal wasn't working)
@@ -176,8 +175,7 @@ export default {
       settingsIdentificationChange: "Modificar ID",
       settingsNotificationsTitle: "Notificacións",
       settingsEventRemindersToggle: "Habilitar recordatorios de eventos",
-      settingsEventRemindersChooseTime:
-        "Antelación ao evento para a notificación",
+      settingsEventRemindersChooseTime: "Antelación ao evento",
       settingsEventsRemindersTime0: "Ao comezar",
 
       // IdChange (modal wasn't working)

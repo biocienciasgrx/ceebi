@@ -83,7 +83,7 @@
             <ion-toggle v-model="eventRemindersOn"></ion-toggle>
           </ion-item>
           <ion-item lines="inset">
-            <ion-label>{{
+            <ion-label class="label">{{
               $t("message.settingsEventRemindersChooseTime")
             }}</ion-label>
             <ion-select
@@ -232,5 +232,9 @@ setUserProperties(analytics, {
 
 .first-card.ios {
   margin-top: 5em;
+}
+
+ion-label {
+  white-space: normal !important;
 }
 </style>
