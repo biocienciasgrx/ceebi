@@ -36,11 +36,9 @@
           <ion-radio slot="start" value="passport-other"></ion-radio>
         </ion-item>
       </ion-radio-group>
-      <ion-list-header>
-        <ion-title class="ion-margin-top">
-          {{ $t("message.identificationDocumentIdentifier") }}
-        </ion-title>
-      </ion-list-header>
+      <ion-title class="ion-margin-vertical title-input">
+        {{ $t("message.identificationDocumentIdentifier") }}
+      </ion-title>
       <form @submit.prevent="saveId()" @keyup.enter="saveId()">
         <ion-item
           counter
@@ -300,4 +298,22 @@ watch(documentType, (value) => {
 });
 </script>
 
-<style></style>
+<style scoped>
+.ios .title-input {
+  position: relative;
+  height: max-content;
+  /* font-weight: 600; */
+  /* font-size: 17px; */
+  /* text-align: center; */
+  width: 100vw;
+  /* display: block; */
+  /* color: #262626; */
+  /* padding-top: 0.3rem; */
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.md .title-input {
+  padding-left: 2.5rem;
+}
+</style>
