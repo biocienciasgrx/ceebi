@@ -9,7 +9,8 @@
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "cap:sync": "npm run build && npm run cap:android:sync",
-    "cap:android:sync": "cap sync android"
+    "cap:android:sync": "cap sync android",
+    "cap:ios:sync": "cap sync ios"
   },
   "dependencies": {
     "@awesome-cordova-plugins/screen-orientation": "^5.37.3",
