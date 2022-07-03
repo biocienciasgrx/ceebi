@@ -1,5 +1,5 @@
 <template>
-  <ion-header :collapse="condense ? 'condense' : undefined" class="header">
+  <ion-header :collapse="condense ? 'condense' : undefined">
     <ion-toolbar id="toolbar">
       <!-- <ion-title size="large">Tab 3</ion-title> -->
       <img :src="logoHorizontal" alt="CEEBI" slot="start" />
@@ -90,13 +90,9 @@ export default {
 </script>
 
 <style scoped>
-.header {
-  z-index: 40;
-  padding-top: env(safe-area-inset-top, 10px);
-}
-
 #toolbar {
   padding: 10px 20px;
+  padding-top: max(env(safe-area-inset-top, 10px), 10px);
 }
 
 #toolbar > img {
