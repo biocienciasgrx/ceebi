@@ -225,8 +225,12 @@ export default {
   margin: 0;
 }
 
-.event__description {
+body .event__description {
   margin-top: 0.2em;
   color: #111;
+}
+
+body.dark .event__description {
+  color: #eee;
 }
 </style>

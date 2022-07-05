@@ -27,7 +27,7 @@
   </ion-header>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import {
   IonHeader,
   IonToolbar,
@@ -42,51 +42,42 @@ import {
   settingsOutline,
 } from "ionicons/icons";
 // @ts-ignore
-import logoHorizontal from "../../public/assets/logo_horizontal.png";
+import logoHorizontalNegro from "../../public/assets/logo_horizontal.png";
+import logoHorizontalBlanco from "../../public/assets/logo_horizontal_blanco.png";
 import { useRouter } from "vue-router";
 // import { FIREBASE_ANALYTICS } from "@/vars";
 // import { inject } from "@vue/runtime-core";
 import { logEvent } from "firebase/analytics";
-
+import { FirebaseCrashlytics } from "@capacitor-community/firebase-crashlytics";
+import { computed, onMounted, ref } from "vue";
 import { analytics } from "@/firebase";
+import { toggleDarkMode } from "@/ui";
+import { getDarkMode, isDarkMode } from "@/darkMode";
 
-export default {
-  props: {
-    condense: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-  },
-  components: { IonHeader, IonToolbar, IonButtons, IonButton, IonIcon },
-  // inject: [FIREBASE_ANALYTICS],
-  setup() {
-    const router = useRouter();
+defineProps<{
+  condense?: boolean;
+}>();
 
-    // const analytics = inject(FIREBASE_ANALYTICS);
+const router = useRouter();
 
-    return {
-      // analytics,
-      goto: (url: string, msg: string) => {
-        logEvent(analytics, "open_" + msg);
-        window.location.href = url;
-      },
+// const analytics = inject(FIREBASE_ANALYTICS);
 
-      logoHorizontal,
-
-      // Icons
-      logoInstagram,
-      globeOutline,
-      informationCircleOutline,
-      settingsOutline,
-
-      link(url: string, name: string) {
-        logEvent(analytics, "navigate_" + name);
-        router.push(url);
-      },
-    };
-  },
+// analytics,
+const goto = (url: string, msg: string) => {
+  logEvent(analytics, "open_" + msg);
+  window.location.href = url;
 };
+
+const logoHorizontal = computed(() =>
+  isDarkMode.value ? logoHorizontalBlanco : logoHorizontalNegro
+);
+
+function link(url: string, name: string) {
+  logEvent(analytics, "navigate_" + name);
+  router.push(url);
+}
+
+// TODO Destroy mutation observer when doc gets destroyed
 </script>
 
 <style scoped>

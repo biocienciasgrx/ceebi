@@ -36,9 +36,14 @@ import {
   FIREBASE_ANALYTICS,
   IMAGES_DIRECTORY,
   KEY_NOTIFICATIONS,
+  KEY_DARK_MODE,
 } from "@/vars";
 
 import { Analytics, logEvent } from "firebase/analytics";
+import * as StackTrace from "stacktrace-js";
+import { FirebaseCrashlytics } from "@capacitor-community/firebase-crashlytics";
+import { toggleDarkMode } from "./ui";
+import { setDarkMode } from "./darkMode";
 
 //* CREATE IMAGE DIR
 Filesystem.mkdir({
@@ -184,5 +189,36 @@ logEvent(analytics, "vue_app_setup");
 })();
 
 //* HIDE SPLASHSCREEN ON MOUNTED
-onMounted(() => setTimeout(SplashScreen.hide, 250));
+onMounted(async () => {
+  // Set timeout to hide splash screen
+  setTimeout(SplashScreen.hide, 250);
+
+  // Load dark/light mode
+  if ((await Storage.keys()).keys.includes(KEY_DARK_MODE)) {
+    const darkModeResult: boolean = JSON.parse(
+      (
+        await Storage.get({
+          key: KEY_DARK_MODE,
+        })
+      ).value || "false"
+    );
+    toggleDarkMode(darkModeResult);
+    setDarkMode(darkModeResult);
+  } else {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    toggleDarkMode(prefersDark.matches);
+    setDarkMode(prefersDark.matches);
+  }
+  // Override global error handling to send report to Firebase Crashlytics
+  window.onerror = async (ev, source, lineno, colno, error) => {
+    const stacktrace = await StackTrace.fromError(
+      error ||
+        new Error(`ERROR from ev ${ev} (${source} - L${lineno}:C${colno})`)
+    );
+    await FirebaseCrashlytics.recordException({
+      message: "Unhandled error ocurred",
+      stacktrace,
+    });
+  };
+});
 </script>

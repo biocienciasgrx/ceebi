@@ -133,4 +133,8 @@ onIonViewDidEnter(() => {
   justify-content: center;
   align-items: center;
 }
+
+#qrcode {
+  border-radius: 15px;
+}
 </style>

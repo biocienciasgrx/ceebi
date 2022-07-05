@@ -155,4 +155,8 @@ const speakers = computed(() => objToArr(props.event.data.speakers || {}));
 .info-item > span {
   color: #444;
 }
+
+body.dark .info-item > span {
+  color: #ccc;
+}
 </style>

@@ -11,7 +11,7 @@
       <section class="flex-row title" style="background: #e5e4e2">
         🏆 &nbsp;&nbsp; {{ $t("message.platinum") }} &nbsp;&nbsp; 🏆
       </section>
-      <div class="flex-row ion-margin">
+      <div class="flex-row ion-padding images-container">
         <template v-for="platino in mecenas.platino">
           <a
             class="img-link"
@@ -27,7 +27,7 @@
       <section class="flex-row title" style="background: #d6ac39">
         🥇 &nbsp;&nbsp; {{ $t("message.gold") }} &nbsp;&nbsp; 🥇
       </section>
-      <div class="flex-row ion-margin">
+      <div class="flex-row ion-padding images-container">
         <template v-for="oro in mecenas.oro">
           <a
             class="img-link"
@@ -42,7 +42,7 @@
       <section class="flex-row title" style="background: #bab7b2">
         🥈 &nbsp;&nbsp; {{ $t("message.silver") }} &nbsp;&nbsp; 🥈
       </section>
-      <div class="flex-row ion-margin">
+      <div class="flex-row ion-padding images-container">
         <template v-for="plata in mecenas.plata">
           <a
             class="img-link silver-smaller-link"
@@ -61,7 +61,7 @@
       <section class="flex-row title" style="background: #cd7f32">
         🥉 &nbsp;&nbsp; {{ $t("message.bronze") }} &nbsp;&nbsp; 🥉
       </section>
-      <div class="flex-row ion-margin">
+      <div class="flex-row ion-padding images-container">
         <template v-for="bronce in mecenas.bronce">
           <a
             class="img-link silver-smaller-link"
@@ -84,7 +84,7 @@
       >
         <b>{{ $t("message.collaborators") }}</b>
       </section>
-      <div class="flex-row ion-margin">
+      <div class="flex-row ion-padding images-container">
         <template v-for="colaborador in mecenas.colaborador">
           <a
             class="img-link silver-smaller-link"
@@ -345,6 +345,7 @@ watch(
 
 .title {
   padding: 1em;
+  color: #111;
 }
 
 .img-link {
@@ -363,5 +364,9 @@ watch(
 
 .colaborador-bronce {
   max-height: 40px;
+}
+
+.images-container {
+  background-color: #fff;
 }
 </style>

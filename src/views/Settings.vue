@@ -34,10 +34,17 @@
               >
             </ion-select>
           </ion-item>
-          <div @mousedown="darkModeInProgress">
-            <ion-item lines="inset" button detail="false">
-              <ion-label>{{ $t("message.darkMode") }}</ion-label>
-              <ion-toggle v-model="darkMode" disabled></ion-toggle>
+          <div>
+            <ion-item
+              lines="inset"
+              button
+              :detail="false"
+              @click.self="darkMode = !darkMode"
+            >
+              <ion-label @click="darkMode = !darkMode">{{
+                $t("message.darkMode")
+              }}</ion-label>
+              <ion-toggle v-model="darkMode"></ion-toggle>
             </ion-item>
           </div>
         </ion-card-content>
@@ -127,13 +134,14 @@ import {
 import { useI18n } from "vue-i18n";
 import Header from "../components/Header.vue";
 import * as locale from "locale-codes";
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { codeWorkingOutline } from "ionicons/icons";
 import { Storage } from "@capacitor/storage";
-import { KEY_LOCALE } from "@/vars";
+import { KEY_LOCALE, KEY_DARK_MODE } from "@/vars";
 import { setUserProperties } from "firebase/analytics";
 import { analytics } from "@/firebase";
-import { toast } from "@/ui";
+import { toast, toggleDarkMode } from "@/ui";
+import { getDarkMode, isDarkMode, setDarkMode } from "@/darkMode";
 
 const router = useIonRouter();
 const i18n = useI18n();
@@ -189,9 +197,20 @@ watch(i18n.locale, (value) => {
 
 const getLocaleName = (tag: string): string => locale.getByTag(tag).name;
 
-const darkMode = ref(false);
+const darkMode = ref(getDarkMode());
 const darkModeInProgress = async () =>
   toast(i18n.t("message.workingOnDarkMode"), codeWorkingOutline);
+
+watch(darkMode, (val) => {
+  toggleDarkMode(val);
+  setDarkMode(val);
+  Storage.set({
+    key: KEY_DARK_MODE,
+    value: val.toString(),
+  });
+}); // TODO Not properly loagin or saving value
+
+watch(isDarkMode, (val) => (darkMode.value = val));
 
 const eventRemindersOn = ref(false);
 const eventRemindersTime = ref(15);
@@ -213,6 +232,19 @@ setUserProperties(analytics, {
   locale: i18n.locale.value,
   eventRemindersOn: eventRemindersOn.value,
   eventRemindersTime: eventRemindersTime.value,
+});
+
+onMounted(() => {
+  // watch(document.body.classList, () => {
+  //   console.log("heyyyyy :((()))");
+  //   darkMode.value = document.body.classList.contains("dark");
+  // });
+  // new MutationObserver(
+  //   () => (darkMode.value = document.body.classList.contains("dark"))
+  // ).observe(document.body, {
+  //   attributes: true,
+  //   attributeFilter: ["class"],
+  // });
 });
 </script>
 
