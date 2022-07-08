@@ -3,7 +3,12 @@
     <Header />
     <ion-content :fullscreen="true">
       <div class="center-content">
-        <canvas v-if="idSet" id="qrcode" height="300" width="300"></canvas>
+        <template v-if="idSet">
+          <canvas id="qrcode" height="300" width="300"></canvas>
+          <ion-button class="asistencia" @click="openJesus">{{
+            $t("message.viewAttendance")
+          }}</ion-button></template
+        >
         <template v-else>
           <ion-label>{{ $t("message.qrcodeIdNotSet") }}</ion-label>
           <ion-button class="ion-margin-top" router-link="/id-change">{{
@@ -34,11 +39,23 @@ import QRCode from "qrcode";
 import { ref } from "@vue/reactivity";
 import { Storage } from "@capacitor/storage";
 import { KEY_ID } from "@/vars";
+import { modalController } from "@ionic/core/components";
+import AttendanceModalVue from "@/components/AttendanceModal.vue";
 
 const showQR = ref(false);
 const idSet = ref(true);
 
 const dni = ref("");
+
+const openJesus = async () => {
+  const modal = await modalController.create({
+    component: AttendanceModalVue,
+    componentProps: {
+      dni: dni.value,
+    },
+  });
+  modal.present();
+};
 
 function genCode() {
   console.log(
@@ -136,5 +153,10 @@ onIonViewDidEnter(() => {
 
 #qrcode {
   border-radius: 15px;
+}
+
+.asistencia {
+  position: absolute;
+  bottom: 80px;
 }
 </style>

@@ -5,6 +5,7 @@ export default {
       close: "Close",
       save: "Save",
       cancel: "Cancel",
+      loading: "Loading",
 
       // Tabs
       tabQRCode: "QR Code",
@@ -15,6 +16,14 @@ export default {
       // QRCode
       qrcodeIdNotSet: "Setup an ID to use QR code access",
       qrcodeSetId: "Set ID",
+      viewAttendance: "View attendance",
+
+      // components/AttendanceModal.vue
+      attendance: "Attendance",
+      youveAssistedTo: "You have attended to",
+      outOfTotalOf: "hours out of a total of 25 hours",
+      eventsYouveAssisted: "Events you have attended",
+      noAssistance: "No attendance registered",
 
       // components/NoConnection.vue
       noConnection: "No connection",
@@ -76,6 +85,7 @@ export default {
       close: "Cerrar",
       save: "Guardar",
       cancel: "Cancelar",
+      loading: "Cargando",
 
       // Tabs
       tabQRCode: "Código QR",
@@ -86,6 +96,14 @@ export default {
       // QRCode
       qrcodeIdNotSet: "Configura tu ID para usar el acceso por QR",
       qrcodeSetId: "Añadir ID",
+      viewAttendance: "Ver asistencia",
+
+      // components/AttendanceModal.vue
+      attendance: "Asistencia",
+      youveAssistedTo: "Has asistido a",
+      outOfTotalOf: "horas de un total de 25 horas",
+      eventsYouveAssisted: "Eventos a los que has asistido",
+      noAssistance: "Aún no tienes asistencia registrada",
 
       // components/NoConnection.vue
       noConnection: "Sin conexión",
@@ -151,6 +169,7 @@ export default {
       close: "Pechar",
       save: "Gardar",
       cancel: "Cancelar",
+      loading: "Cargando",
 
       // Tabs
       tabQRCode: "Código QR",
@@ -161,6 +180,14 @@ export default {
       // QRCode
       qrcodeIdNotSet: "Configura o teu ID para usar o acceso por QR",
       qrcodeSetId: "Engadir ID",
+      viewAttendance: "Ver asistencia",
+
+      // components/AttendanceModal.vue
+      attendance: "Asistencia",
+      youveAssistedTo: "Asistiches a",
+      outOfTotalOf: "horas dun total de 25 horas",
+      eventsYouveAssisted: "Eventos aos que asistiches",
+      noAssistance: "Aínda non tes asistencia rexistrada",
 
       // components/NoConnection.vue
       noConnection: "Sen conexión",
@@ -276,6 +303,7 @@ interface Translation {
     close: string;
     save: string;
     cancel: string;
+    loading: string;
 
     // Tabs
     tabQRCode: string;
@@ -286,6 +314,14 @@ interface Translation {
     // QRCode
     qrcodeIdNotSet: string;
     qrcodeSetId: string;
+    viewAttendance: string;
+
+    // components/AttendanceModal.vue
+    attendance: string;
+    youveAssistedTo: string;
+    outOfTotalOf: string;
+    eventsYouveAssisted: string;
+    noAssistance: string;
 
     // components/NoConnection.vue
     noConnection: string;
