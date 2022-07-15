@@ -10,7 +10,11 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <div v-if="loading" class="wrapper">
+    <no-connection v-if="!connected">
+      Conéctate a internet para poder ver tu asistencia
+    </no-connection>
+
+    <div v-else-if="loading" class="wrapper">
       <ion-spinner></ion-spinner>
       <span>{{ $t("message.loading") }}...</span>
     </div>
@@ -83,10 +87,12 @@ import {
 } from "@ionic/vue";
 import { collection, DocumentData, getDocs } from "firebase/firestore";
 import { firestore } from "@/firebase";
-import { computed, defineProps, ref, Ref } from "vue";
+import { computed, defineProps, onMounted, ref, Ref } from "vue";
+import { Network } from "@capacitor/network";
 //@ts-expect-error
 import { ProgressCircle } from "vue-progress-circle";
 import confetti from "canvas-confetti";
+import NoConnection from "./NoConnection.vue";
 
 const props = defineProps<{
   dni: string;
@@ -97,6 +103,8 @@ const style = getComputedStyle(document.body);
 const dismissModal = () => modalController.dismiss();
 
 const items: Ref<DocumentData[]> = ref([]);
+const connected = ref(true);
+(async () => (connected.value = (await Network.getStatus()).connected))();
 const loading = ref(true);
 const hoursDone = computed(
   () =>
@@ -105,16 +113,30 @@ const hoursDone = computed(
       .reduce((prev, curr) => prev + curr) as number
 );
 
+const removeDuplicates = (duplicates: DocumentData[]) => {
+  const flag: Record<any, any> = {};
+  const unique: DocumentData[] = [];
+  duplicates.forEach((elem) => {
+    if (!flag[elem.session]) {
+      flag[elem.session] = true;
+      unique.push(elem);
+    }
+  });
+  console.info("HEY HEY HEY -> Flags:", flag);
+  return unique;
+};
+
 // TODO Add loading
-(async () => {
+const main = async () => {
+  if (!connected.value) return;
+  const tmpItems: DocumentData[] = [];
   const querySnapshot = await getDocs(collection(firestore, props.dni));
   querySnapshot.forEach((doc) => {
     console.log(`DOCSSSS: ${doc.id} => ${doc.data()}`);
-    items.value.push(doc.data());
+    tmpItems.push(doc.data());
   });
-  items.value.sort((a, b) =>
-    Date.parse(a.time) < Date.parse(b.time) ? -1 : 1
-  );
+  tmpItems.sort((a, b) => (Date.parse(a.time) < Date.parse(b.time) ? -1 : 1));
+  items.value = removeDuplicates(tmpItems);
   loading.value = false;
   console.log(items.value);
   if (hoursDone.value >= 25 * 0.8) {
@@ -131,7 +153,14 @@ const hoursDone = computed(
       colors: ["#24272A", "#34B6ED", "#70C1B3", "#FFE066", "#E8451E"],
     });
   }
-})();
+};
+
+Network.addListener("networkStatusChange", (status) => {
+  connected.value = status.connected;
+  main();
+});
+
+onMounted(main);
 </script>
 
 <style scoped>
