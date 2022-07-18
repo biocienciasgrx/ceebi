@@ -134,6 +134,26 @@
       "nombre": "Los Marines Restaurante-Pizzería",
       "img": "https://biociencias.es/wp-content/uploads/2022/06/Los-marines-1.jpg",
       "web": "https://es-la.facebook.com/restaurante.losmarines/"
+    },
+    {
+      "nombre": "Fundación Andaluza de Biotecnología",
+      "img": "https://biociencias.es/wp-content/uploads/2022/06/logo_FABT.png",
+      "web": "https://www.fabt.es/"
+    },
+    {
+      "nombre": "Departamento de Estatigrafía y Paleontología",
+      "img": "https://biociencias.es/wp-content/uploads/2022/06/Logo-departamento-Estatigrafia-y-paleontologia-1.png",
+      "web": "http://www.ugrestratig.es/"
+    },
+    {
+      "nombre": "Jóvenes Investigadores de la Sociedad Española de Microbiología (JISEM)",
+      "img": "https://biociencias.es/wp-content/uploads/2022/07/logo-grupo-jisem.png",
+      "web": "https://www.semicrobiologia.org/grupos-especializados/jisem-jovenes-investigadores-de-la-sem"
+    },
+     {
+      "nombre": "X Congreso de Investigación Biomédica (CIB 2022)",
+      "img": "https://biociencias.es/wp-content/uploads/2022/07/logo_cib2022_textodebajo.png",
+      "web": "https://cibvalencia.es/"
     }
   ],
   "bronce": [
