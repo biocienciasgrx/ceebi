@@ -14,7 +14,7 @@
           {{ event.data.time.start }}
         </p>
         <h3 class="event__title">
-          {{ event.data.title }}
+          {{ event.data.post.post_title }}
         </h3>
       </div>
       <p class="event__presenter">
@@ -63,9 +63,9 @@ export default {
           };
     }
 
-    props.events.map(
-      (e: Event) => (e.data.title = e.data.title.replace(/&#822(0|1);/g, '"'))
-    ); // TODO Instead of making this map, there is another field in the Object that has the quotations marks properly done, I think data.post.title was
+    // props.events.map(
+    //   (e: Event) => (e.data.title = e.data.title.replace(/&#822(0|1);/g, '"'))
+    // ); // TODO Instead of making this map, there is another field in the Object that has the quotations marks properly done, I think data.post.title was
 
     console.info("setting up");
     console.info("events", props.events);
