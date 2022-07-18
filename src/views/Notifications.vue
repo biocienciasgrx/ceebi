@@ -20,11 +20,9 @@
           ></ion-icon>
           <div style="display: flex; flex-direction: column">
             <ion-text>{{ notification.title }}</ion-text>
-            <ion-note
-              >{{
-                extractContent(notification.body || "").substring(0, 30)
-              }}...</ion-note
-            >
+            <ion-note>
+              {{ extractContent(notification.body || "").substring(0, 30) }}...
+            </ion-note>
           </div>
         </ion-item>
       </ion-list>
@@ -100,7 +98,7 @@ const loadTrace = trace(performance, "fetch_notifications");
         not.schedule.seconds || 0
       ),
       ionIcon:
-        // @ts-expect-error
+        // @ts-expect-error Cannot index ionicons with string, but I ensure I'm indexing with a icon name
         ionicons[`${not.icon || "paperPlane"}Outline`] ||
         ionicons.paperPlaneOutline,
     })
