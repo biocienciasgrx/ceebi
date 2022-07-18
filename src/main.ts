@@ -37,6 +37,8 @@ import {
   FIREBASE_ANALYTICS,
   FIREBASE_PERFORMANCE,
 } from "./vars";
+import { FirebaseCrashlytics } from "@capacitor-community/firebase-crashlytics";
+import StackTrace from "stacktrace-js";
 
 //* I18n
 const i18n = createI18n({
@@ -87,6 +89,18 @@ const app = createApp(App).use(IonicVue).use(i18n).use(router);
 // app.provide(FIREBASE_APP, firebaseApp);
 // app.provide(FIREBASE_ANALYTICS, firebaseAnalytics);
 // app.provide(FIREBASE_PERFORMANCE, firebasePerformance);
+
+app.config.errorHandler = (err, instance, info) => {
+  (async () => {
+    const stacktrace = await StackTrace.fromError(
+      new Error(`ERROR ${err} in instance ${instance}: ${info}`)
+    );
+    await FirebaseCrashlytics.recordException({
+      message: `Unhandled error ocurred: ${info}`,
+      stacktrace,
+    });
+  })();
+};
 
 router.isReady().then(() => {
   app.mount("#app");

@@ -29,16 +29,13 @@ import {
   AppUpdateAvailability,
   FlexibleUpdateInstallStatus,
 } from "@robingenz/capacitor-app-update";
-
 import { analytics } from "@/firebase";
-
 import {
   FIREBASE_ANALYTICS,
   IMAGES_DIRECTORY,
   KEY_NOTIFICATIONS,
   KEY_DARK_MODE,
 } from "@/vars";
-
 import { Analytics, logEvent } from "firebase/analytics";
 import * as StackTrace from "stacktrace-js";
 import { FirebaseCrashlytics } from "@capacitor-community/firebase-crashlytics";
@@ -210,15 +207,17 @@ onMounted(async () => {
     setDarkMode(prefersDark.matches);
   }
   // Override global error handling to send report to Firebase Crashlytics
-  window.onerror = async (ev, source, lineno, colno, error) => {
-    const stacktrace = await StackTrace.fromError(
-      error ||
-        new Error(`ERROR from ev ${ev} (${source} - L${lineno}:C${colno})`)
-    );
-    await FirebaseCrashlytics.recordException({
-      message: "Unhandled error ocurred",
-      stacktrace,
-    });
+  window.onerror = (ev, source, lineno, colno, error) => {
+    (async () => {
+      const stacktrace = await StackTrace.fromError(
+        error ||
+          new Error(`ERROR from ev ${ev} (${source} - L${lineno}:C${colno})`)
+      );
+      await FirebaseCrashlytics.recordException({
+        message: `Unhandled error ocurred: ${error} [event: ${ev}; source: ${source}] - L${lineno}:C${colno}`,
+        stacktrace,
+      });
+    })();
   };
 });
 </script>
