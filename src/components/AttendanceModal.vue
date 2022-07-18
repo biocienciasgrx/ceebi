@@ -11,7 +11,7 @@
   </ion-header>
   <ion-content>
     <no-connection v-if="!connected">
-      Conéctate a internet para poder ver tu asistencia
+      {{ $t("message.attendanceConnectToSee") }}
     </no-connection>
 
     <div v-else-if="loading" class="wrapper">

@@ -24,7 +24,7 @@
     </ion-toolbar>
     <ion-content :fullscreen="true">
       <NoConnection v-if="!connected">
-        Go back online to get the updated schedule
+        {{ $t("message.scheduleGoOnline") }}
       </NoConnection>
       <div class="swiper" v-else>
         <swiper

@@ -8,6 +8,7 @@
         >
           {{ $t("message.newsConnectAtLeastOnce") }}
           <ion-button @click="open('https://biociencias.es/noticias/')">
+            <!-- TODO Translate -->
             More on the web
             <ion-icon
               slot="end"
@@ -39,7 +40,7 @@
           </div>
           <div class="flex-center">
             <ion-button @click="open('https://biociencias.es/noticias/')">
-              More on the web
+              {{ $t("message.newsMoreOnWeb") }}
               <ion-icon
                 slot="end"
                 :md="openOutline"

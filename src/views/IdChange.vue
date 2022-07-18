@@ -283,11 +283,19 @@ const saveId = () => {
       value: documentID.value,
     })
       .then(() => {
-        toast("Successfully updated ID", checkmarkCircleOutline, "success");
+        toast(
+          i18n.t("message.identificationSuccessfullyUpdated"),
+          checkmarkCircleOutline,
+          "success"
+        );
         router.push("/settings");
       })
       .catch((e) =>
-        toast(`Error while saving: ${e}`, closeCircleOutline, "danger")
+        toast(
+          `${i18n.t("message.identificationErrorSaving")}: ${e}`,
+          closeCircleOutline,
+          "danger"
+        )
       );
 };
 

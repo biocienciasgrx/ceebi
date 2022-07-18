@@ -24,9 +24,13 @@ export default {
       outOfTotalOf: "hours out of a total of 25 hours",
       eventsYouveAssisted: "Events you have attended",
       noAssistance: "No attendance registered",
+      attendanceConnectToSee: "Go online to check your attendance",
 
       // components/NoConnection.vue
       noConnection: "No connection",
+
+      // Schedule
+      scheduleGoOnline: "Go back online to get the updated schedule",
 
       // Settings
       localeSelection: "Select language",
@@ -50,12 +54,15 @@ export default {
       identificationHelpTextLengthDNI: "DNI must be 9 characters long",
       identificationHelpTextInvalidDNI: "Not a valid DNI",
       identificationHelpTextWrongFormatDNI: "Not valid DNI format",
+      identificationSuccessfullyUpdated: "Successfully updated ID",
+      identificationErrorSaving: "Error when saving ID",
 
       // News
       newsLoadedOffline: "Couldn't fetch news, loaded locally saved news",
       newsCannotRefreshOffline: "Cannot refresh news while offline",
       newsReadMore: "Read more",
       newsConnectAtLeastOnce: "You have to connect at least once to see news",
+      newsMoreOnWeb: "More on the web",
 
       // About
       developedBy: "Developed by",
@@ -104,9 +111,14 @@ export default {
       outOfTotalOf: "horas de un total de 25 horas",
       eventsYouveAssisted: "Eventos a los que has asistido",
       noAssistance: "Aún no tienes asistencia registrada",
+      attendanceConnectToSee:
+        "Conéctate a internet para poder ver tu asistencia",
 
       // components/NoConnection.vue
       noConnection: "Sin conexión",
+
+      // Schedule
+      scheduleGoOnline: "Conéctate de nuevo para ver el horario",
 
       // Settings
       localeSelection: "Seleccionar idioma",
@@ -131,6 +143,8 @@ export default {
         "El DNI debe de ser de 9 carácteres de longitud",
       identificationHelpTextInvalidDNI: "DNI no válido",
       identificationHelpTextWrongFormatDNI: "Formato de DNI inválido",
+      identificationSuccessfullyUpdated: "Identificación guardada con éxito",
+      identificationErrorSaving: "Error al guardar Identificación",
 
       // News
       newsLoadedOffline:
@@ -140,6 +154,7 @@ export default {
       newsReadMore: "Leer más",
       newsConnectAtLeastOnce:
         "Conéctese a internet polo menos unha vez para poder ver as novas",
+      newsMoreOnWeb: "Más en la web",
 
       // About
       developedBy: "App desarrollada por",
@@ -188,9 +203,14 @@ export default {
       outOfTotalOf: "horas dun total de 25 horas",
       eventsYouveAssisted: "Eventos aos que asistiches",
       noAssistance: "Aínda non tes asistencia rexistrada",
+      attendanceConnectToSee:
+        "Conéctate ao internet para poder ver a túa asistencia",
 
       // components/NoConnection.vue
       noConnection: "Sen conexión",
+
+      // Schedule
+      scheduleGoOnline: "Recupera a conexión a internet para ver o horario",
 
       // Settings
       localeSelection: "Seleccionar idioma",
@@ -214,6 +234,8 @@ export default {
       identificationHelpTextLengthDNI: "O DNI debe ter 9 carácteres",
       identificationHelpTextInvalidDNI: "DNI non válido",
       identificationHelpTextWrongFormatDNI: "Formato de DNI inválido",
+      identificationSuccessfullyUpdated: "Identificación gardada con éxito",
+      identificationErrorSaving: "Erro ao gardar identificación",
 
       // News
       newsTakingLongMessage: "A descarga está a tardar máis do esperado",
@@ -225,6 +247,7 @@ export default {
       newsLoadedOffline: "Cargadas as noticias descargadas",
       newsConnectAtLeastOnce:
         "Conéctate a internet por lo menos una vez para poder ver las noticias",
+      newsMoreOnWeb: "Máis na nosa web",
 
       // About
       developedBy: "Creado por",
@@ -261,6 +284,11 @@ export default {
       // QRCode
       qrcodeIdNotSet: "Stellen Sie eine ID auf, um QR-Code zu benutzen",
       qrcodeSetId: "Set ID",
+      viewAttendance: "Anwesenheit nachweisen",
+
+      attendance: 'Anwesenheit',
+      youveAssistedTo: 'Sie haben zu',
+      outOfTotalOf: 'von den ingesamt y Stunden  teilgenomen',
 
       // components/NoConnection.vue
       noConnection: "Keine Verbindung",
@@ -293,9 +321,106 @@ export default {
       newsTakingLongerWait: "Abwarten Sie, bitte",
       newsCannotRefreshOffline: "Nachrichten sind nicht offline zu laden",
       newsReadMore: "Lessen mehr",
+      newsMoreOnWeb: 'Mehr im Web',
+
+      // ---
+      eventSpeakers: 'Rednen'
     },
-  } as Translation | any,
-};
+  },
+  eu: {
+    message: {
+      minutes: "minutu",
+      close: "Itxi",
+      save: "Gorde",
+      cancel: "Ezeztatu",
+      loading: "Kargatzen",
+
+      // Tabs
+      tabQRCode: "QR kodea",
+      tabSchedule: "Ordutegia",
+      tabNews: "Berriak",
+      tabNotifications: "Jakinarazpenak",
+
+      // QRCode
+      qrcodeIdNotSet:
+        "Zure IDa konfigura ezazu QR-en bidez sarrera erabiltzeko",
+      qrcodeSetId: "IDa gehitu",
+      viewAttendance: "Jendea ikusi",
+
+      // components/AttendanceModal.vue
+      attendance: "Jendea",
+      youveAssistedTo: "-(e)ra azaldu zara",
+      outOfTotalOf: "ordu guztizko 25 orduetatik",
+      eventsYouveAssisted: "Azaldu naizen ekitaldiak",
+      noAssistance: "Oraindik ez duzu zure etortzea erregistratu",
+      attendanceConnectToSee: "Internetera konektatu zure bertaratzea ikusteko",
+
+      // components/NoConnection.vue
+      noConnection: "Konexiorik gabe",
+
+      // Schedule
+      scheduleGoOnline: "Ordutegia ikusteko berriro konekta zaitez",
+
+      // Settings
+      localeSelection: "Hizkuntza hautatu",
+      settingsInterfaceTitle: "Interfazea",
+      darkMode: "Ilun modua",
+      workingOnDarkMode: "Ilun modua oraindik ez dago erabilgarri",
+      settingsTitle: "Ezarpenak",
+      settingsIdentificationTitle: "Identifikazioa",
+      settingsIdentificationChange: "IDa aldatu",
+      settingsNotificationsTitle: "Jakinarazpenak",
+      settingsEventRemindersToggle: "Ekitaldien oroigarriak aktibatu",
+      settingsEventRemindersChooseTime: "Ekitaldirako aurrerapena",
+      settingsEventsRemindersTime0: "Hasterakoan",
+
+      // IdChange (modal wasn't working)
+      identificationTypeTitle: "Dokumento mota",
+      identificationDNI: "DNI Espainiarra",
+      identificationNIE: "NIE Espainiarra",
+      identificationPassportOrOther:
+        "Pasaportea edo beste bat (edozein herrialde)",
+      identificationDocumentIdentifier: "Dokumentuaren identifikazioa",
+      identificationHelpTextLengthDNI: "DNIak 9 karaktere izan behar ditu",
+      identificationHelpTextInvalidDNI: "DNIa ez da baliozkoa",
+      identificationHelpTextWrongFormatDNI: "DNIaren formatua ez da baliozkoa",
+      identificationSuccessfullyUpdated:
+        "Identifikazioa behar bezala gorde egin da",
+      identificationErrorSaving:
+        "Identifikazioa gordetzean errore bat gertatu da",
+
+      // News
+      newsLoadedOffline: "Ezin dira berriak lortu, gordetakoak kargatzen",
+      newsCannotRefreshOffline:
+        "Ezin dira berriak berriro kargatu konexiorik gabe",
+      newsReadMore: "Gehiago irakurri",
+      newsConnectAtLeastOnce:
+        "Berriak ikusteko Internetera konekta zaitez gutxienez aldi bat",
+      newsMoreOnWeb: "Web-orrian gehiago",
+
+      // About
+      developedBy: "-(e)k garatutako App-a",
+      aboutMe: "Niri buruz",
+      sourceCode: "Iturburu-kodea",
+      patron: "MEZENAS",
+      platinum: "Platinoa",
+      gold: "Urreaa",
+      silver: "Zilarra",
+      bronze: "Brontzea",
+      collaborators: "KOLABORATZAILEAK",
+      errorLoadingImages: "Irudiak deskargatzerakoan errore bat gertatu da",
+
+      // Notifications
+      noNotificationsYet: "Oraindik ez dago jakinarazpenik",
+      notificationSentOn: "-(e)an bidalita",
+
+      // ---
+      eventNoLocation: "Oraindik ez dago kokapenik",
+      eventSpeakers: "Hizlariak",
+      eventViewOnWeb: "Web-orrian ikusi",
+    },
+  },
+} as Record<string, Translation | any>;
 
 interface Translation {
   message: {
@@ -322,9 +447,13 @@ interface Translation {
     outOfTotalOf: string;
     eventsYouveAssisted: string;
     noAssistance: string;
+    attendanceConnectToSee: string;
 
     // components/NoConnection.vue
     noConnection: string;
+
+    // Schedule
+    scheduleGoOnline: string;
 
     // Settings
     localeSelection: string;
@@ -348,12 +477,15 @@ interface Translation {
     identificationHelpTextLengthDNI: string;
     identificationHelpTextInvalidDNI: string;
     identificationHelpTextWrongFormatDNI: string;
+    identificationSuccessfullyUpdated: string;
+    identificationErrorSaving: string;
 
     // News
     newsLoadedOffline: string;
     newsCannotRefreshOffline: string;
     newsReadMore: string;
     newsConnectAtLeastOnce: string;
+    newsMoreOnWeb: string;
 
     // About
     developedBy: string;
