@@ -32,3 +32,6 @@ npm-debug.log*
 
 splash_screen.*
 keystore*.jks
+upload_certificate.pem
+
+releases/
