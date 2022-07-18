@@ -5,6 +5,25 @@ This file serves to keep track of changes across versions of the app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.15] - 2022-07-18
+
+### Added
+
+- Translations to Basque
+- Show message when not connected to internet and tried to view attendance
+- Filter attendance when fetching to ensure that there is not duplicate registries
+
+### Changed
+
+- Improved German translations
+
+### Fixed
+
+- Report more info to Firebase Crashlytics on non-critical errors
+- All app strings are translatable
+- Improve double colons event title fix
+- Restart Android project due to errors when compiling
+
 ## [1.3.7] - 2022-07-08
 
 ### Added
@@ -191,6 +210,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Showing _alt_ text in case images don't load
 
 [unreleased]: https://github.com/biocienciasgrx/ceebi/compare/v1.1.2...HEAD
+[1.3.15]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.3.15
+[1.3.7]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.3.7
 [1.1.2]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.1.2
 [1.0.2]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.0.2
 [1.0.0]: https://github.com/biocienciasgrx/ceebi/releases/tag/v1.0.0
