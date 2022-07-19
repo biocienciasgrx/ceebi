@@ -1,12 +1,33 @@
 [
   {
-    "id": "sorteos_viernes",
-    "title": "Sorteos CEEBI Viernes",
-    "body": "Estos son los sorteos que estarán activos hoy viernes desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Viernes:</b> Sube una foto del ponente del miércoles que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li><li><b>Sorteo Organizador:</b> Sube a instastories una foto con el organizador que mejor te haya caído. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Instastories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul> ",
+    "id": "noche_19",
+    "title": "Actividad nocturna martes 19",
+    "body": "<i>Os recordamos que este es un plan opcional, no cuenta para la obtención del certificado del congreso</i><br><br>🥳 Pub Mezquita 14<br>📍 Ver <a href=\"https://goo.gl/maps/8SRVp3rFz61wv2DW8\">aquí</a> la ubicación<br>🕚 23:00 horas<br>⚠️ <b>IMPORTANTE</b> llevar pulsera del CEEBI para entrar gratis y tener descuentos en las consumiciones.<br>😏 Recomendable llevar la acreditación del CEEBI para el postureo, para ver los nombres de los demás, y para participar en el concurso de hoy.",
     "schedule": {
       "year": 2022,
       "month": 7,
-      "day": 21,
+      "day": 19,
+      "hour": 9,
+      "minutes": 5
+    },
+    "icon": "sparkles",
+    "buttons": [
+      {
+        "id": "ubicacion",
+        "text": "Cómo llegar a Mezquita 14",
+        "link": "https://goo.gl/maps/8SRVp3rFz61wv2DW8",
+        "icon": "navigate"
+      }
+    ]
+  },
+  {
+    "id": "sorteos_viernes",
+    "title": "Sorteos CEEBI Viernes",
+    "body": "Estos son los sorteos que estarán activos hoy viernes desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Viernes:</b> Sube una foto del ponente del viernes que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li><li><b>Sorteo Organizador:</b> Sube a instastories una foto con el organizador que mejor te haya caído. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Instastories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul> ",
+    "schedule": {
+      "year": 2022,
+      "month": 7,
+      "day": 22,
       "hour": 10,
       "minutes": 0
     },
@@ -29,7 +50,7 @@
   {
     "id": "sorteos_jueves",
     "title": "Sorteos CEEBI Jueves",
-    "body": "Estos son los sorteos que estarán activos hoy jueves desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Jueves:</b> Sube una foto del ponente del miércoles que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> <li><b>Sorteo Stand de empresas Instagram:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo póster:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Sorteo Microcursos Jueves Instastories:</b> Sube una foto de algo que estés haciendo en un microcurso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo Plan Social Jueves:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li> </ul> ",
+    "body": "Estos son los sorteos que estarán activos hoy jueves desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Jueves:</b> Sube una foto del ponente del jueves que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> <li><b>Sorteo Stand de empresas Instagram:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo póster:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Sorteo Microcursos Jueves Instastories:</b> Sube una foto de algo que estés haciendo en un microcurso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo Plan Social Jueves:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li> </ul> ",
     "schedule": {
       "year": 2022,
       "month": 7,
