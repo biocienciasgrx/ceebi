@@ -1,5 +1,59 @@
 [
   {
+    "id": "sorteos_viernes",
+    "title": "Sorteos CEEBI Viernes",
+    "body": "Estos son los sorteos que estarán activos hoy viernes desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Viernes:</b> Sube una foto del ponente del miércoles que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li><li><b>Sorteo Organizador:</b> Sube a instastories una foto con el organizador que mejor te haya caído. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Sorteo foto grupal oficial Instastories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul> ",
+    "schedule": {
+      "year": 2022,
+      "month": 7,
+      "day": 21,
+      "hour": 10,
+      "minutes": 0
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "web",
+        "text": "Página web sorteos",
+        "link": "http://biociencias.es/sorteos",
+        "icon": "globe"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "http://biociencias.es/bases",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "sorteos_jueves",
+    "title": "Sorteos CEEBI Jueves",
+    "body": "Estos son los sorteos que estarán activos hoy jueves desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Jueves:</b> Sube una foto del ponente del miércoles que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> <li><b>Sorteo Stand de empresas Instagram:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo póster:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Sorteo Microcursos Jueves Instastories:</b> Sube una foto de algo que estés haciendo en un microcurso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Sorteo Plan Social Jueves:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li> </ul> ",
+    "schedule": {
+      "year": 2022,
+      "month": 7,
+      "day": 21,
+      "hour": 10,
+      "minutes": 0
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "web",
+        "text": "Página web sorteos",
+        "link": "http://biociencias.es/sorteos",
+        "icon": "globe"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "http://biociencias.es/bases",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
     "id": "sorteos_miercoles",
     "title": "Sorteos CEEBI Miércoles",
     "body": "Estos son los sorteos que estarán activos hoy miércoles desde las 10:00 a las 23:59. Te animamos a que participes!!! <ul> <li> <b>Sorteo Ponente Miércoles:</b> Sube una foto del ponente del miércoles que más te haya gustado. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> <li> <b>Sorteo Pósit Coffee Break:</b> Pega un pósit en el tablón que destinaremos para ello diciendo qué te está pareciendo el congreso. Pon tu Instagram o nombre completo para que te podamos identificar. </li> <li> <b>Sorteo Microcursos Miércoles Instastories:</b> Sube una foto de algo que estés haciendo en un microcurso. Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> <li> <b>Miradores de Granada Instastories:</b> Sube una foto desde un mirador de Granada (plan social del miércoles). Añade el hashtag #CEEBI y nombra a @BiocienciasGRX. </li> </ul> ",
