@@ -1,5 +1,140 @@
 [
   {
+    "id": "2023_sorteos_viernes",
+    "title": "Sorteos y Miniconcursos del viernes",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Ponente viernes:</b> Sube una foto del ponente del viernes que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Foto grupal oficial IG-stories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Photocall IG-stories:</b> Sube una foto a Instastories en el photocall que encontrarás en el hall, nombrando además a tres empresas o entidades que salen en el banner y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Stand de empresas IG-stories:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Curso Genotipia:</b> ¡Busca el post de IG!<ol><li>Sigue a @genotipia y a @BiocienciasGRX.</li><li>Comenta en el post a dos amig@s a los que les gustaría hacer el curso.</li><li>Si compartes el post en stories, tendrás otra participación más.</li></ol>El plazo para participar termina <b>HOY</b> viernes <b>21 de Julio</b> a las <b>18:30h</b> (Hora de verano de España).<br><u>PREMIO:</u> Curso del catálogo de Genotipia.</li></ul>",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 21,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2023_sorteos_jueves",
+    "title": "Sorteos y Miniconcursos del jueves",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Ponente jueves:</b> Sube una foto del ponente del jueves que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Póster IG-stories:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Microcursos jueves IG-stories:</b> Sube una foto de algo que estés haciendo en un microcurso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Organizador II CEEBI IG-stories:</b> Sube una foto con el organizador que mejor te haya caído y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Plan social jueves IG-stories:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 20,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2023_sorteos_miercoles",
+    "title": "Sorteos y Miniconcursos del miercoles",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Ponente miércoles:</b> Sube una foto del ponente del miércoles que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Post-It Coffee Break miércoles:</b> Pega un pósit en la mesa del coffee break diciendo qué te está pareciendo el congreso y pon tu Instagram o nombre completo para que te podamos identificar.</li><li><b>Miradores de Granada IG-stories:</b> Sube una foto desde un mirador de Granada (plan social del miércoles) y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Microcursos miércoles IG-stories:</b> Sube una foto de algo que estés haciendo en un microcurso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 19,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2023_sorteos_martes",
+    "title": "Sorteos y Miniconcursos del martes",
+    "body": "<p>Hemos creado todos estos sorteos y microcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Kit de bienvenida:</b> Sube una foto de la cosa que más te haya gustado del kit de bienvenida y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Acreditación IG-stories:</b> Haz una foto de tu acreditación junto a la de otra persona de una universidad distinta a la tuya y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Plan social martes IG-stories:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 18,
+      "hour": 15,
+      "minutes": 00
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2023_sorteos_semana",
+    "title": "Sorteos y Miniconcursos de la semana",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Premio a la participación:</b> ¡Hazte notar! Sé el más participativo tanto en redes sociales como en persona. Deja huella en el corazón de los organizadores ¡y no te olvides de decirles tu nombre!<br><u>PREMIO:</u> calculadora CASIO</li><li><b>Premio Jef@ de Instagram y Jef@ de Twitter:</b> Para aquel que suba más publicaciones en cada red social y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.<br><u>PREMIO</u>: ¡sorpresa!</li><li><b>Premios Influencer de Instagram e Influencer de Twitter:</b> Para aquel que tenga más repercusión en una publicación o tweet en concreto y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.<br><u>PREMIO</u>: ¡sorpresa!</li></ul>",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 18,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
     "id": "sorteo_bienvenida_2023",
     "title": "SORTEO DE BIENVENIDA 🙌🏻",
     "body": "Hola a tod@s!! Queda nada para que comience el congreso 🚀🚀<br>Esta edición del CEEBI acogerá 526 estudiantes de distintas universidades tanto online como presencial👩🏽‍🎓👨🏽‍🎓. Esperamos que sea una experiencia super gratificante!! <br>➡️ A lo largo del congreso iremos anunciando pequeños concursos y sorteos. Comenzamos con el primero:  <br>👉 Anímate a subir una foto viniendo de viaje al CEEBI en Twitter o Instastories escribiendo ”Camino al #CEEBI y nombrándonos en @BiocienciasGRX”  y consigue una taza del congreso 🍵🍀",
