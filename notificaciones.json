@@ -1,5 +1,32 @@
 [
   {
+    "id": "sorteo_bienvenida_2023",
+    "title": "SORTEO DE BIENVENIDA 🙌🏻",
+    "body": "Hola a tod@s!! Queda nada para que comience el congreso 🚀🚀<br>Esta edición del CEEBI acogerá 526 estudiantes de distintas universidades tanto online como presencial👩🏽‍🎓👨🏽‍🎓. Esperamos que sea una experiencia super gratificante!! <br>➡️ A lo largo del congreso iremos anunciando pequeños concursos y sorteos. Comenzamos con el primero:  <br>👉 Anímate a subir una foto viniendo de viaje al CEEBI en Twitter o Instastories escribiendo ”Camino al #CEEBI y nombrándonos en @BiocienciasGRX”  y consigue una taza del congreso 🍵🍀",
+    "schedule": {
+      "year": 2023,
+      "month": 7,
+      "day": 17,
+      "hour": 17,
+      "minutes": 0
+    },
+    "icon": "rocket",
+    "buttons": [
+      {
+        "id": "new",
+        "text": "Más info en la noticia",
+        "link": "https://biociencias.es/noticias/sorteos-y-miniconcursos/",
+        "icon": "newspaper"
+      },
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
     "id": "noche_19",
     "title": "Actividad nocturna martes 19",
     "body": "<i>Os recordamos que este es un plan opcional, no cuenta para la obtención del certificado del congreso</i><br><br>🥳 Pub Mezquita 14<br>📍 Ver <a href=\"https://goo.gl/maps/8SRVp3rFz61wv2DW8\">aquí</a> la ubicación<br>🕚 23:00 horas<br>⚠️ <b>IMPORTANTE</b> llevar pulsera del CEEBI para entrar gratis y tener descuentos en las consumiciones.<br>😏 Recomendable llevar la acreditación del CEEBI para el postureo, para ver los nombres de los demás, y para participar en el concurso de hoy.",
