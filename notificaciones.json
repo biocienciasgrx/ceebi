@@ -1,5 +1,111 @@
 [
   {
+    "id": "2024_sorteos_viernes",
+    "title": "Sorteos y Miniconcursos del viernes 19/07",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Ponente viernes:</b> Sube una foto del ponente del viernes que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Foto grupal oficial IG-stories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Photocall:</b> Sube una foto a Instastories en el photocall que encontrarás en el hall, nombrando además a tres empresas o entidades que salen en el banner y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Stand de empresas:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Curso Genotipia:</b> ¡Busca el post de IG!<ol><li>Sigue a @genotipia y a @BiocienciasGRX.</li><li>Comenta en el post a dos amig@s a los que les gustaría hacer el curso.</li><li>Si compartes el post en stories, tendrás otra participación más.</li></ol></li></ul><p>El plazo para participar termina <b>HOY</b> viernes <b>19 de julio</b> a las <b>17:00h</b> (hora de verano de España).<u>PREMIO:</u> Curso del catálogo de Genotipia.</p>",
+    "schedule": {
+      "year": 2024,
+      "month": 7,
+      "day": 19,
+      "hour": 09,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2024_sorteos_jueves",
+    "title": "Sorteos y Miniconcursos del jueves 18/07",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Microcursos jueves:</b> Sube una foto de algo que estés haciendo en un microcurso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Ponente jueves:</b> Sube una foto del ponente del jueves que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Póster jueves:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Plan social jueves:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2024,
+      "month": 7,
+      "day": 18,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2024_sorteos_miercoles",
+    "title": "Sorteos y Miniconcursos del miercoles 17/07",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Microcursos miércoles:</b> Sube una foto de algo que estés haciendo en un microcurso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Ponente miércoles:</b> Sube una foto del ponente del miércoles que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Póster miércoles:</b> Sube a instastories una foto de cualquier póster con el hashtag #CEEBI y nombrando a @BiocienciasGRX.</li><li><b>Plan social miércoles:</b> Sube un instastory durante el plan social de la noche con algún otro participante del congreso y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2024,
+      "month": 7,
+      "day": 17,
+      "hour": 9,
+
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2024_sorteos_martes",
+    "title": "Sorteos y Miniconcursos del martes 16/07",
+    "body": "<p>Hemos creado todos estos sorteos y microcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Plan social martes:</b> Sube una foto desde un mirador de Granada (plan social del miércoles) y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2024,
+      "month": 7,
+      "day": 16,
+      "hour": 9,
+      "minutes": 30
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
+    "id": "2024_sorteos_semana",
+    "title": "Sorteos y Miniconcursos de la semana",
+    "body": "<p>Hemos creado todos estos sorteos y miniconcursos para durante la celebración del Congreso. Tenemos los siguientes:</p><ul><li><b>Sorteo Kit de Bienvenida: </b>debes subir una foto de la cosa que más te haya gustado del kit de bienvenida, añadir el hashtag #CEEBI y nombrar a @BiocienciasGRX a Instastories, Instagram, Twitter o LinkedIn.</li><li><b>Sorteo Acreditación Viajera: </b>debes hacer una foto de tu acreditación junto a la de otra persona de una universidad distinta a la tuya, añadir el hashtag #CEEBI y nombra a @BiocienciasGRX a Instastories.</li><li><strong>Sorteo 'Cuantos más, mejor': </strong>debes subir a redes todas las fotos que puedas de ti mismo junto al mayor número de organizadores posibles en cada una, en una situación graciosa y/u original, menciónanos (@BiocienciasGRX) y utiliza el hashtag #CEEBI a Instastories. También debes seguir a @BiocienciasGRX en Instagram.</li><li><strong>Sorteo Post-It Coffee Break: </strong>debes pegar un pósit en la mesa del coffee break diciendo qué te está pareciendo el congreso. No olvides poner tu Instagram o nombre completo para que te podamos identificar.</li><li><strong>Miniconcurso CEEBITOS: </strong>vota a tus compañeros para conseguir uno de los fantásticos 20 CEEBITOS. El viernes a las 22:30h se entregará un formulario online y estará abierto hasta que termine la cena de clausura y empiece el reparto de CEEBITOS. Solo podrá rellenarse una vez y deberá hacerse con el email con el que te escribiste en el CEEBI.</li><li><strong>Miniconcurso CEEBITO Chistoso: </strong>este CEEBITO lo asignaremos desde la organización a quien realice el mejor meme del CEEBI. Deberá publicarlo en Twitter o Instagram con el hashtag #memeCEEBI y nombrando a @BiocienciasGRX. Se tendrán en cuenta todos los memes desde el martes a las 10:00h hasta el viernes a las 17:00h.</li><li><strong>Miniconcurso Influencer de Instagram y de Twitter: </strong>Será para aquel que suba más publicaciones en cada red social. Se tendrán en cuenta todas las publicaciones desde el martes a las 10:00h hasta el viernes a las 17:00h.Debes añadir el hashtag #CEEBI y nombra a @BiocienciasGRX.</li></ul>",
+    "schedule": {
+      "year": 2024,
+      "month": 7,
+      "day": 16,
+      "hour": 17,
+      "minutes": 00
+    },
+    "icon": "trophy",
+    "buttons": [
+      {
+        "id": "bases",
+        "text": "Bases legales",
+        "link": "https://biociencias.es/bases/",
+        "icon": "documentText"
+      }
+    ]
+  },
+  {
     "id": "2023_sorteos_viernes",
     "title": "Sorteos y Miniconcursos del viernes",
     "body": "<p>Hemos creado todos estos sorteos y miniconcursos para el día de hoy. Tenemos los siguientes:</p><ul><li><b>Ponente viernes:</b> Sube una foto del ponente del viernes que más te haya gustado y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Foto grupal oficial Twitter:</b> Retuitea la foto grupal que subirá @BiocienciasGRX.</li><li><b>Foto grupal oficial IG-stories:</b> Comparte en tu instastories la publicación de @BiocienciasGRX con la foto grupal y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Photocall IG-stories:</b> Sube una foto a Instastories en el photocall que encontrarás en el hall, nombrando además a tres empresas o entidades que salen en el banner y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Stand de empresas IG-stories:</b> Sube una foto a Instastories en el stand de una empresa nombrando a la empresa de dicho stand y añade el hashtag #CEEBI y nombra a @BiocienciasGRX.</li><li><b>Curso Genotipia:</b> ¡Busca el post de IG!<ol><li>Sigue a @genotipia y a @BiocienciasGRX.</li><li>Comenta en el post a dos amig@s a los que les gustaría hacer el curso.</li><li>Si compartes el post en stories, tendrás otra participación más.</li></ol>El plazo para participar termina <b>HOY</b> viernes <b>21 de Julio</b> a las <b>18:30h</b> (Hora de verano de España).<br><u>PREMIO:</u> Curso del catálogo de Genotipia.</li></ul>",
